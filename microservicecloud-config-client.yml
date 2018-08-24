@@ -5,7 +5,7 @@
     
 ---
 server:
-  port: 8001
+  port: 8201
 spring:  #开发环境
   profiles: dev
   application:
@@ -16,7 +16,7 @@ spring:  #开发环境
       defaultZone: http://eureka7001.com:7001/eureka/     
 ---
 server:
-  port: 8002
+  port: 8202
 spring:  #测试环境
   profiles: test
   application:
