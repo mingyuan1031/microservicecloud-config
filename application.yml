@@ -1,0 +1,16 @@
+﻿spring:
+  profiles:
+    active:
+    - dev
+    
+---
+spring:  #开发环境
+  profiles: dev
+  application:
+    name: microservicecloud-config-yuan-dev
+---
+spring:  #测试环境
+  profiles: test
+  application:
+    name: microservicecloud-config-yuan-test
+    # 保存为UTF-8格式
