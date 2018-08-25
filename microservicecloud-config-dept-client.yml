@@ -1,9 +1,4 @@
-﻿spring:
-  profiles:
-    active:
-    - dev
----
-server:
+﻿server:
   port: 8001
   
 mybatis:
@@ -31,7 +26,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/      
   instance:
     instance-id: microservicecloud-dept8001
     prefer-ip-address: true     #访问路径可以显示IP地址     
@@ -41,4 +36,5 @@ info:
   company.name: www.atguigu.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
-  
+
+
