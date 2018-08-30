@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.goods.GoodsShowDao">
+    <resultMap id="GoodsShowMap" type="com.lwxf.newstore.webapp.domain.entity.goods.GoodsShow">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="goods_id" property="goodsId" jdbcType="CHAR" />
+        <result column="path" property="path" jdbcType="VARCHAR" />
+        <result column="is_defaults" property="defaults" jdbcType="BIT" />
+        <result column="sequence" property="sequence" jdbcType="INTEGER" />
+    </resultMap>
+    <sql id="columns">
+id, goods_id, path, is_defaults, sequence
+</sql>
+
+    <select id="selectById" resultMap="GoodsShowMap" parameterType="String">
+        SELECT <include refid="columns" />
+        FROM   goods_show
+        WHERE  id = #{id}
+    </select>
+
+    <select id="selectByFilter" resultMap="GoodsShowMap">
+        SELECT <include refid="columns" />
+        FROM   goods_show
+        <where><trim prefixOverrides="AND">
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="goodsId != null">
+                AND goods_id = #{goodsId}
+            </if>
+            <if test="path != null">
+                AND path = #{path}
+            </if>
+            <if test="defaults != null">
+                AND is_defaults = #{defaults}
+            </if>
+            <if test="sequence != null">
+                AND sequence = #{sequence}
+            </if>
+        </trim></where>
+
+    </select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO
+goods_show(id, goods_id, path, is_defaults, sequence)
+    VALUES(#{id}, #{goodsId}, #{path}, #{defaults}, #{sequence})
+</insert>
+
+    <update id="updateByMapContext">
+        UPDATE goods_show
+        <set><trim suffixOverrides=",">
+            <if test="_parameter.containsKey('goodsId') and goodsId != null">
+                goods_id = #{goodsId},
+            </if>
+            <if test="_parameter.containsKey('path') and path != null">
+                path = #{path},
+            </if>
+            <if test="_parameter.containsKey('defaults') and defaults != null">
+                is_defaults = #{defaults},
+            </if>
+            <if test="_parameter.containsKey('sequence')">
+                sequence = #{sequence}
+            </if>
+        </trim></set>
+        WHERE  id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   goods_show
+WHERE  id = #{id}
+</delete>
+    <select id="findByGoodsId" resultMap="GoodsShowMap">
+        select <include refid="columns"/> from goods_show where goods_id= #{id} order by is_defaults desc
+    </select>
+
+    <update id="removeDefaults">
+        update goods_show set is_defaults = false where is_defaults = true and goods_id = #{arg0}
+    </update>
+
+    <update id="setDefault">
+        update goods_show set is_defaults = true where id = #{arg0}
+    </update>
+</mapper>

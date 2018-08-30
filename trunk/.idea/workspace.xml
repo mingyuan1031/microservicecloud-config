@@ -1,0 +1,1807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/order/impl/CityAreaFacadeImpl.java" line="28" mnemonic="2" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="59048b51-b25c-4a46-a393-489d0cf9be9f" name="Default" comment="添加">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/config/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/config/ShiroConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-innertest.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-innertest.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-localtest.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-localtest.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mobile/pub/quickshare.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mobile/pub/quickshare.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mobile/pub/reservation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mobile/pub/reservation.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mobile/pub/storecard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mobile/pub/storecard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mobile/quickshare.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mobile/quickshare.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mobile/reservation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mobile/reservation.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mobile/storecard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mobile/storecard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/payment/payment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/payment/payment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pc/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pc/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pc/pub/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pc/pub/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pc/pub/reservation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pc/pub/reservation.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pc/pub/storecard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pc/pub/storecard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pc/storecard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pc/storecard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/lwxf/newstore/webapp/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/lwxf/newstore/webapp/AppTest.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="newstore" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="newstore" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="newstore" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="newstore: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="com.lwxf.newstore" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="OrderController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/controller/api/order/OrderController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="713">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/order/OrderFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="25" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/order/OrderMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1518">
+              <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderFacadeImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/order/impl/OrderFacadeImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10143">
+              <caret line="484" column="5" selection-start-line="484" selection-start-column="5" selection-end-line="484" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/controller/api/config/ConfigController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/controller/api/news/NewsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="622">
+              <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RabbitMQConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/config/RabbitMQConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2255">
+              <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order" pinned="false" current-in-tab="false">
+        <entry file="das://f3981342-ff07-4ef7-a289-9ed3ee0dba7a/schema/newstore/table/order">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GoodsDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dto/order/GoodsDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderGoodsDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dto/order/OrderGoodsDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="Jsp File" />
+        <option value="JavaScript File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>created</find>
+      <find>ill</find>
+      <find>u.</find>
+      <find>logistics</find>
+      <find>ILLE</find>
+      <find>selectByOrderIds</find>
+      <find>L</find>
+      <find>jdom</find>
+      <find>selectOrderGoodsDtoByFilter</find>
+      <find>selectGoodsDtoByOrderGoodsId</find>
+      <find>weixinJsonMsgService</find>
+      <find>/pa</find>
+      <find>微信授权通过前，保存当前的请求对象</find>
+      <find>/wx/login</find>
+      <find>OrderPermission</find>
+      <find>OrderP</find>
+      <find>出现非法的请求路径</find>
+      <find>OrderGoodsDto</find>
+      <find>LogisticsDtoMap</find>
+      <find>selectLogisticsDtoByOrderId</find>
+      <find>selectLogisticsDtoByOrderGoodsId</find>
+      <find>address</find>
+      <find>/orderGoods</find>
+      <find>shiro_perm_error_result</find>
+      <find>WILDCARD</find>
+      <find>selectGoodsDtoListByOrderIds</find>
+      <find>GoodsDtoMap</find>
+      <find>users/0</find>
+      <find>selectByMemberId</find>
+      <find>trade</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/test/java/com/lwxf/newstore/webapp/Student.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/lwxf/newstore/webapp/OrderIDTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/lwxf/newstore/webapp/HelloApplication.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/lwxf/newstore/webapp/DemoTesr.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dao/order/OrderDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dao/order/LogisticsDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/bizservice/order/LogisticsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/bizservice/order/impl/LogisticsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/order/LogisticsMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dao/order/impl/LogisticsDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dto/order/GoodsDetailDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dto/order/GoodsDetailsDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dao/order/OrderGoodsDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dao/order/impl/OrderGoodsDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/bizservice/order/OrderGoodsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/bizservice/order/impl/OrderGoodsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/enums/order/AddressStatus.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/order/OrderGoodsMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/controller/api/order/LogisticsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/controller/api/order/OrderGoodsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/OrderGoodsApiPathMatcher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/AddressApiPathMatcher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/user/impl/UserFacadeImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/LogisticsApiPathMatcher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/order/impl/OderGoodsFacadeImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/enums/permission/PermissionIndex.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/lwxf/newstore/webapp/DemoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dto/order/GoodsDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dto/order/OrderGoodsDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/LastPathAPiMatcherActuator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/OrderApiPathMatcher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/SchemesApiPathMatcher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/bizservice/order/PaidRecordsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/bizservice/order/impl/PaidRecordsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dao/order/PaidRecordsDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dao/order/impl/PaidRecordsDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/order/PaidRecordsMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/controller/api/user/MyController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/config/ShiroConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/LwxfShiroUrlFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/order/AddressMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/order/impl/AddressFacadeImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/MyApiPathMatcher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/entity/order/Order.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/uniquecode/UniquneCodeGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/constant/WebConstant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/order/impl/WeiXinPayFacadeImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/order/OrderMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/order/impl/OrderFacadeImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/order/OrderFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/controller/api/order/OrderController.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="E:/Program Files/apache-maven-3.5.3-bin/apache-maven-3.5.3" />
+        <option name="userSettingsFile" value="E:\mavenlib\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <option name="showBasicPhasesOnly" value="false" />
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="com.lwxf.newstore" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="com.lwxf.newstore" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="com.lwxf.newstore" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="clean" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="com.lwxf.newstore" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="install" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="com.lwxf.newstore" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="spring-boot" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="com.lwxf.newstore" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Run Configurations" type="21c1f71a:MavenProjectsStructure$RunConfigurationsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="com.lwxf.newstore" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/src/main/frontend/mobile/mall/quickshare/node_modules" />
+    <handled-path value="$PROJECT_DIR$/src/main/frontend/mobile/mall/reservation/node_modules" />
+    <handled-path value="$PROJECT_DIR$/src/main/frontend/mobile/mall/shopmobile/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/src/main/frontend/mobile/mall/card/package.json" />
+      <path value="$PROJECT_DIR$/src/main/frontend/mobile/mall/quickshare/package.json" />
+      <path value="$PROJECT_DIR$/src/main/frontend/mobile/mall/reservation/package.json" />
+      <path value="$PROJECT_DIR$/src/main/frontend/mobile/mall/shopmobile/package.json" />
+      <path value="$PROJECT_DIR$/src/main/frontend/pc/admin/package.json" />
+      <path value="$PROJECT_DIR$/src/main/frontend/pc/login/package.json" />
+      <path value="$PROJECT_DIR$/src/main/frontend/summernotedemo/demo/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="52" />
+    <option name="y" value="8" />
+    <option name="width" value="1465" />
+    <option name="height" value="834" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="com.lwxf.newstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trunk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.lwxf.newstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trunk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.lwxf.newstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trunk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.lwxf.newstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trunk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.lwxf.newstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trunk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.lwxf.newstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trunk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.lwxf.newstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trunk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.lwxf.newstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trunk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.lwxf.newstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trunk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.lwxf.newstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trunk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.lwxf.newstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trunk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.lwxf.newstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trunk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.lwxf.newstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SearchEverywhereHistoryKey" value="System&#9;FILE&#9;file://E:/workspace/newstore/codes/lwxf_newstore/trunk/src/main/java/com/lwxf/newstore/webapp/common/enums/activity/SystemActivityEvent.java&#10;SystemA&#9;FILE&#9;file://E:/workspace/newstore/codes/lwxf_newstore/trunk/src/main/java/com/lwxf/newstore/webapp/common/enums/activity/SystemActivityEvent.java" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="G:/boot" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace\newstore\codes\lwxf_newstore\trunk\src\main\webapp\WEB-INF\views\payment" />
+      <recent name="E:\workspace\newstore\codes\lwxf_newstore\trunk\src\main\webapp\WEB-INF\views\mobile" />
+      <recent name="E:\workspace\newstore\codes\lwxf_newstore\trunk\src\main\webapp\WEB-INF\views\mobile\pub" />
+      <recent name="E:\workspace\newstore\codes\lwxf_newstore\trunk\src\main\resources" />
+      <recent name="E:\workspace\newstore\codes\lwxf_newstore\trunk\src\main\resources\static" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lwxf.newstore.webapp.domain.dto.order" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\workspace\newstore\codes\lwxf_newstore\trunk\src\main\resources\static" />
+      <recent name="E:\workspace\newstore\codes\lwxf_newstore\trunk\src\main\java\com\lwxf\newstore\webapp\controller\api\demo" />
+      <recent name="E:\workspace\newstore\codes\lwxf_newstore\trunk\src\main\resources\mybatis\mapper\order" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Maven.com.lwxf.newstore [spring-boot:run]">
+    <configuration name="GenEntityTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lwxf.newstore.webapp.GenEntityTest" />
+      <module name="com.lwxf.newstore" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lwxf.newstore.webapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="DaoMapper.test_batchGenerateOrderDaoClassAndServiceClassAndDaoXmlFiles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.lwxf.newstore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lwxf.newstore.webapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.lwxf.newstore.webapp" />
+      <option name="MAIN_CLASS_NAME" value="com.lwxf.newstore.webapp.DaoMapper" />
+      <option name="METHOD_NAME" value="test_batchGenerateOrderDaoClassAndServiceClassAndDaoXmlFiles" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="DemoTest.StringIndexofTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.lwxf.newstore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lwxf.newstore.webapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.lwxf.newstore.webapp" />
+      <option name="MAIN_CLASS_NAME" value="com.lwxf.newstore.webapp.DemoTest" />
+      <option name="METHOD_NAME" value="StringIndexofTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="HelloApplication.testOrderId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.lwxf.newstore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lwxf.newstore.webapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.lwxf.newstore.webapp" />
+      <option name="MAIN_CLASS_NAME" value="com.lwxf.newstore.webapp.HelloApplication" />
+      <option name="METHOD_NAME" value="testOrderId" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="com.lwxf.newstore [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="spring-boot:run" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+    </configuration>
+    <configuration name="WebAppStart" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="com.lwxf.newstore" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lwxf.newstore.webapp.WebAppStart" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.WebAppStart" />
+      <item itemvalue="Maven.com.lwxf.newstore [spring-boot:run]" />
+      <item itemvalue="JUnit.HelloApplication.testOrderId" />
+      <item itemvalue="JUnit.DemoTest.StringIndexofTest" />
+      <item itemvalue="Application.GenEntityTest" />
+      <item itemvalue="JUnit.DaoMapper.test_batchGenerateOrderDaoClassAndServiceClassAndDaoXmlFiles" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Maven.com.lwxf.newstore [spring-boot:run]" />
+        <item itemvalue="JUnit.DaoMapper.test_batchGenerateOrderDaoClassAndServiceClassAndDaoXmlFiles" />
+        <item itemvalue="Application.GenEntityTest" />
+        <item itemvalue="JUnit.DemoTest.StringIndexofTest" />
+        <item itemvalue="JUnit.HelloApplication.testOrderId" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",VISIBILITY_SORTER" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\workspace\newstore\codes\lwxf_newstore\trunk" />
+          <option name="myCopyRoot" value="E:\workspace\newstore\codes\lwxf_newstore\trunk" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\workspace\newstore\codes\lwxf_newstore\trunk" />
+          <option name="myCopyRoot" value="E:\workspace\newstore\codes\lwxf_newstore\trunk" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="59048b51-b25c-4a46-a393-489d0cf9be9f" name="Default" comment="" />
+      <created>1528791115391</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1528791115391</updated>
+      <workItem from="1528791118691" duration="2920000" />
+      <workItem from="1528883898723" duration="5317000" />
+      <workItem from="1528937482186" duration="7614000" />
+      <workItem from="1528946746640" duration="8487000" />
+      <workItem from="1528960233703" duration="12924000" />
+      <workItem from="1529028230333" duration="15957000" />
+      <workItem from="1529115540851" duration="5769000" />
+      <workItem from="1529128996683" duration="2320000" />
+      <workItem from="1529374788838" duration="22686000" />
+      <workItem from="1529457638555" duration="15395000" />
+      <workItem from="1529543912470" duration="31826000" />
+      <workItem from="1529649651537" duration="2647000" />
+      <workItem from="1529659683785" duration="1094000" />
+      <workItem from="1529723388380" duration="13944000" />
+      <workItem from="1529748627960" duration="254000" />
+      <workItem from="1529888425650" duration="30334000" />
+      <workItem from="1529977788034" duration="23518000" />
+      <workItem from="1530060777760" duration="34203000" />
+      <workItem from="1530234961891" duration="18257000" />
+      <workItem from="1530319963881" duration="22988000" />
+      <workItem from="1530492105634" duration="18976000" />
+      <workItem from="1530580847333" duration="20461000" />
+      <workItem from="1530665763742" duration="3641000" />
+      <workItem from="1530675390700" duration="8792000" />
+      <workItem from="1530771261588" duration="9045000" />
+      <workItem from="1530782129554" duration="12001000" />
+      <workItem from="1530838676235" duration="8015000" />
+      <workItem from="1530857888302" duration="13348000" />
+      <workItem from="1530953524864" duration="1230000" />
+      <workItem from="1531098521591" duration="3526000" />
+      <workItem from="1531102626614" duration="17967000" />
+      <workItem from="1531132714091" duration="5462000" />
+      <workItem from="1531185223628" duration="17208000" />
+      <workItem from="1531218557502" duration="5448000" />
+      <workItem from="1531270281884" duration="25719000" />
+      <workItem from="1531307646769" duration="1517000" />
+      <workItem from="1531359154260" duration="10554000" />
+      <workItem from="1531377964852" duration="1587000" />
+      <workItem from="1531535798008" duration="3275000" />
+      <workItem from="1531559756656" duration="1545000" />
+      <workItem from="1531904950728" duration="1146000" />
+      <workItem from="1531961744981" duration="4369000" />
+      <workItem from="1532047820204" duration="17175000" />
+      <workItem from="1532141565601" duration="8963000" />
+      <workItem from="1532308974830" duration="5962000" />
+      <workItem from="1532316759030" duration="18123000" />
+      <workItem from="1532395540684" duration="12077000" />
+      <workItem from="1532482400570" duration="21634000" />
+      <workItem from="1532510301520" duration="2928000" />
+      <workItem from="1532568333723" duration="8586000" />
+      <workItem from="1532675109562" duration="3571000" />
+      <workItem from="1532683489315" duration="10718000" />
+      <workItem from="1532771246059" duration="871000" />
+      <workItem from="1532913126728" duration="24019000" />
+      <workItem from="1532945728304" duration="1351000" />
+      <workItem from="1533000123632" duration="18651000" />
+      <workItem from="1533036793134" duration="802000" />
+      <workItem from="1533088023490" duration="9580000" />
+      <workItem from="1533180154672" duration="2036000" />
+      <workItem from="1533602404190" duration="3241000" />
+      <workItem from="1533613258621" duration="9578000" />
+      <workItem from="1533689460721" duration="18001000" />
+      <workItem from="1533776820758" duration="13891000" />
+      <workItem from="1533801439602" duration="9346000" />
+      <workItem from="1533864297060" duration="27299000" />
+      <workItem from="1533902936389" duration="719000" />
+      <workItem from="1533949048197" duration="5562000" />
+      <workItem from="1533970268017" duration="4597000" />
+      <workItem from="1534121486200" duration="8075000" />
+      <workItem from="1534132547533" duration="8598000" />
+      <workItem from="1534209127784" duration="16816000" />
+      <workItem from="1534295417258" duration="12982000" />
+      <workItem from="1534384047439" duration="10194000" />
+      <workItem from="1534471805979" duration="3036000" />
+      <workItem from="1534554609107" duration="3791000" />
+      <workItem from="1534755018857" duration="3061000" />
+      <workItem from="1534813821019" duration="5471000" />
+      <workItem from="1535074467545" duration="868000" />
+      <workItem from="1535532040896" duration="127000" />
+    </task>
+    <task id="LOCAL-00118" summary="添加查询订单方法">
+      <created>1532508900300</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1532508900300</updated>
+    </task>
+    <task id="LOCAL-00119" summary="添加查询订单方法">
+      <created>1532508940432</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1532508940432</updated>
+    </task>
+    <task id="LOCAL-00120" summary="添加查询订单方法">
+      <created>1532508955750</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1532508955750</updated>
+    </task>
+    <task id="LOCAL-00121" summary="添加查询订单方法">
+      <created>1532509764114</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1532509764114</updated>
+    </task>
+    <task id="LOCAL-00122" summary="用户地址操作日志">
+      <created>1532514036369</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1532514036370</updated>
+    </task>
+    <task id="LOCAL-00123" summary="添加查询订单方法">
+      <created>1532514045849</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1532514045849</updated>
+    </task>
+    <task id="LOCAL-00124" summary="添加查询订单方法">
+      <created>1532514053717</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1532514053717</updated>
+    </task>
+    <task id="LOCAL-00125" summary="添加查询订单方法">
+      <created>1532514073930</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1532514073930</updated>
+    </task>
+    <task id="LOCAL-00126" summary="添加查询订单方法">
+      <created>1532588940627</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1532588940628</updated>
+    </task>
+    <task id="LOCAL-00127" summary="添加查询订单方法">
+      <created>1532588948316</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1532588948316</updated>
+    </task>
+    <task id="LOCAL-00128" summary="添加查询订单方法">
+      <created>1532588957448</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1532588957448</updated>
+    </task>
+    <task id="LOCAL-00129" summary="解决冲突">
+      <created>1532683740706</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1532683740706</updated>
+    </task>
+    <task id="LOCAL-00130" summary="添加查询订单方法">
+      <created>1532749165043</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1532749165043</updated>
+    </task>
+    <task id="LOCAL-00131" summary="董世博使用3.4状态">
+      <created>1533032762990</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1533032762991</updated>
+    </task>
+    <task id="LOCAL-00132" summary="添加jar包">
+      <created>1533090261576</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1533090261577</updated>
+    </task>
+    <task id="LOCAL-00133" summary="添加订单支付记录">
+      <created>1533776986606</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1533776986606</updated>
+    </task>
+    <task id="LOCAL-00134" summary="添加支付记录权限">
+      <created>1533778069442</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1533778069442</updated>
+    </task>
+    <task id="LOCAL-00135" summary="添加商品详情Dto">
+      <created>1533800439391</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1533800439391</updated>
+    </task>
+    <task id="LOCAL-00136" summary="添加">
+      <created>1533800812369</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1533800812369</updated>
+    </task>
+    <task id="LOCAL-00137" summary="添加">
+      <created>1533806781252</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1533806781252</updated>
+    </task>
+    <task id="LOCAL-00138" summary="添加">
+      <created>1533808689777</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1533808689777</updated>
+    </task>
+    <task id="LOCAL-00139" summary="添加">
+      <created>1533809328190</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1533809328190</updated>
+    </task>
+    <task id="LOCAL-00140" summary="添加关闭订单">
+      <created>1533951906060</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1533951906060</updated>
+    </task>
+    <task id="LOCAL-00141" summary="修改熊振接口">
+      <created>1534148862538</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1534148862539</updated>
+    </task>
+    <task id="LOCAL-00142" summary="修改返回信息">
+      <created>1534156508439</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1534156508439</updated>
+    </task>
+    <task id="LOCAL-00143" summary="添加">
+      <created>1534215268322</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1534215268322</updated>
+    </task>
+    <task id="LOCAL-00144" summary="添加">
+      <created>1534215285304</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1534215285304</updated>
+    </task>
+    <task id="LOCAL-00145" summary="添加">
+      <created>1534216463976</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1534216463976</updated>
+    </task>
+    <task id="LOCAL-00146" summary="添加">
+      <created>1534217671899</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1534217671899</updated>
+    </task>
+    <task id="LOCAL-00147" summary="添加">
+      <created>1534230187618</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1534230187618</updated>
+    </task>
+    <task id="LOCAL-00148" summary="添加权限">
+      <created>1534231356349</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1534231356350</updated>
+    </task>
+    <task id="LOCAL-00149" summary="添加">
+      <created>1534296717862</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1534296717863</updated>
+    </task>
+    <task id="LOCAL-00150" summary="添加">
+      <created>1534296740869</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1534296740869</updated>
+    </task>
+    <task id="LOCAL-00151" summary="添加">
+      <created>1534296774919</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1534296774919</updated>
+    </task>
+    <task id="LOCAL-00152" summary="添加">
+      <created>1534301157689</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1534301157689</updated>
+    </task>
+    <task id="LOCAL-00153" summary="添加">
+      <created>1534303147035</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1534303147035</updated>
+    </task>
+    <task id="LOCAL-00154" summary="修改删除地址">
+      <created>1534389001601</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1534389001602</updated>
+    </task>
+    <task id="LOCAL-00155" summary="修改查询用户">
+      <created>1534389024858</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1534389024858</updated>
+    </task>
+    <task id="LOCAL-00156" summary="添加my权限">
+      <created>1534389234642</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1534389234642</updated>
+    </task>
+    <task id="LOCAL-00157" summary="添加">
+      <created>1534389283093</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1534389283093</updated>
+    </task>
+    <task id="LOCAL-00158" summary="添加">
+      <created>1534399870899</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1534399870899</updated>
+    </task>
+    <task id="LOCAL-00159" summary="添加">
+      <created>1534555168606</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1534555168607</updated>
+    </task>
+    <task id="LOCAL-00160" summary="添加">
+      <created>1534555483181</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1534555483181</updated>
+    </task>
+    <task id="LOCAL-00161" summary="添加">
+      <created>1534814905994</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1534814905994</updated>
+    </task>
+    <task id="LOCAL-00162" summary="添加">
+      <created>1534815732213</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1534815732213</updated>
+    </task>
+    <task id="LOCAL-00163" summary="完善订单查询接口">
+      <created>1534816273904</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1534816273904</updated>
+    </task>
+    <task id="LOCAL-00164" summary="添加">
+      <created>1534819422867</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1534819422867</updated>
+    </task>
+    <task id="LOCAL-00165" summary="添加">
+      <created>1534819430409</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1534819430409</updated>
+    </task>
+    <task id="LOCAL-00166" summary="添加">
+      <created>1534819440229</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1534819440229</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="DemoTest_StringIndexofTest - 2018.08.08 at 15h 12m 14s.xml">
+      <configuration name="DemoTest.StringIndexofTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DemoTest_StringIndexofTest - 2018.08.08 at 15h 12m 25s.xml">
+      <configuration name="DemoTest.StringIndexofTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DemoTest_StringIndexofTest - 2018.08.08 at 15h 12m 33s.xml">
+      <configuration name="DemoTest.StringIndexofTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DemoTest_StringIndexofTest - 2018.08.09 at 17h 15m 12s.xml">
+      <configuration name="DemoTest.StringIndexofTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DemoTest_StringIndexofTest - 2018.08.14 at 16h 25m 18s.xml">
+      <configuration name="DemoTest.StringIndexofTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DemoTest_StringIndexofTest - 2018.08.14 at 16h 25m 39s.xml">
+      <configuration name="DemoTest.StringIndexofTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DemoTest_StringIndexofTest - 2018.08.14 at 16h 26m 16s.xml">
+      <configuration name="DemoTest.StringIndexofTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DemoTest_StringIndexofTest - 2018.08.14 at 16h 26m 23s.xml">
+      <configuration name="DemoTest.StringIndexofTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DaoMapper_test_batchGenerateOrderDaoClassAndServiceClassAndDaoXmlFiles - 2018.08.21 at 09h 32m 02s.xml">
+      <configuration name="DaoMapper.test_batchGenerateOrderDaoClassAndServiceClassAndDaoXmlFiles" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DaoMapper_test_batchGenerateOrderDaoClassAndServiceClassAndDaoXmlFiles - 2018.08.21 at 09h 42m 24s.xml">
+      <configuration name="DaoMapper.test_batchGenerateOrderDaoClassAndServiceClassAndDaoXmlFiles" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="805586000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Event Log" order="10" sideWeight="0.39783785" side_tool="true" visible="true" weight="0.1024" />
+      <window_info anchor="right" id="Maven Projects" order="5" sideWeight="0.6021622" visible="true" weight="0.1024" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Designer" order="1" />
+      <window_info anchor="right" id="Database" order="9" sideWeight="0.4967742" weight="0.184" />
+      <window_info id="Structure" order="0" sideWeight="0.32361963" side_tool="true" weight="0.248" />
+      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.4983871" weight="0.2496" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.9221748" weight="0.29513514" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32864866" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32864866" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29837838" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.18054055" />
+      <window_info anchor="bottom" id="Spring" order="8" weight="0.32864866" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32864866" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.6763804" visible="true" weight="0.1856" />
+      <window_info anchor="right" id="Bean Validation" order="7" sideWeight="0.4935484" weight="0.3296" />
+      <window_info id="Web" order="5" sideWeight="0.1" side_tool="true" weight="0.21813333" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info id="Favorites" order="4" sideWeight="0.31743422" side_tool="true" weight="0.22186667" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.9221748" visible="true" weight="0.32972974" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.18378378" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3654054" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="添加用户地址" />
+    <MESSAGE value="添加注释" />
+    <MESSAGE value="用户地址操作日志" />
+    <MESSAGE value="优化发货单" />
+    <MESSAGE value="优化后" />
+    <MESSAGE value="删除评论" />
+    <MESSAGE value="解决冲突" />
+    <MESSAGE value="添加查询订单方法" />
+    <MESSAGE value="优化订单" />
+    <MESSAGE value="董世博使用3.4状态" />
+    <MESSAGE value="添加jar包" />
+    <MESSAGE value="添加订单支付记录" />
+    <MESSAGE value="添加支付记录权限" />
+    <MESSAGE value="添加商品详情Dto" />
+    <MESSAGE value="添加关闭订单" />
+    <MESSAGE value="修改熊振接口" />
+    <MESSAGE value="修改默认地址接口" />
+    <MESSAGE value="修改返回信息" />
+    <MESSAGE value="添加权限" />
+    <MESSAGE value="修改删除地址" />
+    <MESSAGE value="修改查询用户" />
+    <MESSAGE value="添加my权限" />
+    <MESSAGE value="添加tradeNo" />
+    <MESSAGE value="完善订单查询接口" />
+    <MESSAGE value="添加" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/controller/mobile/WeixinController.java</url>
+          <line>173</line>
+          <properties />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/mobile/impl/WeixinFacadeImpl.java</url>
+          <line>411</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/mavenlib/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-sources.jar!/org/apache/ibatis/session/SqlSessionManager.java</url>
+          <line>165</line>
+          <properties />
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/mavenlib/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-sources.jar!/org/apache/ibatis/executor/BaseExecutor.java</url>
+          <line>133</line>
+          <properties />
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/mavenlib/com/github/binarywang/weixin-java-pay/3.1.0/weixin-java-pay-3.1.0-sources.jar!/com/github/binarywang/wxpay/util/SignUtils.java</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="250" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/LwxfWildcarkPermission.java</url>
+          <line>79</line>
+          <properties />
+          <option name="timeStamp" value="339" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/MyApiPathMatcher.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="450" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/MyApiPathMatcher.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="451" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/MyApiPathMatcher.java</url>
+          <line>46</line>
+          <properties />
+          <option name="timeStamp" value="452" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="458" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="MavenRunConfiguration">
+        <watch expression="WebUtils.getCurrUserId()" language="JAVA" />
+        <watch expression="WebUtils.getCurrUser()" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>WebUtils.getCurrUser()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>WebUtils.getCurrUserId()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>JsonUtil.toJson(validResult)</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>com.lwxf.newstore.webapp.common.utils.JsonUtil</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/bizservice/order/impl/OrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/goods/GoodsExtendMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="75" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dao/order/impl/OrderDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/ShiroUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/LastPathAPiMatcherActuator.java-rev1817.svn000.tmp.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/user/impl/UserFacadeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="461" selection-start-line="461" selection-end-line="461" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/SchemesApiPathMatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/bizservice/order/PaidRecordsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/bizservice/order/impl/PaidRecordsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="49" column="43" lean-forward="true" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dao/order/PaidRecordsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dao/order/impl/PaidRecordsDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="45" column="57" lean-forward="true" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/order/PaidRecordsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/FirstPathMatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/ApiPathPermissionMatcherActuator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/entity/order/PaidRecords.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/controller/api/order/AddressController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/AddressApiPathMatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/ClerkManageApiPathMatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/CfgApiPathMatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/GoodsApiPathMatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/LogisticsApiPathMatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="33" column="72" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/OrderApiPathMatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="37" column="172" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="172" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/LastPathAPiMatcherActuator.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/config/ShiroConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6118">
+          <caret line="287" column="4" selection-start-line="287" selection-start-column="4" selection-end-line="290" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dao/order/impl/AddressDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/bizservice/order/impl/AddressServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/order/AddressMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="75" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/LwxfShiroUrlFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/shiro/matcher/impl/MyApiPathMatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/controller/api/user/MyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="85" column="49" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/order/impl/AddressFacadeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2576">
+          <caret line="134" column="9" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/controller/api/order/CityAreaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dto/order/OrderDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="22" column="56" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/lwxf/newstore/webapp/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-253">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/gencode/newstore/order/Order.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/lwxf/newstore/webapp/GenEntityTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="103" column="78" lean-forward="true" selection-start-line="103" selection-start-column="78" selection-end-line="103" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/constant/WebConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/order/impl/WeiXinPayFacadeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92">
+          <caret line="147" column="47" selection-start-line="147" selection-start-column="47" selection-end-line="147" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/common/uniquecode/UniquneCodeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/lwxf/newstore/webapp/DaoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="101" column="40" lean-forward="true" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/entity/order/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5612">
+          <caret line="306" column="46" lean-forward="true" selection-start-line="306" selection-start-column="46" selection-end-line="306" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f3981342-ff07-4ef7-a289-9ed3ee0dba7a/schema/newstore/table/order">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dto/order/GoodsDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/domain/dto/order/OrderGoodsDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/order/OrderMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1518">
+          <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/order/OrderFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="25" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/controller/api/order/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/facade/order/impl/OrderFacadeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10143">
+          <caret line="484" column="5" selection-start-line="484" selection-start-column="5" selection-end-line="484" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/controller/api/config/ConfigController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/controller/api/news/NewsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lwxf/newstore/webapp/config/RabbitMQConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2255">
+          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>com.lwxf.newstore:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>com.lwxf.newstore</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: args4j:args4j:2.0.26</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.config.StoreConfigDao">
+    <resultMap id="StoreConfigMap" type="com.lwxf.newstore.webapp.domain.entity.config.StoreConfig">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="company_id" property="companyId" jdbcType="CHAR" />
+        <result column="logo" property="logo" jdbcType="VARCHAR" />
+        <result column="header" property="header" jdbcType="VARCHAR" />
+        <result column="scope" property="scope" jdbcType="VARCHAR" />
+        <result column="linkman" property="linkman" jdbcType="VARCHAR" />
+        <result column="service_call" property="serviceCall" jdbcType="VARCHAR" />
+        <result column="reservation_call" property="reservationCall" jdbcType="VARCHAR" />
+        <result column="qrcode" property="qrcode" jdbcType="VARCHAR" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="service_qq" property="serviceQq" jdbcType="VARCHAR" />
+        <result column="poster" property="poster" jdbcType="VARCHAR" />
+        <result column="pinkage" property="pinkage" jdbcType="INTEGER" />
+        <result column="storecard" property="storecard" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="columns">
+id, name, company_id, logo, header, scope, linkman, service_call, reservation_call, qrcode, address, service_qq, poster, pinkage, storecard
+</sql>
+
+    <select id="selectById" resultMap="StoreConfigMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   store_config
+WHERE  id = #{id}
+</select>
+
+    <select id="selectByFilter" resultMap="StoreConfigMap">
+SELECT <include refid="columns" />
+FROM   store_config
+<where><trim prefixOverrides="AND">
+<if test="id != null">
+    id = #{id}
+</if>
+<if test="name != null">
+    AND name = #{name}
+</if>
+<if test="companyId != null">
+    AND company_id = #{companyId}
+</if>
+<if test="logo != null">
+    AND logo = #{logo}
+</if>
+<if test="header != null">
+    AND header = #{header}
+</if>
+<if test="scope != null">
+    AND scope = #{scope}
+</if>
+<if test="linkman != null">
+    AND linkman = #{linkman}
+</if>
+<if test="serviceCall != null">
+    AND service_call = #{serviceCall}
+</if>
+<if test="reservationCall != null">
+    AND reservation_call = #{reservationCall}
+</if>
+<if test="qrcode != null">
+    AND qrcode = #{qrcode}
+</if>
+<if test="address != null">
+    AND address = #{address}
+</if>
+<if test="serviceQq != null">
+    AND service_qq = #{serviceQq}
+</if>
+<if test="poster != null">
+    AND poster = #{poster}
+</if>
+<if test="pinkage != null">
+    AND pinkage = #{pinkage}
+</if>
+<if test="storecard != null">
+    AND storecard = #{storecard}
+</if>
+</trim></where>
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+store_config(id, name, company_id, logo, header, scope, linkman, service_call, reservation_call, qrcode, address, service_qq, poster, pinkage, storecard)
+      VALUES(#{id}, #{name}, #{companyId}, #{logo}, #{header}, #{scope}, #{linkman}, #{serviceCall}, #{reservationCall}, #{qrcode}, #{address}, #{serviceQq}, #{poster}, #{pinkage}, #{storecard})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE store_config
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('name') and name != null">
+    name = #{name},
+</if>
+    <if test="_parameter.containsKey('companyId') and companyId != null">
+    company_id = #{companyId},
+</if>
+    <if test="_parameter.containsKey('logo') and logo != null">
+    logo = #{logo},
+</if>
+    <if test="_parameter.containsKey('header') and header != null">
+    header = #{header},
+</if>
+    <if test="_parameter.containsKey('scope') and scope != null">
+    scope = #{scope},
+</if>
+    <if test="_parameter.containsKey('linkman')">
+    linkman = #{linkman},
+</if>
+    <if test="_parameter.containsKey('serviceCall')">
+    service_call = #{serviceCall},
+</if>
+    <if test="_parameter.containsKey('reservationCall')">
+    reservation_call = #{reservationCall},
+</if>
+    <if test="_parameter.containsKey('qrcode')">
+    qrcode = #{qrcode},
+</if>
+    <if test="_parameter.containsKey('address')">
+    address = #{address},
+</if>
+    <if test="_parameter.containsKey('serviceQq')">
+    service_qq = #{serviceQq},
+</if>
+    <if test="_parameter.containsKey('poster')">
+    poster = #{poster},
+</if>
+    <if test="_parameter.containsKey('pinkage')">
+    pinkage = #{pinkage},
+</if>
+    <if test="_parameter.containsKey('storecard')">
+    storecard = #{storecard}
+</if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   store_config
+WHERE  id = #{id}
+</delete>
+
+    <select id="findOneByLimit" resultMap="StoreConfigMap">
+        SELECT <include refid="columns" />
+        FROM   store_config  limit 1
+    </select>
+
+    <select id="findByCompanyId" resultMap="StoreConfigMap">
+        select <include refid="columns"/> from store_config where company_id = #{companyId}
+    </select>
+
+
+</mapper>

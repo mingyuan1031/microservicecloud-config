@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.goods.GoodsSpecDao">
+    <resultMap id="GoodsSpecMap" type="com.lwxf.newstore.webapp.domain.entity.goods.GoodsSpec">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="goods_type_id" property="goodsTypeId" jdbcType="CHAR" />
+    </resultMap>
+    <sql id="columns">
+id, name, goods_type_id
+</sql>
+
+    <select id="selectById" resultMap="GoodsSpecMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   goods_spec
+WHERE  id = #{id}
+</select>
+
+    
+    <select id="selectByFilter" resultMap="GoodsSpecMap">
+SELECT <include refid="columns" />
+FROM   goods_spec
+<where><trim prefixOverrides="AND">
+<if test="id != null">
+    id = #{id}
+</if>
+<if test="name != null">
+    AND name = #{name}
+</if>
+<if test="goodsTypeId != null">
+    AND goods_type_id = #{goodsTypeId}
+</if>
+</trim></where>
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+goods_spec(id, name, goods_type_id)
+    VALUES(#{id}, #{name}, #{goodsTypeId})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE goods_spec
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('name') and name != null">
+    name = #{name},
+</if>
+    <if test="_parameter.containsKey('goodsTypeId')">
+    goods_type_id = #{goodsTypeId}
+</if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <delete id="deleteById" parameterType="String">
+    DELETE FROM   goods_spec
+    WHERE  id = #{id}
+    </delete>
+
+    <select id="findAll" resultMap="GoodsSpecMap">
+        SELECT <include refid="columns" />
+        FROM   goods_spec
+    </select>
+
+    <select id="findByTypeId" resultMap="GoodsSpecMap">
+        select <include refid="columns"/>
+        from goods_spec where goods_type_id = #{arg0}
+    </select>
+
+    <select id="isExistByName" resultType="java.lang.Boolean">
+        select count(*) from goods_spec where goods_type_id = #{goodsTypeId} and name = #{name}
+    </select>
+
+    <delete id="deleteByTypeId" >
+        delete from goods_spec where goods_type_id = #{arg0}
+    </delete>
+</mapper>

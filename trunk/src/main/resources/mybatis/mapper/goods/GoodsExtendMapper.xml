@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.goods.GoodsExtendDao">
+    <resultMap id="GoodsExtendMap" type="com.lwxf.newstore.webapp.domain.entity.goods.GoodsExtend">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="goods_id" property="goodsId" jdbcType="CHAR" />
+        <result column="sales" property="sales" jdbcType="INTEGER" />
+        <result column="originalprice" property="originalprice" jdbcType="DECIMAL" />
+        <result column="price" property="price" jdbcType="DECIMAL" />
+        <result column="is_defaults" property="defaults" jdbcType="BIT" />
+        <result column="stock" property="stock" jdbcType="INTEGER" />
+        <result column="options" property="options" jdbcType="VARCHAR" />
+        <result column="bigimage" property="bigimage" jdbcType="VARCHAR" />
+        <result column="smallimage" property="smallimage" jdbcType="VARCHAR" />
+        <result column="state" property="state" jdbcType="CHAR" />
+    </resultMap>
+    <sql id="columns">
+id, goods_id, sales, originalprice, price, is_defaults, stock, options, bigimage, smallimage, state
+</sql>
+
+    <select id="selectById" resultMap="GoodsExtendMap" parameterType="String">
+        SELECT <include refid="columns" />
+        FROM   goods_extend
+        WHERE  id = #{id}
+    </select>
+
+    <select id="selectByFilter" resultMap="GoodsExtendMap">
+        SELECT <include refid="columns" />
+        FROM   goods_extend
+        <where><trim prefixOverrides="AND">
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="goodsId != null">
+                AND goods_id = #{goodsId}
+            </if>
+            <if test="sales != null">
+                AND sales = #{sales}
+            </if>
+            <if test="originalprice != null">
+                AND originalprice = #{originalprice}
+            </if>
+            <if test="price != null">
+                AND price = #{price}
+            </if>
+            <if test="defaults != null">
+                AND is_defaults = #{defaults}
+            </if>
+            <if test="stock != null">
+                AND stock = #{stock}
+            </if>
+            <if test="options != null">
+                AND options = #{options}
+            </if>
+            <if test="bigimage != null">
+                AND bigimage = #{bigimage}
+            </if>
+            <if test="smallimage != null">
+                AND smallimage = #{smallimage}
+            </if>
+            <if test="state != null">
+                AND state = #{state}
+            </if>
+        </trim></where>
+
+    </select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO
+goods_extend(id, goods_id, sales, originalprice, price, is_defaults, stock, options, bigimage, smallimage, state)
+      VALUES(#{id}, #{goodsId}, #{sales}, #{originalprice}, #{price}, #{defaults}, #{stock}, #{options}, #{bigimage}, #{smallimage}, #{state})
+</insert>
+
+    <update id="updateByMapContext">
+        UPDATE goods_extend
+        <set><trim suffixOverrides=",">
+            <if test="_parameter.containsKey('sales') and sales != null">
+                sales = #{sales},
+            </if>
+            <if test="_parameter.containsKey('originalprice') and originalprice != null">
+                originalprice = #{originalprice},
+            </if>
+            <if test="_parameter.containsKey('price') and price != null">
+                price = #{price},
+            </if>
+            <if test="_parameter.containsKey('defaults') and defaults != null">
+                is_defaults = #{defaults},
+            </if>
+            <if test="_parameter.containsKey('stock') and stock != null">
+                stock = #{stock},
+            </if>
+            <if test="_parameter.containsKey('bigimage')">
+                bigimage = #{bigimage},
+            </if>
+            <if test="_parameter.containsKey('smallimage')">
+                smallimage = #{smallimage},
+            </if>
+            <if test="_parameter.containsKey('state')">
+                state = #{state}
+            </if>
+        </trim></set>
+        WHERE  id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   goods_extend
+WHERE  id = #{id}
+</delete>
+    <select id="isExistByLikeOptions" resultType="java.lang.Boolean">
+        select count(*) from goods_extend where options like CONCAT('%',#{id},'%')
+    </select>
+
+    <select id="findByGoodsId" resultMap="GoodsExtendMap">
+        select <include refid="columns"/> from goods_extend where goods_id =#{arg0}
+    </select>
+
+    <select id="isExistByDefaults" resultType="java.lang.Boolean">
+        select count(*) from goods_extend where goods_id = #{arg0} and is_defaults = true
+    </select>
+
+    <update id="removeDefaults">
+        update goods_extend set is_defaults = false where is_defaults = true and goods_id=#{arg0};
+    </update>
+
+    <select id="isExistByGoodsIdAndExtendId" resultType="java.lang.Boolean">
+        select count(*) from goods_extend where goods_id = #{goodsId} and id = #{extendId}
+    </select>
+</mapper>

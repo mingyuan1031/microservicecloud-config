@@ -1,0 +1,75 @@
+.paging{
+	margin-top: 50px;
+	float: right;
+	margin-right: 20px;
+}
+.redstar{
+		color: red;
+		height: 16px;
+		line-height: 16px;
+	}
+body{
+	height: 100%;
+    width: 100%;
+}
+
+.contain{
+    margin-left: 210px;
+    margin-right: 10px;
+    height: 1000px;
+}
+h3{
+	font-size: 16px;
+    font-weight: normal;
+    line-height: 20px;
+    color: #333;
+    display: inline-block;
+}
+h5{
+	font-size: 12px;
+    font-weight: normal;
+    line-height: 18px;
+    color: #777;
+    display: inline-block;
+    margin-left: 10px;
+}
+.item-title{
+	height: 35px;
+	line-height: 25px;
+    white-space: nowrap;
+    width: 98%;
+    padding-top: 3px;
+    margin: 20px 1%;
+    border-bottom: solid 1px #E6E6E6;
+}
+.search{
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	display: inline-block;
+}
+.listtittle{
+	 font-size: 12px;
+    font-weight: normal;
+    line-height: 24px;
+    color: #777;
+    vertical-align: bottom;
+    letter-spacing: normal;
+    display: inline-block;
+    padding: 0
+}
+.tips{
+	color: #0ba4da;
+}
+.routerx{
+	color: #fff;
+}
+table span{
+	font-size: 12px;
+}
+.ivu-table{
+	height: auto;
+}
+.ivu-page-prev,.ivu-page-next{
+	padding-top: 9px;
+}

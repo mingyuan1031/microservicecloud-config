@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.quickshare.MicroblogCommentDao">
+    <resultMap id="MicroblogCommentMap" type="com.lwxf.newstore.webapp.domain.entity.quickshare.MicroblogComment">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="microblog_id" property="microblogId" jdbcType="CHAR" />
+        <result column="parent_id" property="parentId" jdbcType="CHAR" />
+        <result column="parent_creator" property="parentCreator" jdbcType="CHAR" />
+        <result column="creator" property="creator" jdbcType="CHAR" />
+        <result column="content" property="content" jdbcType="VARCHAR" />
+        <result column="is_disabled" property="disabled" jdbcType="BIT" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="columns">
+id, microblog_id, parent_id, parent_creator, creator, content, is_disabled, created
+</sql>
+
+    <select id="selectById" resultMap="MicroblogCommentMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   microblog_comment
+WHERE  id = #{id}
+</select>
+
+    <select id="selectByFilter" resultMap="MicroblogCommentMap">
+        SELECT <include refid="columns" />
+        FROM   microblog_comment
+        <where><trim prefixOverrides="AND">
+        <if test="id != null">
+            id = #{id}
+        </if>
+        <if test="microblogId != null">
+            AND microblog_id = #{microblogId}
+        </if>
+        <if test="parentId != null">
+            AND parent_id = #{parentId}
+        </if>
+        <if test="parentCreator != null">
+            AND parent_creator = #{parentCreator}
+        </if>
+        <if test="creator != null">
+            AND creator = #{creator}
+        </if>
+        <if test="content != null">
+            AND content = #{content}
+        </if>
+        <if test="disabled != null">
+            AND is_disabled = #{disabled}
+        </if>
+        <if test="created != null">
+            AND created = #{created}
+        </if>
+        </trim></where>
+  </select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+microblog_comment(id, microblog_id, parent_id, parent_creator, creator, content, is_disabled, created)
+           VALUES(#{id}, #{microblogId}, #{parentId}, #{parentCreator}, #{creator}, #{content}, #{disabled}, #{created})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE microblog_comment
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('microblogId') and microblogId != null">
+    microblog_id = #{microblogId},
+</if>
+    <if test="_parameter.containsKey('parentId') and parentId != null">
+    parent_id = #{parentId},
+</if>
+    <if test="_parameter.containsKey('parentCreator')">
+    parent_creator = #{parentCreator},
+</if>
+    <if test="_parameter.containsKey('content') and content != null">
+    content = #{content},
+</if>
+    <if test="_parameter.containsKey('disabled') and disabled != null">
+    is_disabled = #{disabled}
+</if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   microblog_comment
+WHERE  id = #{id}
+</delete>
+
+    <select id="findCountByMicroblogId" resultType="integer">
+      select count(id) from microblog_comment where microblog_id=#{microblogId}
+    </select>
+
+
+    <select id="selectMicroblogCommentByBlogId" resultMap="MicroblogCommentMap">
+        select <include refid="columns"/> from microblog_comment where microblog_id = #{blogId}
+    </select>
+
+    <select id="selectMicroblogCommentByBlogIds" parameterType="java.util.Set" resultMap="MicroblogCommentMap">
+        SELECT <include refid="columns" />
+        FROM   microblog_comment where microblog_id in
+            <foreach collection="collection" item="blogIds" open="(" separator="," close=")">
+                #{blogIds}
+            </foreach>
+        order by created asc
+    </select>
+
+    <delete id="deleteMicroblogCommentByBlogId" parameterType="String">
+        DELETE FROM   microblog_comment
+        WHERE  microblog_id = #{blogId}
+    </delete>
+
+    <select id="findByParentIds" resultMap="MicroblogCommentMap">
+        select <include refid="columns"/> from microblog_comment where parent_id in
+        <foreach collection="collection" item="parentIds" open="(" separator="," close=")">
+            #{parentIds}
+        </foreach>
+    </select>
+
+    <select id="findByParentId" resultMap="MicroblogCommentMap">
+        select * from microblog_comment where parent_id = #{parentId}
+    </select>
+
+    <update id="updateByParentId">
+        update microblog_comment set parent_id = null where parent_id = #{parentId}
+    </update>
+
+</mapper>

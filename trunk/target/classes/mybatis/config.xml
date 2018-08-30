@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns="http://www.springframework.org/schema/beans"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+	<context:property-placeholder ignore-unresolvable="true" />
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+		<!-- Connection Info -->
+		<property name="driverClassName" value="${spring.datasource.driver-class-name}" />
+		<!--<property name="url" value="${spring.datasource.url}" />-->
+		<property name="url" value="jdbc:mysql://${lwxf.db.host}:${lwxf.db.port}/${lwxf.db.database}?useAffectedRows=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true" />
+		<property name="username" value="${spring.datasource.username}" />
+		<property name="password" value="${spring.datasource.password}" />
+
+		<!-- Connection Pooling Info -->
+		<property name="defaultAutoCommit" value="false" />
+		<property name="initialSize" value="${spring.datasource.initialSize}"/>
+		<property name="maxActive" value="${spring.datasource.maxActive}"/>
+		<!--<property name="maxIdle" value="50" />-->
+		<property name="minIdle" value="${spring.datasource.minIdle}"/>
+		<property name="maxWait" value="${spring.datasource.maxWait}"/>
+		<property name="timeBetweenEvictionRunsMillis" value="${spring.datasource.timeBetweenEvictionRunsMillis}"/>
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="${spring.datasource.minEvictableIdleTimeMillis}"/>
+		<property name="validationQuery" value="${spring.datasource.validationQuery}"/>
+		<property name="testWhileIdle" value="${spring.datasource.testWhileIdle}"/>
+		<property name="testOnBorrow" value="${spring.datasource.testOnBorrow}"/>
+		<property name="testOnReturn" value="${spring.datasource.testOnReturn}"/>
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="${spring.datasource.poolPreparedStatements}"/>
+		<property name="maxPoolPreparedStatementPerConnectionSize" value="${spring.datasource.maxPoolPreparedStatementPerConnectionSize}"/>
+		<!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙 -->
+		<property name="filters" value="${spring.datasource.filters}"/>
+		<!-- 通过connectProperties属性来打开mergeSql功能；慢SQL记录 -->
+		<property name="connectionProperties" value="${spring.datasource.connectionProperties}"/>
+		<property name="proxyFilters">
+			<list>
+				<ref bean="wall-filter"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="wall-filter" class="com.alibaba.druid.wall.WallFilter">
+		<property name="config" ref="wall-config"/>
+	</bean>
+
+	<bean id="wall-config" class="com.alibaba.druid.wall.WallConfig">
+		<property name="multiStatementAllow" value="true"/>
+	</bean>
+
+	<!-- MyBatis配置 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis/mybatis.xml" />
+		<!-- 自动扫描entity目录, 省掉Configuration.xml里的手工配置 -->
+		<property name="typeAliasesPackage" value="com.lwxf.newstore.webapp.domain.entity,com.lwxf.newstore.webapp.baseservice.schedule.entity" />
+		<!-- 显式指定Mapper文件位置 -->
+		<property name="mapperLocations" value="classpath:/mybatis/mapper/**/*.xml" />
+		<property name="plugins">
+			<array>
+				<!--<bean class="com.github.pagehelper.PageInterceptor">
+					<property name="properties">
+						<value>
+							helperDialect=mysql
+							offsetAsPageNum=true
+							rowBoundsWithCount=true
+							reasonable=true
+							supportMethodsArguments=true
+							autoRuntimeDialect=true
+						</value>
+					</property>
+				</bean>-->
+				<!-- TSManager拦截器 -->
+				<bean class="com.lwxf.newstore.webapp.baseservice.tsmanager.TSManagerInterceptor">
+					<property name="properties">
+						<value>
+							packageName=com.lwxf.newstore.webapp.domain.entity
+						</value>
+					</property>
+				</bean>
+			</array>
+		</property>
+	</bean>
+	<!-- 扫描basePackage下所有以@MyBatisRepository标识的 接口-->
+	<!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.lwxf.newstore.webapp.domain" />
+		<property name="annotationClass" value="com.lwxf.newstore.webapp.domain.mapper"/>
+	</bean>-->
+	<!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+	<!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.lwxf.newstore.webapp.domain.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+	</bean>-->
+	<!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+	<bean id="transactionManager"
+		  class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+</beans>

@@ -1,0 +1,194 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: "微软雅黑";
+
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	color: #aaa;
+	text-decoration: none;
+}
+
+
+.mui-slider-indicator .mui-indicator{
+	box-shadow: none;
+	width: 8px;
+	height:8px;
+	margin: 1px 3px;
+}
+
+
+
+/*底部-s*/
+
+
+.floor{
+	position: fixed;
+	width: 100%;
+	left: 0px;
+	bottom: 0px;
+	font-size: 0px;
+	z-index: 99;
+}
+
+.floor ul{
+	display: inline-block;
+	width: 100%;
+	background: white;
+	
+}
+
+
+.floor ul li{
+	width: 25%;
+	float: left;
+	padding:5px 0px;
+	font-size: 12px;
+	text-align: center;
+
+}
+
+
+.floor ul li a i{
+	font-size: 26px;
+	color: #666666;
+}
+
+
+
+
+.floor ul li.active{
+	color: orangered;
+}
+
+
+.floor ul li.active p{
+	color: orangered;
+}
+
+.floor ul li.active a i{
+	
+	color: orangered;
+}
+
+
+
+/*模板头部一-s*/
+/*首页头部*/
+#headTop{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	padding: 7px 0px;
+	background: #f3f3f3;
+	z-index: 99;
+	width: 100%;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+.headT-logonav{
+	padding:0px 0px;
+	font-size: 0px;
+	height: 36px;
+	font-weight: bold;
+  overflow: hidden; 
+}
+
+.headT-logonav ul{
+	display: inline-block;
+	line-height: 36px;
+	width: 100%;
+  font-size: 0px;
+  
+
+}
+
+.headT-logonav ul li{
+	float: left;
+	
+	font-size: 16px;
+}
+.headT-logonav ul li.headT-back{
+	width: 15%;
+   
+	text-align: center;
+}
+
+.headT-logonav ul li.headT-back a i{
+	font-size: 20px;
+}
+
+
+.headT-logonav ul li.headT-logo-cen{
+	width: 70%;
+	text-align: center;
+	color: #AAAAAA;
+}
+
+.headT-logonav ul li.headT-so a i{
+	font-size: 20px;
+}
+
+
+
+/*模板头部-e*/
+
+
+/*模板盒子-s*/
+.templebox{
+	padding-top: 50px;
+	padding-bottom: 56px;
+}
+/*模板盒子*/
+
+
+
+/*商品展示结构1-s*/
+.shopBox{
+	width: 100%;
+	overflow: hidden;
+}
+
+
+.shopBox ul{
+	width: 18.2rem;
+	display: inline-block;
+}
+
+.shopBox ul li{
+	float: left;
+	width: 8.9rem;
+	margin-right: 0.2rem;
+}
+
+.shopBox ul li h3.boxImg{
+	width: 100%;
+}
+
+.shopBox ul li h3.boxImg img{
+	display: block;
+	width: 100%;
+	height: 8.9rem;
+}
+
+.shopBox ul li .boxTitle{
+	padding:0.3rem 0.5rem;
+}
+
+.shopBox ul li .boxTitle  p{
+	font-size: 0.7rem;
+}
+
+.shopBox ul li .boxTitle  span{
+	display: block;
+	color: orangered;
+	font-size: 0.7rem;
+}
+/*商品展示结构1-e*/

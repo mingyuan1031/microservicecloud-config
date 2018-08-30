@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.goods.GoodsDao">
+    <resultMap id="GoodsMap" type="com.lwxf.newstore.webapp.domain.entity.goods.Goods">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="creator" property="creator" jdbcType="CHAR" />
+        <result column="goods_type_id" property="goodsTypeId" jdbcType="CHAR" />
+        <result column="content" property="content" jdbcType="LONGVARCHAR" />
+        <result column="is_disabled" property="disabled" jdbcType="BIT" />
+        <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+        <result column="updator" property="updator" jdbcType="CHAR" />
+        <result column="brand_id" property="brandId" jdbcType="CHAR" />
+        <result column="is_tops" property="tops" jdbcType="BIT" />
+        <result column="views" property="views" jdbcType="INTEGER" />
+        <result column="freight" property="freight" jdbcType="DECIMAL" />
+    </resultMap>
+    <resultMap id="GoodsDefault" type="com.lwxf.newstore.webapp.domain.dto.goods.GoodsDefault">
+        <id column="id" property="goodsId"/>
+        <result column="name" property="name"/>
+        <result column="created" property="created"/>
+        <result column="goods_type_id" property="goodsTypeId"/>
+        <result column="brand_id" property="brandId"/>
+        <result column="originalprice" property="originalprice"/>
+        <result column="price" property="price"/>
+        <result column="sum(e.sales)" property="sumSales"/>
+        <result column="path" property="path"/>
+        <result column="content" property="content"/>
+        <result column="freight" property="freight"/>
+        <result column="is_disabled" property="disabled"/>
+    </resultMap>
+    <sql id="columns">
+id, name, created, creator, goods_type_id, content, is_disabled, updated, updator, brand_id, is_tops, views, freight
+</sql>
+
+    <select id="selectById" resultMap="GoodsMap" parameterType="String">
+        SELECT <include refid="columns" />
+        FROM   goods
+        WHERE  id = #{id}
+    </select>
+
+    <select id="selectByFilter" resultMap="GoodsMap">
+        SELECT <include refid="columns" />
+        FROM   goods
+        <where><trim prefixOverrides="AND">
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="name != null">
+                AND name = #{name}
+            </if>
+            <if test="created != null">
+                AND created = #{created}
+            </if>
+            <if test="creator != null">
+                AND creator = #{creator}
+            </if>
+            <if test="goodsTypeId != null">
+                AND goods_type_id = #{goodsTypeId}
+            </if>
+            <if test="content != null">
+                AND content = #{content}
+            </if>
+            <if test="disabled != null">
+                AND is_disabled = #{disabled}
+            </if>
+            <if test="updated != null">
+                AND updated = #{updated}
+            </if>
+            <if test="updator != null">
+                AND updator = #{updator}
+            </if>
+            <if test="brandId != null">
+                AND brand_id = #{brandId}
+            </if>
+            <if test="tops != null">
+                AND is_tops = #{tops}
+            </if>
+            <if test="views != null">
+                AND views = #{views}
+            </if>
+            <if test="freight != null">
+                AND freight = #{freight}
+            </if>
+        </trim></where>
+
+    </select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO
+ goods(id, name, created, creator, goods_type_id, content, is_disabled, updated, updator, brand_id, is_tops, views, freight)
+VALUES(#{id}, #{name}, #{created}, #{creator}, #{goodsTypeId}, #{content}, #{disabled}, #{updated}, #{updator}, #{brandId}, #{tops}, #{views}, #{freight})
+</insert>
+
+    <update id="updateByMapContext">
+        UPDATE goods
+        <set><trim suffixOverrides=",">
+            <if test="_parameter.containsKey('name') and name != null">
+                name = #{name},
+            </if>
+            <if test="_parameter.containsKey('goodsTypeId') and goodsTypeId != null">
+                goods_type_id = #{goodsTypeId},
+            </if>
+            <if test="_parameter.containsKey('content')">
+                content = #{content},
+            </if>
+            <if test="_parameter.containsKey('disabled') and disabled != null">
+                is_disabled = #{disabled},
+            </if>
+            <if test="_parameter.containsKey('updated')">
+                updated = #{updated},
+            </if>
+            <if test="_parameter.containsKey('updator')">
+                updator = #{updator},
+            </if>
+            <if test="_parameter.containsKey('brandId')">
+                brand_id = #{brandId},
+            </if>
+            <if test="_parameter.containsKey('tops')">
+                is_tops = #{tops},
+            </if>
+            <if test="_parameter.containsKey('views')">
+                views = #{views},
+            </if>
+            <if test="_parameter.containsKey('freight')">
+                freight = #{freight}
+            </if>
+        </trim></set>
+        WHERE  id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   goods
+WHERE  id = #{id}
+</delete>
+    <select id="findGoodsDefaultByParamsForPaging" resultMap="GoodsDefault">
+        select * from (SELECT g.id,g.name,g.brand_id,g.created,g.goods_type_id,g.freight ,sum(e.sales),g.is_disabled from goods g left JOIN
+        goods_extend e ON g.id=e.goods_id
+        <where>
+            <trim prefixOverrides="AND">
+                <if test="_parameter.containsKey('brandId') and brandId != null">
+                    brand_id = #{brandId}
+                </if>
+                <if test="_parameter.containsKey('name') and name != null">
+                    and name like CONCAT('%',#{name},'%')
+                </if>
+                <if test="_parameter.containsKey('beginDate') and beginDate != null">
+                    and g.created &gt; #{beginDate}
+                </if>
+                <if test="_parameter.containsKey('endDate') and endDate != null">
+                    and  g.created &lt; #{endDate}
+                </if>
+                <if test="_parameter.containsKey('disabled') and disabled != null">
+                    and g.is_disabled = #{disabled}
+                </if>
+                <if test="_parameter.containsKey('goodsTypeId') and goodsTypeId != null">
+                    and g.goods_type_id in
+                    <foreach collection='goodsTypeId'  item="id"  open="("   separator="," close=")">
+                        #{id}
+                    </foreach>
+                </if>
+                <if test="_parameter.containsKey('brandNameIds') and brandNameIds != null">
+                    and g.brand_id in
+                    <foreach collection='brandNameIds'  item="brand"  open="("   separator="," close=")">
+                        #{brand.id}
+                    </foreach>
+                </if>
+            </trim>
+        </where>
+        GROUP BY g.id
+        ) c left join
+        (select e.goods_id,e.originalprice,e.price,s.path from goods_extend e inner join goods_show s ON e.goods_id=s.goods_id
+        <where>
+            <trim prefixOverrides="AND">
+                <if test="true">
+                    e.is_defaults = true and s.is_defaults = true or s.is_defaults is null
+                </if>
+                <if test="_parameter.containsKey('smallprice') and smallprice != null">
+                    and price &gt;= #{smallprice}
+                </if>
+                <if test="_parameter.containsKey('bigprice') and bigprice != null">
+                    and price &lt;= #{bigprice}
+                </if>
+            </trim>
+        </where>)d ON c.id=d.goods_id  order by c.is_disabled asc,c.created desc
+    </select>
+    <select id="isExistByBrandId" resultType="java.lang.Boolean">
+        SELECT count(*) FROM goods WHERE brand_id = #{arg0}
+    </select>
+    <select id="isExistByGoodsTypeId" resultType="java.lang.Boolean">
+        SELECT count(*) FROM goods WHERE goods_type_id = #{arg0}
+    </select>
+    <select id="findForHomePage" resultMap="GoodsDefault">
+        select * from (select g.id,g.name,g.brand_id,g.created,g.goods_type_id,g.is_tops,g.views,g.freight ,SUM(sales) from goods g JOIN goods_extend e ON g.id=e.goods_id where g.is_disabled = false GROUP BY goods_id) c join
+(select e.goods_id,e.originalprice,e.price,s.path from goods_extend e  LEFT join goods_show s ON e.goods_id=s.goods_id where e.is_defaults = true and s.is_defaults = true or s.is_defaults is null)d ON c.id=d.goods_id ORDER BY c.is_tops desc ,c.views desc,c.created desc
+    </select>
+    <select id="findGoodsInfo" resultMap="GoodsDefault">
+        select * from (select g.id,g.name,g.brand_id,g.created,g.goods_type_id,g.is_tops,g.views,g.content,g.freight ,SUM(sales) from goods g JOIN goods_extend e ON g.id=e.goods_id where g.is_disabled = false GROUP BY goods_id) c join
+(select e.goods_id,e.originalprice,e.price,s.path from goods_extend e  LEFT join goods_show s ON e.goods_id=s.goods_id where e.is_defaults = true and s.is_defaults = true or s.is_defaults is null)d ON c.id=d.goods_id where d.goods_id=#{arg0}
+    </select>
+    <update id="updateUpdator">
+        update goods set updated = #{updated} , updator = #{updator} where id = #{id}
+    </update>
+</mapper>

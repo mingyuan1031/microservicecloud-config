@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.config.StoreHomeNavDao">
+    <resultMap id="StoreHomeNavMap" type="com.lwxf.newstore.webapp.domain.entity.config.StoreHomeNav">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="url" property="url" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="BIT" />
+        <result column="sequence" property="sequence" jdbcType="INTEGER" />
+        <result column="image" property="image" jdbcType="VARCHAR" />
+        <result column="is_outer_link" property="outerLink" jdbcType="BIT" />
+    </resultMap>
+    <sql id="columns">
+id, name, url, status, sequence, image, is_outer_link
+</sql>
+
+    <select id="selectById" resultMap="StoreHomeNavMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   store_home_nav
+WHERE  id = #{id}
+</select>
+
+    <select id="selectByFilter" resultMap="StoreHomeNavMap">
+SELECT <include refid="columns" />
+FROM   store_home_nav
+<where><trim prefixOverrides="AND">
+<if test="id != null">
+    id = #{id}
+</if>
+<if test="name != null">
+    AND name = #{name}
+</if>
+<if test="url != null">
+    AND url = #{url}
+</if>
+<if test="status != null">
+    AND status = #{status}
+</if>
+<if test="sequence != null">
+    AND sequence = #{sequence}
+</if>
+<if test="image != null">
+    AND image = #{image}
+</if>
+<if test="outerLink != null">
+    AND is_outer_link = #{outerLink}
+</if>
+</trim></where>
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+store_home_nav(id, name, url, status, sequence, image, is_outer_link)
+        VALUES(#{id}, #{name}, #{url}, #{status}, #{sequence}, #{image}, #{outerLink})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE store_home_nav
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('name') and name != null">
+    name = #{name},
+</if>
+    <if test="_parameter.containsKey('url') and url != null">
+    url = #{url},
+</if>
+    <if test="_parameter.containsKey('status') and status != null">
+    status = #{status},
+</if>
+    <if test="_parameter.containsKey('sequence') and sequence != null">
+    sequence = #{sequence},
+</if>
+    <if test="_parameter.containsKey('image') and image != null">
+    image = #{image},
+</if>
+    <if test="_parameter.containsKey('outerLink') and outerLink != null">
+    is_outer_link = #{outerLink}
+</if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   store_home_nav
+WHERE  id = #{id}
+</delete>
+
+    <!-- 根据sequence进行降序排列 -->
+    <select id="findHomeNavDatas" resultMap="StoreHomeNavMap">
+        select <include refid="columns"/> from store_home_nav order by sequence asc
+    </select>
+
+</mapper>

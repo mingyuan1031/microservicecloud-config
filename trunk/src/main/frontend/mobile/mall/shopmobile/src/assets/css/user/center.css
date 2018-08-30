@@ -1,0 +1,165 @@
+.center_ba {
+	widows: 100%;
+	margin: auto;
+	position: relative;
+}
+
+.center_sz {
+	width: 5%;
+	position: absolute;
+	top: 8%;
+	right: 5%;
+	display: block;
+}
+
+.center_sz img {
+	width: 100%;
+}
+
+.center_ba_son {
+	display: block;
+}
+
+.center_ba_son img {
+	width: 100%;
+}
+
+.center_list {
+	width: 100%;
+	margin: auto;
+	background: white;
+}
+
+.center_li li {
+	width: 20%;
+	float: left;
+	display: block;
+	margin: 0.8rem 0rem;
+	padding: 0.5rem 0rem;
+	
+}
+
+.center_li li .item{
+	position: relative;
+	width: 50%;
+	margin: 0px auto;
+}
+
+.center_li li .item span{
+	position: absolute;
+	top: -0.3rem;
+	right: -0.3rem;
+	width: 0.8rem;
+	height: 0.8rem;
+	display: block;
+	text-align: center;
+	color: white;
+	background: #FF4444;
+	border-radius: 50%;
+	font-size: 0.5rem;
+}
+
+.center_li li p {
+	width: 100%;
+	font-size: 0.8rem;
+	color: #515151;
+	text-align: center;
+	margin-top: 0.2rem;
+}
+
+.center_li img {
+	width: 100%;
+	display: block;
+	margin: auto;
+}
+
+.center_de {
+	width: 100%;
+	margin-top: 0.5rem;
+}
+
+.center_deon>li {
+	padding: 0.5rem 4%;
+}
+
+.center_img {
+	float: left;
+	display: block;
+	width: 1.6rem;
+}
+
+.center_img img {
+	width: 0.9rem;
+	
+}
+
+.wode_dd {
+
+	float: left;
+	display: block;
+	color: #515151;
+	
+	text-align: center;
+	font-size: 0.8rem;
+	
+}
+
+.float_right {
+	float: right;
+	width: 1.2rem;
+	
+}
+
+.float_right img {
+	width: 100%;
+}
+
+.center_border {
+	border-top: solid 0.1rem #f7f7f7;
+}
+
+.center_bor {
+	border-top: solid 0.8rem #f7f7f7;
+}
+
+.js_zc {
+	width: 100%;
+	margin: auto;
+	margin-top: 1rem;
+	background-color: #f7f7f7;
+	padding: 2rem 0 1rem 0;
+}
+
+.dp_zy {
+	width: 88%;
+	margin: auto;
+}
+
+.dp_zy li {
+	width: 20%;
+	float: left;
+	font-size: 0.6rem;
+	text-align: center;
+}
+
+.zy_sp {
+	border-right: solid #aaaaaa 0.1rem;
+	box-sizing: border-box;
+}
+
+.dp_zy li a {
+	color: #aaaaaa;
+	width: 100%;
+}
+
+.bq_sy {
+	width: 100%;
+	margin: auto;
+}
+
+.bq_sy p {
+	text-align: center;
+	font-size: 0.6rem;
+	color: #aaaaaa;
+	margin-top: 0.6rem;
+}

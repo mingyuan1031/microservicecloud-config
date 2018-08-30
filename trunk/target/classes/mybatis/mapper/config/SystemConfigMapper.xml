@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.config.SystemConfigDao">
+    <resultMap id="SystemConfigMap" type="com.lwxf.newstore.webapp.domain.entity.config.SystemConfig">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="seo_keywords" property="seoKeywords" jdbcType="VARCHAR" />
+        <result column="welcome" property="welcome" jdbcType="VARCHAR" />
+        <result column="company_id" property="companyId" jdbcType="CHAR" />
+        <result column="wxmenus" property="wxmenus" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="columns">
+id, seo_keywords, welcome, company_id,wxmenus
+</sql>
+
+    <select id="selectById" resultMap="SystemConfigMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   system_config
+WHERE  id = #{id}
+</select>
+
+    <select id="selectByFilter" resultMap="SystemConfigMap">
+SELECT <include refid="columns" />
+FROM   system_config
+<where><trim prefixOverrides="AND">
+<if test="id != null">
+    id = #{id}
+</if>
+<if test="seoKeywords != null">
+    AND seo_keywords = #{seoKeywords}
+</if>
+<if test="welcome != null">
+    AND welcome = #{welcome}
+</if>
+<if test="companyId != null">
+    AND company_id = #{companyId}
+</if>
+</trim></where>
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+system_config(id, seo_keywords, welcome, company_id,wxmenus)
+       VALUES(#{id}, #{seoKeywords}, #{welcome}, #{companyId}, #{wxmenus})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE system_config
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('seoKeywords')">
+    seo_keywords = #{seoKeywords},
+</if>
+    <if test="_parameter.containsKey('welcome')">
+    welcome = #{welcome},
+</if>
+    <if test="_parameter.containsKey('companyId') and companyId != null">
+    company_id = #{companyId}
+</if>
+    <if test="_parameter.containsKey('wxmenus') and wxmenus != null">
+        wxmenus = #{wxmenus}
+</if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   system_config
+WHERE  id = #{id}
+</delete>
+
+    <select id="findOneByLimit" resultMap="SystemConfigMap">
+        SELECT <include refid="columns" />
+        FROM system_config limit 1
+    </select>
+
+</mapper>

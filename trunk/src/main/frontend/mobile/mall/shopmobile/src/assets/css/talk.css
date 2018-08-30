@@ -1,0 +1,394 @@
+
+
+/*用户评论*/
+
+.goodUsertalk {
+	display: block;
+	clear: both;
+    padding: 0rem 0.5rem;
+	background: white;
+}
+
+.goodUsertalk .userTitle {
+	padding: 0rem 0.5rem;
+	line-height: 2rem;
+	border-bottom: solid 1px #EEEEEE;
+	font-size: 0.7rem
+}
+
+.goodUsertalk .userTitle small {
+	color: #666666;
+}
+
+.goodUsertalk .userTitle .Umore {
+	color: #666666;
+	float: right;
+}
+
+.goodUsertalk .userTitle .Umore span {
+	color: orangered;
+	margin-right: 0.2rem;
+}
+
+.goodUsertalk .userTitle .Umore i {
+	font-size: 0.7rem;
+	line-height: 2rem;
+	margin-left: 0.3rem;
+}
+
+.goodusertalk {
+	padding: 0.5rem ;
+	border-bottom: solid 1px #EEEEEE;
+}
+
+.goodusertalk .userMeg {
+	width: 100%;
+	display: inline-block;
+	
+}
+
+.goodusertalk .userMeg .userMeg-img {
+	width: 2.3rem;
+	height: 2.3rem;
+	overflow: hidden;
+	border-radius: 50%;
+	float: left;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+/*.goodusertalk .userMeg .userMeg-img img {
+	display: block;
+	
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	min-width: 2.3rem;
+	max-width: 3.6rem;
+	min-height: 100%;
+	margin: auto;
+	
+}
+*/
+.goodusertalk .userMeg .userMeg-Nmae {
+	float: left;
+	margin-left: 0.5rem;
+	line-height: 0.8rem;
+	padding-top: 0.3rem;
+}
+
+.goodusertalk .userMeg .userMeg-Nmae p {
+	color: #333333;
+	margin: 0px;
+	font-size: 0.6rem;
+}
+
+.goodusertalk .userMeg .userMeg-Nmae span {
+	color: #666;
+	font-size: 0.6rem;
+}
+
+.goodusertalk .userMeg .userMeg-evaluate {
+	float: right;
+	color: orangered;
+	line-height: 2.3rem;
+}
+
+.goodusertalk .userMeg .userMeg-evaluate i {
+	font-size:1rem;
+	color: orangered;
+	float: left;
+}
+
+
+
+.goodusertalk .userMeg .userMeg-evaluate span small {
+	display: block;
+	float: right;
+    font-size: 0.6rem;
+   
+	margin-left: 0.2rem;
+}
+
+.goodusertalk-contentnet{
+	width: 100%;
+
+}
+
+
+.goodusertalk-contentnet p{
+	line-height: 1.5em;
+	font-size: 0.65rem;
+	color: #333333;
+	margin: 0.5rem 0rem;
+	word-break: break-all;
+}
+
+
+.goodusertalk-contentnet .take-imgs{
+	width: 100%;
+	padding: 0.3rem 0rem;
+}
+
+.goodusertalk-contentnet .take-imgs ul{
+	display: inline-block;
+	width: 100%;
+}
+
+
+
+.goodusertalk-contentnet .take-imgs li img{
+	display: block;
+	
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom:0px ;
+	right: 0px;
+
+	margin:  auto;
+   margin-left: -3rem;
+	min-width:10rem;
+	max-width: 20rem;
+	min-height: 100%;
+}
+
+
+.goodusertalk-contentnet .take-imgs ul.one li{
+	width: 50%;
+	display: block;
+	
+	margin: 0px auto;
+	
+}
+
+.goodusertalk-contentnet .take-imgs ul.two li{
+	width: 32.5%;
+	float: left;
+	margin-left: 1%;
+	height: 5.5rem;
+	
+	overflow: hidden;
+background-position: 50% 50%;
+	background-size: cover;
+}
+
+.goodusertalk-contentnet .take-imgs ul li:first-child {
+	margin-left: 0%;
+}
+
+/*回复*/
+
+.goodusertalk-revert{
+	width: 100%;
+	background: #F6F6F6;
+	
+}
+
+.goodusertalk-revert ul{
+	padding: 0.3rem;
+	
+}
+
+
+.goodusertalk-revert ul li{
+	width: 100%;
+	min-height: 1.2rem;
+	line-height: 0.7rem;
+     font-size: 0.6rem;
+	
+	}
+
+.goodusertalk-revert ul li .userImg{
+	float: left;
+	width: 0.8rem;
+	height: 0.8rem;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.goodusertalk-revert ul li .userImg img{
+	display: block;
+	width: 100%;
+	height: 1rem;
+	
+}
+	
+	
+.goodusertalk-revert ul li span{ 
+   line-height: 1rem;
+   font-size: 0.5rem;
+   color: #3a3a3a;
+}
+
+
+.goodusertalk-revert ul li span.Uname{
+    padding: 0rem 0.2rem; 
+  
+   
+ 	
+}
+
+.goodusertalk-revert ul li span.Uname.gf{
+	color: orangered;
+}
+	
+
+
+/*图片放大*/
+
+.imgMagnifytake{
+ position: fixed;
+ top: 0px;
+ left: 0px;
+ width: 100%;
+ height: 100%;
+background: #000000;
+ overflow: auto;
+ display: none;
+}
+
+
+.imgMagnifytake .imgNav{
+	width: 100%;
+	padding:5rem 0rem ;
+	
+} 
+
+
+.imgMagnifytake .imgNav img{
+	display: block;
+	
+	width: 100%;
+	height: rem;
+	
+}
+
+
+.imgMagnifytake.imgshow{
+	display: block;
+}
+
+body.overx{
+	overflow-y: hidden;
+}
+
+
+.goodusertalk-revert .clickMore{
+	width: 100%;
+	height: 2rem;
+	line-height: 2rem;
+	background: #F6F6F6;
+	color: orangered;
+	border-top: solid 1px #DDDDDD;
+	text-align: center;
+	font-size: 0.7rem;
+}
+
+.allTalk{
+	position: fixed;
+	z-index: 99;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 30rem;
+	background: white;
+	overflow: auto;
+	display: block;
+	 -webkit-transition: all 0.5s;
+			         -moz-transition: all 0.3s;
+			         -ms-transition: all 0.3s;
+			         -o-transition: all 0.3s;
+			         transition: all 0.3s;
+}
+
+.allTalk.block{
+	display: block;
+}
+
+
+
+#TalkTop{
+	
+	top: 0px;
+	left: 0px;
+	padding: 7px 0px;
+	background: #f3f3f3;
+	z-index: 99;
+	width: 100%;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+.TalkTop-logonav{
+	padding:0px 0px;
+	font-size: 0px;
+	height: 36px;
+	font-weight: bold;
+  overflow: hidden; 
+}
+
+.TalkTop-logonav ul{
+	display: inline-block;
+	line-height: 36px;
+	width: 100%;
+  font-size: 0px;
+  
+
+}
+
+.TalkTop-logonav ul li{
+	float: left;
+	
+	font-size: 16px;
+}
+.TalkTop-logonav ul li.TalkTop-back{
+	width: 15%;
+   
+	text-align: center;
+}
+
+.TalkTop-logonav ul li.TalkTop-back a i{
+	font-size: 20px;
+}
+
+
+.TalkTop-logonav ul li.TalkTop-logo-cen{
+	width: 70%;
+	text-align: center;
+	color: #AAAAAA;
+}
+
+.TalkTop-logonav ul li.TalkTop-so a i{
+	font-size: 20px;
+}
+
+
+.comment-tab{
+	width:100%;
+	font-size: 0px;
+	border-bottom: solid 1px #EEEEEE;
+}
+
+
+.comment-tab ul{
+	display: inline-block;
+	width: 100%;
+}
+
+
+.comment-tab ul li{
+	float: left;
+	padding: 0.5rem 0rem;
+	width: 25%;
+	text-align: center;
+	font-size: 0.6rem;
+	
+}
+
+.comment-tab ul li.active{
+	color: #D20000;
+}
+

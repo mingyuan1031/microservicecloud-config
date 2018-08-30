@@ -1,0 +1,27 @@
+.search{
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	display: inline-block;
+}
+.listtittle{
+	 font-size: 12px;
+    font-weight: normal;
+    line-height: 24px;
+    color: #777;
+    vertical-align: bottom;
+    letter-spacing: normal;
+    display: inline-block;
+    padding: 0
+}
+.tips{
+	color: #0ba4da;
+}
+.routerx{
+	color: #fff;
+}
+.w_add{
+	margin-left: 10px;
+	height: 40px;
+	line-height: 40px;
+}

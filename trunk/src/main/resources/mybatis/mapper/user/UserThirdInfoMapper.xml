@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.user.UserThirdInfoDao">
+	<resultMap id="UserThirdInfoMap" type="com.lwxf.newstore.webapp.domain.entity.user.UserThirdInfo">
+		<result column="user_id" property="userId" jdbcType="CHAR"/>
+		<result column="wx_open_id" property="wxOpenId" jdbcType="VARCHAR"/>
+		<result column="wx_nickname" property="wxNickname" jdbcType="VARCHAR"/>
+		<result column="wx_union_id" property="wxUnionId" jdbcType="VARCHAR"/>
+		<result column="wx_is_subscribe" property="wxIsSubscribe" jdbcType="BIT"/>
+		<result column="wx_is_bind" property="wxIsBind" jdbcType="BIT"/>
+		<result column="email_is_bind" property="emailIsBind" jdbcType="BIT" />
+		<result column="mobile_is_bind" property="mobileIsBind" jdbcType="BIT" />
+	</resultMap>
+	<sql id="columns">
+		user_id, wx_open_id, wx_nickname, wx_union_id, wx_is_subscribe, wx_is_bind, email_is_bind, mobile_is_bind
+	</sql>
+
+	<select id="selectById" resultMap="UserThirdInfoMap" parameterType="String">
+		SELECT
+		<include refid="columns"/>
+		FROM user_third_info
+		WHERE user_id = #{userId}
+	</select>
+
+	<select id="selectByWxOpenId" resultMap="UserThirdInfoMap">
+		SELECT
+		<include refid="columns"/>
+		FROM user_third_info
+		WHERE wx_open_id = #{wxOpenId}
+	</select>
+
+	<select id="selectUserIdsBysWxOpenId" resultType="String">
+		SELECT
+		user_id
+		FROM user_third_info
+		WHERE wx_open_id = #{wxOpenId}
+	</select>
+
+	<select id="selectByWxUnionId" resultMap="UserThirdInfoMap">
+		SELECT
+		<include refid="columns"/>
+		FROM user_third_info
+		WHERE wx_union_id = #{wxUnionId}
+	</select>
+
+	<select id="selectByFilter" resultMap="UserThirdInfoMap">
+		SELECT <include refid="columns" />
+		FROM   user_third_info
+		<where><trim prefixOverrides="AND">
+		<if test="userId != null">
+			user_id = #{userId}
+		</if>
+		<if test="wxOpenId != null">
+			AND wx_open_id = #{wxOpenId}
+		</if>
+		<if test="wxNickname != null">
+			AND wx_nickname = #{wxNickname}
+		</if>
+		<if test="wxUnionId != null">
+			AND wx_union_id = #{wxUnionId}
+		</if>
+		<if test="wxIsSubscribe != null">
+			AND wx_is_subscribe = #{wxIsSubscribe}
+		</if>
+		<if test="wxIsBind != null">
+			AND wx_is_bind = #{wxIsBind}
+		</if>
+		<if test="emailIsBind != null">
+			AND email_is_bind = #{emailIsBind}
+		</if>
+		<if test="mobileIsBind != null">
+			AND mobile_is_bind = #{mobileIsBind}
+		</if>
+		</trim>
+		</where>
+	</select>
+
+	<insert id="insert" useGeneratedKeys="false">
+		INSERT INTO
+			user_third_info(user_id, wx_open_id, wx_nickname, wx_union_id, wx_is_subscribe, wx_is_bind, email_is_bind, mobile_is_bind)
+		VALUES(#{userId}, #{wxOpenId}, #{wxNickname}, #{wxUnionId}, #{wxIsSubscribe}, #{wxIsBind}, #{emailIsBind}, #{mobileIsBind})
+	</insert>
+
+	<update id="updateByMapContext">
+		UPDATE user_third_info
+		<set>
+			<trim suffixOverrides=",">
+				<if test="_parameter.containsKey('wxOpenId')">
+					wx_open_id = #{wxOpenId},
+				</if>
+				<if test="_parameter.containsKey('wxUnionId')">
+					wx_union_id = #{wxUnionId},
+				</if>
+				<if test="_parameter.containsKey('wxNickname')">
+					wx_nickname = #{wxNickname},
+				</if>
+				<if test="_parameter.containsKey('wxIsSubscribe')">
+					wx_is_subscribe = #{wxIsSubscribe},
+				</if>
+				<if test="_parameter.containsKey('wxIsBind')">
+					wx_is_bind = #{wxIsBind},
+				</if>
+				<if test="_parameter.containsKey('emailIsBind')">
+					email_is_bind = #{emailIsBind},
+				</if>
+				<if test="_parameter.containsKey('mobileIsBind')">
+					mobile_is_bind = #{mobileIsBind}
+				</if>
+			</trim>
+		</set>
+		WHERE user_id = #{userId}
+	</update>
+
+	<delete id="deleteByOpenId" parameterType="String">
+		DELETE FROM user_third_info
+		WHERE wx_open_id = #{wxOpenId}
+	</delete>
+
+	<delete id="deleteByUserId" parameterType="String">
+		DELETE FROM user_third_info
+		WHERE user_id = #{userId}
+	</delete>
+
+	<select id="findAllWithNotBlankWxOpenId" resultMap="UserThirdInfoMap">
+		SELECT
+		<include refid="columns"/>
+		FROM user_third_info where wx_open_id is not null
+	</select>
+
+	<select id="findByUserIds" resultMap="UserThirdInfoMap">
+		SELECT
+		<include refid="columns"/>
+		FROM user_third_info where user_id in
+		<foreach collection="list" item="userId" open="(" close=")" separator=",">
+			#{userId}
+		</foreach>
+	</select>
+
+	<select id="selectByUserId" resultMap="UserThirdInfoMap">
+		SELECT
+		<include refid="columns"/>
+		FROM user_third_info where user_id = #{userId}
+	</select>
+	<select id="findAllClerks" resultMap="UserThirdInfoMap">
+		select <include refid="columns"/>
+		from user_third_info
+		where user_id in
+		(
+			SELECT id FROM user WHERE state !=0 AND role!=0
+		)
+	</select>
+
+
+	<update id="updateByWxOpenId">
+		UPDATE user_third_info
+		<set>
+			<trim suffixOverrides=",">
+				<if test="_parameter.containsKey('wxUnionId')">
+					wx_union_id = #{wxUnionId},
+				</if>
+				<if test="_parameter.containsKey('wxNickname')">
+					wx_nickname = #{wxNickname},
+				</if>
+				<if test="_parameter.containsKey('wxIsSubscribe')">
+					wx_is_subscribe = #{wxIsSubscribe},
+				</if>
+				<if test="_parameter.containsKey('wxIsBind')">
+					wx_is_bind = #{wxIsBind},
+				</if>
+				<if test="_parameter.containsKey('emailIsBind')">
+					email_is_bind = #{emailIsBind},
+				</if>
+				<if test="_parameter.containsKey('mobileIsBind')">
+					mobile_is_bind = #{mobileIsBind}
+				</if>
+			</trim>
+		</set>
+		WHERE wx_open_id = #{wxOpenId}
+	</update>
+
+	<select id="selectByOpenId" resultMap="UserThirdInfoMap">
+		select <include refid="columns"/> from user_third_info where wx_open_id=#{wxOpenId}
+	</select>
+
+</mapper>

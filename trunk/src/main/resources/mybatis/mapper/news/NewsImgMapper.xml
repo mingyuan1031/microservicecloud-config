@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.news.NewsImgDao">
+    <resultMap id="NewsImgMap" type="com.lwxf.newstore.webapp.domain.entity.news.NewsImg">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="path" property="path" jdbcType="VARCHAR" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="news_id" property="newsId" jdbcType="CHAR" />
+        <result column="news_type_id" property="newsTypeId" jdbcType="CHAR" />
+    </resultMap>
+    <sql id="columns">
+id, path, created, name, news_id, news_type_id
+</sql>
+
+    <select id="selectById" resultMap="NewsImgMap" parameterType="String">
+        SELECT <include refid="columns" />
+        FROM   news_img
+        WHERE  id = #{id}
+    </select>
+
+    <select id="selectByFilter" resultMap="NewsImgMap">
+        SELECT <include refid="columns" />
+        FROM   news_img
+        <where><trim prefixOverrides="AND">
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="path != null">
+                AND path = #{path}
+            </if>
+            <if test="created != null">
+                AND created = #{created}
+            </if>
+            <if test="name != null">
+                AND name = #{name}
+            </if>
+            <if test="newsId != null">
+                AND news_id = #{newsId}
+            </if>
+            <if test="newsTypeId != null">
+                AND news_type_id = #{newsTypeId}
+            </if>
+        </trim></where>
+
+    </select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO
+news_img(id, path, created, name, news_id, news_type_id)
+  VALUES(#{id}, #{path}, #{created}, #{name}, #{newsId}, #{newsTypeId})
+</insert>
+
+    <update id="updateByMapContext" />
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   news_img
+WHERE  id = #{id}
+</delete>
+
+
+    <select id="isExistByNewsIdAndName" resultType="java.lang.Boolean">
+        select count(*) from news_img where name = #{imgName} and news_id = #{id}
+    </select>
+    <select id="findByNewsId" resultMap="NewsImgMap">
+        select <include refid="columns"/> from news_img where news_id = #{newsId}
+    </select>
+    <delete id="deleteByNewsId">
+        delete from news_img where news_id = #{newsId}
+    </delete>
+</mapper>

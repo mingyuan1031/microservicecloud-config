@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.base.BasePositionDao">
+	<select id="getEntityMaxPosition" resultType="java.lang.Integer">
+		SELECT IFNULL(max(position), 0) FROM ${tableName}
+		<where>
+			<if test="colName != null">
+				${colName} = #{colValue}
+				<if test="colName2 != null">
+					AND ${colName2} = #{colValue2}
+				</if>
+			</if>
+		</where>
+	</select>
+	<select id="selectEntityMinPosition" resultType="java.lang.Integer">
+		SELECT IFNULL(min(position), 0) FROM ${tableName}
+		<where>
+			<if test="colName != null">
+				${colName} = #{colValue}
+				<if test="colName2 != null">
+					AND ${colName2} = #{colValue2}
+				</if>
+			</if>
+		</where>
+	</select>
+
+	<update id="batchUpdateEntityPosition">
+		UPDATE ${tableName}
+		<set>
+			position = position + 1
+		</set>
+		<where>
+			position > #{position}
+			<if test="colName != null">
+				AND ${colName} = #{colValue}
+				<if test="colName2 != null">
+					AND ${colName2} = #{colValue2}
+				</if>
+			</if>
+		</where>
+	</update>
+</mapper>

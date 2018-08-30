@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.advertising.AdvertisingDao">
+    <resultMap id="AdvertisingMap" type="com.lwxf.newstore.webapp.domain.entity.advertising.Advertising">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="adv_name" property="advName" jdbcType="VARCHAR" />
+        <result column="place" property="place" jdbcType="INTEGER" />
+        <result column="link_type" property="linkType" jdbcType="INTEGER" />
+        <result column="link" property="link" jdbcType="VARCHAR" />
+        <result column="link_start" property="linkStart" jdbcType="INTEGER" />
+        <result column="path" property="path" jdbcType="VARCHAR" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="creator" property="creator" jdbcType="CHAR" />
+    </resultMap>
+    <sql id="columns">
+id, adv_name, place, link_type, link, link_start, path, created, creator
+</sql>
+
+    <select id="selectById" resultMap="AdvertisingMap" parameterType="String">
+        SELECT <include refid="columns" />
+        FROM   advertising
+        WHERE  id = #{id}
+    </select>
+
+    <select id="selectByFilter" resultMap="AdvertisingMap">
+        SELECT <include refid="columns" />
+        FROM   advertising
+        <where><trim prefixOverrides="AND">
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="advName != null">
+                AND adv_name = #{advName}
+            </if>
+            <if test="place != null">
+                AND place = #{place}
+            </if>
+            <if test="linkType != null">
+                AND link_type = #{linkType}
+            </if>
+            <if test="link != null">
+                AND link = #{link}
+            </if>
+            <if test="linkStart != null">
+                AND link_start = #{linkStart}
+            </if>
+            <if test="path != null">
+                AND path = #{path}
+            </if>
+            <if test="created != null">
+                AND created = #{created}
+            </if>
+            <if test="creator != null">
+                AND creator = #{creator}
+            </if>
+        </trim></where>
+
+    </select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO
+advertising(id, adv_name, place, link_type, link, link_start, path, created, creator)
+     VALUES(#{id}, #{advName}, #{place}, #{linkType}, #{link}, #{linkStart}, #{path}, #{created}, #{creator})
+</insert>
+
+    <update id="updateByMapContext">
+        UPDATE advertising
+        <set><trim suffixOverrides=",">
+            <if test="_parameter.containsKey('advName') and advName != null">
+                adv_name = #{advName},
+            </if>
+            <if test="_parameter.containsKey('place') and place != null">
+                place = #{place},
+            </if>
+            <if test="_parameter.containsKey('linkType') and linkType != null">
+                link_type = #{linkType},
+            </if>
+            <if test="_parameter.containsKey('link') and link != null">
+                link = #{link},
+            </if>
+            <if test="_parameter.containsKey('linkStart') and linkStart != null">
+                link_start = #{linkStart},
+            </if>
+            <if test="_parameter.containsKey('path') and path != null">
+                path = #{path},
+            </if>
+            <if test="_parameter.containsKey('created') and created != null">
+                created = #{created},
+            </if>
+            <if test="_parameter.containsKey('creator') and creator != null">
+                creator = #{creator}
+            </if>
+        </trim></set>
+        WHERE  id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   advertising
+WHERE  id = #{id}
+</delete>
+
+    <select id="findAll" resultMap="AdvertisingMap">
+        SELECT <include refid="columns" />
+        FROM   advertising
+    </select>
+</mapper>

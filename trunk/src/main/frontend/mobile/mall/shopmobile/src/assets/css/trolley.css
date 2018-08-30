@@ -1,0 +1,459 @@
+.trolley-logo{
+	width: 100%;
+	background: white;
+	padding: 1rem 0rem;
+	padding-bottom: 0.5rem;
+}
+
+.trolley-logo p{
+	font-size: 0.8rem;
+	color: #666666;
+	padding: 0rem 0.5rem;
+	line-height: 1rem;
+}
+
+
+.trolley-logo p a{
+	display: block;
+	float: right;
+	font-size: 0.6rem;
+	line-height: 1rem;
+}
+
+.trolley-logo p a i{
+	font-size: 0.6rem;
+}
+
+
+/**/
+
+.goodStoreNmae .StoreNmae{
+	width: 100%;
+	clear: both;
+	border-bottom: solid #DDDDDD 1px;
+	
+}
+
+.goodStoreNmae .StoreNmae a{
+	font-size: 0.8rem;
+	color:#333333;
+	display: block;
+	padding: 0.5rem;
+	
+	line-height: 1.5rem;
+	height: 1.5rem;
+}
+
+.goodStoreNmae{
+	width: 100%;
+	background: white;
+	}
+
+.goodStoreNmae p{
+	font-size: 0.8rem;
+	color: #666666;
+	padding: 0.5rem 0.5rem;
+	line-height: 1rem;
+	height: 1rem;
+}
+
+
+.goodStoreNmae p a{
+	display: block;
+	float: right;
+	font-size: 0.6rem;
+	line-height: 1rem;
+}
+
+.goodStoreNmae p a i{
+	font-size: 0.6rem;
+}
+
+.StoreNmae span{
+	display: block;
+	width: 0.8rem;
+	height: 0.8rem;
+	float: left;
+	margin: 0.3rem;
+}
+
+.StoreNmae span img{
+	display: block;
+	width: 100%;
+	
+}
+.trolley-nav{
+	
+	
+}
+
+.trolley-nav .trolley-none {
+	font-size: 0px;
+	padding: 0.5rem 2rem;
+}
+
+.trolley-nav .trolley-none ul{
+
+}
+
+.trolley-nav .trolley-none ul li{
+	width: 100%;
+	font-size: 0.6rem;
+		color: #AAAAAA;
+		text-align: center;
+}
+
+.trolley-nav .trolley-none ul li i{
+	font-size: 2rem;
+	color: #AAAAAA;
+	
+}
+
+.trolley-nav .trolley-none ul li small{
+	font-size: 0.8rem;
+	display: block;
+	margin-left: 0.5rem;
+}
+
+.trolley-nav .trolley-none ul li a{
+	width: 3rem;
+	display: block;
+	margin: 0.5rem auto;
+	font-size: 0.6rem;
+	text-align: center;
+	height: 1rem;
+	line-height: 1rem;
+	color: red;
+	
+	border:red;
+	border: solid 1px red;
+	padding:0rem 0.5rem;
+}
+
+
+.trolley-goods{
+	width: 100%;
+}
+
+
+.trolley-goods ul li .items{
+	
+	float: left;
+}
+
+
+
+.trolley-goods ul{
+	width: 100%;
+	font-size: 0px;
+}
+
+.trolley-goods ul li{
+	display: inline-block;
+	font-size: 16px;
+	background: #fafafa;
+	width: 100%;
+    padding: 0.5rem 0rem;
+	
+	margin-bottom: 0.5rem;
+
+}
+
+.trolley-goods ul li .items.pack span{
+	
+	display: block;
+	width: 1rem;
+	height: 1rem;
+ text-align: center;
+	border-radius: 50%;
+	border: solid 1px #AAAAAA;
+	margin: 2rem 0.2rem;
+}
+
+.trolley-goods ul li .items.pack span i{
+	display: none;
+	color: white;
+}
+
+.trolley-goods ul li .items.pack span.active{
+	background: orangered;
+	border: solid 1px orangered;
+	
+	
+}
+
+.trolley-goods ul li .items.pack span.active i{
+	display: block;
+	font-size: 0.7rem;
+	line-height: 1rem;
+}
+
+.trolley-goods ul li .items.imges small{
+	display: block;
+	width: 4rem;
+	padding: 0.5rem;
+	/*border: solid 1px #DDDDDD;*/
+}
+
+.trolley-goods ul li .items.imges img{
+	display: block;
+	width: 100%;
+	
+}
+
+
+.trolley-goods ul li .items.gdd{
+	width: 10rem;
+	padding-left: 0.5rem;
+    line-height: 1rem;
+    padding-top: 0.5rem;
+}
+
+.trolley-goods ul li .items.gdd p{
+	font-size: 0.8rem;
+	color: #333;
+	overflow: hidden; text-overflow: ellipsis; white-space: nowrap;   
+}
+
+.trolley-goods ul li .items.gdd span{
+	display: block;
+	font-size: 0.7rem;
+	color: #666;
+}
+
+.trolley-goods ul li .items.gdd span .goodNum{
+	font-weight: 100;
+	margin-left: 0.5rem;
+}
+
+
+.trolley-goods ul li .items.gdd .calculator{
+	
+	display: inline-block;
+	width: 100%;
+	font-size: 0.7rem;
+/*	padding-top: 0.3rem;*/
+}
+
+.trolley-goods ul li .items.gdd .calculator small{
+	
+	display: block;
+	float: left;
+	width: 100%;
+	font-size: 0.8rem;
+	color: #ff4444;
+	
+}
+
+
+.trolley-goods  .items.gdd .calculator .left{
+	 float: left;
+}
+
+
+.trolley-goods  .items.gdd .calculator span{
+	display: block;
+	background: white;
+	width: 1.2rem;
+	height: 1.2rem;
+	border: solid 1px #DDDDDD;
+	text-align: center; 
+	font-size: 1rem;
+	line-height: 1.2rem;
+	
+	
+}
+
+.trolley-goods  .items.gdd .calculator span.no{
+	background: #DDDDDD;
+}
+
+.trolley-goods  .items.gdd .calculator i{
+	display: block;
+	float: right;
+	width: 1.2rem;
+	height: 1.2rem;
+	border: solid 1px #DDDDDD;
+	text-align: center;
+	font-size: 1rem;
+	line-height: 1.2rem;
+}
+
+
+.trolley-goods  .items.gdd .calculator input{
+	width: 1.8rem;
+	height: 1.2rem;
+	text-align: center;
+	
+	border: solid 1px #DDDDDD;
+}
+
+
+.close{
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	z-index: 100;
+	height: 55px;
+	background: white;
+	width: 100%;
+
+}
+
+.close ul{
+	display: inline-block;
+	width: 100%;
+}
+
+.close ul li{
+	width: 33.33%;
+	float: left;
+	height: 55px;
+	
+}
+
+.close ul li.f p{
+	font-size: 14px;
+	color: #AAAAAA;
+	padding-top: 3px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.close ul li.f p:last-child{
+	padding: 0px;
+}
+
+.close ul li.f p span{
+
+	font-size: 20px;
+	color: #ed702d;
+	font-weight: bold;
+}
+
+.close ul li.cen{
+	/*background: whitesmoke;*/
+
+}
+
+.close ul li.cen a{
+	display: block;
+	color:#333;
+	width: 100%;
+	line-height: 55px;
+	text-align: center;
+}
+
+
+.close ul li.clo{
+	background: #eb544d;
+}
+
+.close ul li.clo a{
+	display: block;
+	color:white;
+	width: 100%;
+	line-height: 55px;
+	text-align: center;
+}
+	
+
+/*猜你喜欢-s*/
+.guess{
+	width: 100%;
+	clear: both;
+}
+
+.guess .guessBanner{
+	width: 100%;
+}
+
+.guess .guessBanner img{
+	display: block;
+	width: 100%;
+}
+/*猜你喜欢-e*/
+
+
+.compile{
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	z-index: 100;
+	height: 55px;
+	background: white;
+	width: 100%;
+
+}
+
+.compile ul{
+	width: 100%;
+	
+}
+
+
+.compile ul li{
+	width: 50%;
+	float: left;
+	
+}
+
+.compile ul li.pick{
+	
+}
+
+.compile ul li.pick span{
+	display: block;
+	float: left;
+	width: 20px;
+	height:20px;
+	line-height: 20px;
+    text-align: center;
+	border-radius: 50%;
+	border: solid 1px #AAAAAA;
+	margin: 16px;
+	font-size: 10px;
+	margin-right: 5px;
+}
+
+.compile ul li.pick span i{
+	font-size: 12px;
+	color: white;
+}
+
+.compile ul li.pick span.checked{
+	background: orangered;
+	border: solid 1px orangered;
+}
+
+.compile ul li.pick small{
+	display: block;
+	float: left;
+	line-height: 55px;
+	font-size: 14px;
+}
+
+
+.compile ul li.end span{
+	
+	display: block;
+	width:100%;
+	text-align: center;
+	line-height: 55px;
+	background: orangered;
+	color: white;
+	font-size: 16px;
+	
+}
+
+.trolley-compile{
+	width: 100%;
+	height:1.5rem;
+	line-height: 1.5rem;
+	font-size: 0.7rem;
+}
+
+.trolley-compile span{
+	float: right;
+	margin-right: 0.5rem;
+}

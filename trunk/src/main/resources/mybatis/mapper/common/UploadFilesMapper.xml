@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.common.UploadFilesDao">
+    <resultMap id="UploadFilesMap" type="com.lwxf.newstore.webapp.domain.entity.common.UploadFiles">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="resource_id" property="resourceId" jdbcType="CHAR" />
+        <result column="resource_type" property="resourceType" jdbcType="TINYINT" />
+        <result column="path" property="path" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="mime" property="mime" jdbcType="VARCHAR" />
+        <result column="original_mime" property="originalMime" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="TINYINT" />
+        <result column="creator" property="creator" jdbcType="CHAR" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="belong_id" property="belongId" jdbcType="CHAR" />
+    </resultMap>
+    <sql id="columns">
+id, resource_id, resource_type, path, name, mime, original_mime, status, creator, created, belong_id
+</sql>
+
+    <select id="selectById" resultMap="UploadFilesMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   upload_files
+WHERE  id = #{id}
+</select>
+
+    <select id="selectByFilter" resultMap="UploadFilesMap">
+SELECT <include refid="columns" />
+FROM   upload_files
+<where><trim prefixOverrides="AND">
+<if test="id != null">
+    id = #{id}
+</if>
+<if test="resourceId != null">
+    AND resource_id = #{resourceId}
+</if>
+<if test="resourceType != null">
+    AND resource_type = #{resourceType}
+</if>
+<if test="path != null">
+    AND path = #{path}
+</if>
+<if test="name != null">
+    AND name = #{name}
+</if>
+<if test="mime != null">
+    AND mime = #{mime}
+</if>
+<if test="originalMime != null">
+    AND original_mime = #{originalMime}
+</if>
+<if test="status != null">
+    AND status = #{status}
+</if>
+<if test="creator != null">
+    AND creator = #{creator}
+</if>
+<if test="created != null">
+    AND created = #{created}
+</if>
+<if test="belongId != null">
+    AND belong_id = #{belongId}
+</if>
+</trim></where>
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+upload_files(id, resource_id, resource_type, path, name, mime, original_mime, status, creator, created, belong_id)
+      VALUES(#{id}, #{resourceId}, #{resourceType}, #{path}, #{name}, #{mime}, #{originalMime}, #{status}, #{creator}, #{created}, #{belongId})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE upload_files
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('resourceType') and resourceType != null">
+    resource_type = #{resourceType},
+</if>
+<if test="_parameter.containsKey('name') and name != null">
+    name = #{name},
+</if>
+<if test="_parameter.containsKey('path') and path != null">
+    path = #{path},
+</if>
+<if test="_parameter.containsKey('mime') and mime != null">
+    mime = #{mime},
+</if>
+<if test="_parameter.containsKey('originalMime') and originalMime != null">
+    original_mime = #{originalMime},
+</if>
+<if test="_parameter.containsKey('creator') and creator != null">
+    creator = #{creator},
+</if>
+<if test="_parameter.containsKey('created') and created != null">
+    created = #{created},
+</if>
+    <if test="_parameter.containsKey('status') and status != null">
+    status = #{status},
+</if>
+    <if test="_parameter.containsKey('belongId')">
+    belong_id = #{belongId},
+</if>
+    <if test="_parameter.containsKey('resourceId')">
+        resource_id = #{resourceId}
+    </if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   upload_files
+WHERE  id = #{id}
+</delete>
+
+    <select id="findByBelongIdAndResourceIdAndResourceType" resultMap="UploadFilesMap">
+        select <include refid="columns"/> from upload_files where belong_id = #{belongId} and resource_id = #{ResourceId} and resource_type=#{ResourceType}
+    </select>
+    <delete id="deleteByResourceId">
+        delete from upload_files where resource_id = #{arg0}
+    </delete>
+
+    <select id="findByBelongId" resultMap="UploadFilesMap">
+        select <include refid="columns"/>
+        from upload_files
+        where belong_id=#{belongId} and status=1 and resource_type=4
+    </select>
+
+
+
+
+    <update id="updateMicImageStatusAndresourceIdAndbelongId">
+        update upload_files set resource_id=#{resourceId},status=1,belong_id=#{belongId} where id in
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+
+    </update>
+
+    <update id="updateMicImageStatus">
+
+        update upload_files set status=1 where id in
+        <foreach collection="array" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+
+    </update>
+
+    <select id="isNullByIds" parameterType="String" resultMap="UploadFilesMap">
+        SELECT <include refid="columns" />
+        FROM   upload_files
+        WHERE  id in
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
+    <delete id="deleteMicImage" parameterType="String">
+        delete from upload_files where id in
+        <foreach collection="array" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="selectMicImageIdByBlogId" parameterType="String" resultType="String">
+        select id from upload_files where belong_id=#{id}
+    </select>
+    
+    <select id="selectByCreatorAndTempAndResourceType" resultMap="UploadFilesMap">
+        select
+        <include refid="columns" />
+        from upload_files
+        where creator=#{creator} and resource_type=4 and status=0
+    </select>
+
+
+    <delete id="deleteByUserIdAndStatusAndResType" parameterType="String">
+        delete from upload_files where creator=#{userId} and resource_type=4 and status=0
+    </delete>
+
+    <select id="findByResourceId" resultMap="UploadFilesMap">
+        select <include refid="columns"/> from upload_files where resource_id=#{resourceId}
+    </select>
+    <select id="findByBlogIds" resultMap="UploadFilesMap">
+        select <include refid="columns"/> from upload_files where belong_id in
+            <foreach collection="collection" item="blogIds" open="(" separator="," close=")">
+                #{blogIds}
+            </foreach>
+    </select>
+
+    <delete id="deleteByBelongId" parameterType="String">
+        delete from upload_files where belong_id=#{id}
+    </delete>
+    <select id="findByResourceIdAndStatusAndTypeId" resultMap="UploadFilesMap">
+        select <include refid="columns"/> from upload_files where resource_id = #{ResourceId} and status = #{status} and resource_type = #{typeId}
+    </select>
+
+
+</mapper>

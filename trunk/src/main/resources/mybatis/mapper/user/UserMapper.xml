@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.user.UserDao">
+	<resultMap id="UserMap" type="com.lwxf.newstore.webapp.domain.entity.user.User">
+		<id column="id" property="id" jdbcType="CHAR"/>
+		<result column="name" property="name" jdbcType="VARCHAR"/>
+		<result column="email" property="email" jdbcType="VARCHAR"/>
+		<result column="avatar" property="avatar" jdbcType="VARCHAR"/>
+		<result column="created" property="created" jdbcType="TIMESTAMP"/>
+		<result column="last_login" property="lastLogin" jdbcType="TIMESTAMP"/>
+		<result column="time_zone" property="timeZone" jdbcType="VARCHAR"/>
+		<result column="language" property="language" jdbcType="VARCHAR"/>
+		<result column="mobile" property="mobile" jdbcType="VARCHAR"/>
+		<result column="birthday" property="birthday" jdbcType="TIMESTAMP"/>
+		<result column="state" property="state" jdbcType="TINYINT"/>
+		<result column="background" property="background" jdbcType="VARCHAR"/>
+		<result column="username" property="username" jdbcType="VARCHAR" />
+		<result column="role" property="role"  jdbcType="TINYINT" />
+		<result column="sex" property="sex"  jdbcType="TINYINT" />
+	</resultMap>
+
+	<sql id="columns">
+		id, name,email,avatar,created,last_login,time_zone,language,mobile,birthday,state,background,username,role,sex
+	</sql>
+	<sql id="columnsMap">
+		id, name, email, avatar, created, last_login lastLogin, time_zone timeZone, language, birthday,mobile,background,state,username,role,sex
+	</sql>
+	<sql id="columnsSet">
+		id,name,email,avatar,birthday,mobile,state,sex,role
+	</sql>
+
+	<select id="selectAllUserId" resultType="java.lang.String">
+		SELECT id FROM user
+	</select>
+
+	<select id="selectById" resultMap="UserMap" parameterType="java.lang.String">
+		SELECT
+		<include refid="columns"/>
+		FROM user
+		WHERE id = #{id}
+	</select>
+
+	<select id="selectByEmail" resultMap="UserMap">
+		SELECT
+		<include refid="columns"/>
+		FROM user
+		WHERE email = #{email} LIMIT 1
+	</select>
+
+	<select id="selectByFilter" resultMap="UserMap">
+		SELECT
+		<include refid="columns"/>
+		FROM user
+		<where>
+			<trim prefixOverrides="AND">
+				<if test="id != null">
+					id = #{id}
+				</if>
+				<if test="name != null">
+					AND name = #{name}
+				</if>
+				<if test="email != null">
+					AND email = #{email}
+				</if>
+				<if test="avatar != null">
+					AND avatar = #{avatar}
+				</if>
+				<if test="created != null">
+					AND created = #{created}
+				</if>
+				<if test="lastLogin != null">
+					AND last_login = #{lastLogin}
+				</if>
+				<if test="timeZone != null">
+					AND time_zone = #{timeZone}
+				</if>
+				<if test="language != null">
+					AND language = #{language}
+				</if>
+				<if test="birthday != null">
+					AND birthday = #{birthday}
+				</if>
+				<if test="mobile != null">
+					AND mobile = #{mobile}
+				</if>
+				<if test="state != null">
+					AND state = #{state}
+				</if>
+				<if test="sex != null">
+					AND sex = #{sex}
+				</if>
+				<if test="keywords != null">
+					AND (`name` like CONCAT('%',#{keywords},'%') or mobile like CONCAT('%',#{keywords},'%') or email like CONCAT('%',#{keywords},'%'))
+				</if>
+
+			</trim>
+		</where>
+
+	</select>
+	<select id="selectUserDtoListByUserIds" resultType="com.lwxf.newstore.webapp.domain.dto.user.UserDto">
+		SELECT id,NAME FROM USER WHERE id in
+		<foreach collection="array" item="userId" open="(" close=")" separator=",">
+			#{userId}
+		</foreach>
+	</select>
+	<select id="selectByUserIdList" resultMap="UserMap">
+		SELECT
+		<include refid="columns"/>
+		FROM user
+		WHERE id in
+		<foreach collection="list" item="userId" open="(" close=")" separator=",">
+			#{userId}
+		</foreach>
+	</select>
+	<select id="isExistsByEmail" resultType="java.lang.Boolean">
+		SELECT
+		COUNT(*)
+		FROM user
+		WHERE email = #{email} LIMIT 1
+	</select>
+	<select id="selectByUserId" resultType="java.util.Map">
+		SELECT
+		<include refid="columnsMap"/>
+		FROM user
+		WHERE id = #{userId}
+	</select>
+	<select id="findByMobile" resultMap="UserMap">
+		SELECT
+		<include refid="columns"/>
+		FROM user
+		WHERE mobile = #{mobile} LIMIT 1
+	</select>
+
+	<select id="findByUserName" resultMap="UserMap">
+		select <include refid="columns"/> from  user where username = #{username} LIMIT 1
+	</select>
+
+	<insert id="insert" useGeneratedKeys="false">
+		INSERT INTO
+		user(id, name, email,mobile, avatar, created, last_login, time_zone, language, birthday,background,state,username,role,sex)
+		VALUES(#{id}, #{name}, #{email},#{mobile}, #{avatar}, #{created}, #{lastLogin}, #{timeZone}, #{language}, #{birthday},#{background},#{state}, #{username}, #{role}, #{sex})
+</insert>
+
+	<update id="updateByMapContext">
+		UPDATE user
+		<set>
+			<trim suffixOverrides=",">
+				<if test="_parameter.containsKey('name') and name != null">
+					name = #{name},
+				</if>
+				<if test="_parameter.containsKey('email') and email != null">
+					email = #{email},
+				</if>
+				<if test="_parameter.containsKey('avatar') and avatar != null">
+					avatar = #{avatar},
+				</if>
+				<if test="_parameter.containsKey('lastLogin') and lastLogin != null">
+					last_login = #{lastLogin},
+				</if>
+				<if test="_parameter.containsKey('timeZone') and timeZone != null">
+					time_zone = #{timeZone},
+				</if>
+				<if test="_parameter.containsKey('language') and language != null">
+					language = #{language},
+				</if>
+				<if test="_parameter.containsKey('birthday') and birthday != null">
+					birthday = #{birthday},
+				</if>
+				<if test="_parameter.containsKey('mobile') and mobile != null">
+					mobile = #{mobile},
+				</if>
+				<if test="_parameter.containsKey('state') and state != null">
+					state = #{state},
+				</if>
+				<if test="_parameter.containsKey('background') and background != null">
+					background = #{background}
+				</if>
+				<if test="_parameter.containsKey('role') and role != null">
+					role = #{role}
+				</if>
+				<if test="_parameter.containsKey('sex') and sex != null">
+					sex = #{sex}
+				</if>
+				<if test="_parameter.containsKey('username') and username != null">
+					username = #{username}
+				</if>
+			</trim>
+		</set>
+		WHERE id = #{id}
+	</update>
+
+	<delete id="deleteById" parameterType="java.lang.String">
+		DELETE FROM user
+		WHERE  id = #{id}
+	</delete>
+	<select id="findClerkListByStateAndRole" resultMap="UserMap">
+		SELECT <include refid="columns" />
+		FROM   user
+		<where>
+			<trim prefixOverrides="AND">
+				AND role != 0
+				<if test="state != null">
+					AND state = #{state}
+				</if>
+				<if test="role != null">
+					AND role = #{role}
+				</if>
+			</trim>
+		</where>
+	</select>
+	<select id="findUserInfoByUserIds"  resultMap="UserMap">
+		SELECT <include refid="columns" />
+		FROM   user where id in
+		<foreach collection="collection" item="id" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</select>
+
+	<update id="updateUserName">
+		update user set
+		<if test="username != null">
+			username = #{username}
+		</if>
+        where id=#{id}
+	</update>
+
+	<select id="findUserById" resultType="map">
+		select <include refid="columnsSet"/> from user where id = #{id}
+	</select>
+
+	<select id="findIdByName" resultType="string">
+		select id from user where name like '%${_parameter}%'
+	</select>
+
+</mapper>

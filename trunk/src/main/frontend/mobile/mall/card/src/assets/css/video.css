@@ -1,0 +1,43 @@
+.video{
+	display: block;
+	padding: 0.5rem;
+
+}
+
+
+.video .Vitem{
+	width: 100%;
+	margin-bottom: 0.5rem;
+	background: white;
+}
+
+.video .Vitem:last-child{
+	margin-bottom: 0rem;
+}
+
+.video .Vitem .Vimg{
+	width: 100%;
+	
+}
+
+body{
+	background: whitesmoke;
+}
+
+
+.video .Vitem .Vcenter{
+	padding: 0.5rem;
+	padding-top: 0.3rem;
+	line-height: 0.8rem;
+}
+
+.video .Vitem .Vcenter p{
+	color: #333;
+	font-size: 0.6rem;
+}
+
+.video .Vitem .Vcenter span{
+	color: #AAAAAA;
+	font-size: 0.6rem;
+	
+}

@@ -1,0 +1,159 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RabbitMQProperties",
+      "name": "lwxf.rabbitmq",
+      "type": "com.lwxf.newstore.webapp.config.RabbitMQProperties"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RedisProperties",
+      "name": "lwxf.redis",
+      "type": "com.lwxf.newstore.webapp.config.RedisProperties"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RedisProperties",
+      "name": "lwxf.redis.pool",
+      "sourceMethod": "getPool()",
+      "type": "com.lwxf.newstore.webapp.config.RedisProperties$Pool"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RedisProperties",
+      "name": "lwxf.redis.sentinel",
+      "sourceMethod": "getSentinel()",
+      "type": "com.lwxf.newstore.webapp.config.RedisProperties$Sentinel"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.wxpay.WxPayProperties",
+      "name": "lwxf.wx.pay",
+      "type": "com.lwxf.newstore.webapp.config.wxpay.WxPayProperties"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.FileUploadConfig",
+      "name": "upload.file.upload.component",
+      "sourceMethod": "fileUploadComponent(com.lwxf.newstore.webapp.common.component.IdFileNameGenerator,com.lwxf.newstore.webapp.common.utils.Configuration)",
+      "type": "com.lwxf.newstore.webapp.common.component.BaseFileUploadComponent"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RabbitMQProperties",
+      "defaultValue": 0,
+      "name": "lwxf.rabbitmq.connection-timeout",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RabbitMQProperties",
+      "defaultValue": 0,
+      "name": "lwxf.rabbitmq.heartbeat",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RabbitMQProperties",
+      "name": "lwxf.rabbitmq.password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RabbitMQProperties",
+      "name": "lwxf.rabbitmq.port",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RabbitMQProperties",
+      "name": "lwxf.rabbitmq.server-host",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RabbitMQProperties",
+      "name": "lwxf.rabbitmq.username",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RabbitMQProperties",
+      "name": "lwxf.rabbitmq.virtual-host",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RedisProperties",
+      "defaultValue": 0,
+      "name": "lwxf.redis.database",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RedisProperties",
+      "defaultValue": "localhost",
+      "name": "lwxf.redis.host",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RedisProperties",
+      "name": "lwxf.redis.password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.RedisProperties",
+      "defaultValue": "6379",
+      "name": "lwxf.redis.port",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.wxpay.WxPayProperties",
+      "name": "lwxf.wx.pay.app-id",
+      "description": "设置微信公众号的appid",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.wxpay.WxPayProperties",
+      "name": "lwxf.wx.pay.key-path",
+      "description": "apiclient_cert.p12文件的绝对路径，或者如果放在项目中，请以classpath:开头指定",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.wxpay.WxPayProperties",
+      "name": "lwxf.wx.pay.mch-id",
+      "description": "微信支付商户号",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.wxpay.WxPayProperties",
+      "name": "lwxf.wx.pay.mch-key",
+      "description": "微信支付商户密钥",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.wxpay.WxPayProperties",
+      "name": "lwxf.wx.pay.notify-url",
+      "description": "支付成功后的回调通知地址",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.wxpay.WxPayProperties",
+      "name": "lwxf.wx.pay.sub-app-id",
+      "description": "服务商模式下的子商户公众账号ID，普通模式请不要配置，请在配置文件中将对应项删除",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.config.wxpay.WxPayProperties",
+      "name": "lwxf.wx.pay.sub-mch-id",
+      "description": "服务商模式下的子商户号，普通模式请不要配置，最好是请在配置文件中将对应项删除",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.common.component.BaseFileUploadComponent",
+      "name": "upload.file.upload.component.module-path-mapping",
+      "type": "java.util.Map<java.lang.String,java.lang.String>"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.common.component.BaseFileUploadComponent",
+      "defaultValue": "",
+      "name": "upload.file.upload.component.root-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.lwxf.newstore.webapp.common.component.BaseFileUploadComponent",
+      "defaultValue": "",
+      "name": "upload.file.upload.component.temp-root-path",
+      "type": "java.lang.String"
+    }
+  ]
+}

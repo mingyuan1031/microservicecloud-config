@@ -1,0 +1,294 @@
+.inSearch {
+	display: block;
+	padding: 0.8rem 3rem;
+	background: white;
+	position: relative;
+}
+
+.inSearch .inSinput {
+	display: block;
+	width: 100%;
+	font-size: 0.7rem;
+	height: 1rem;
+	line-height: 1rem;
+	background: white;
+	border: none;
+}
+
+.inSearch .inSicon {
+	display: block;
+	position: absolute;
+	top: 0.8rem;
+	left: 1.6rem;
+	width: 1rem;
+	height: 1rem;
+	font-size: 1rem;
+	text-align: center;
+	line-height: 1rem;
+	color: #AAAAAA;
+}
+
+.inSearch .inSicon i {
+	font-size: 1rem;
+}
+
+.inIcon {
+	width: 100%;
+	clear: both;
+	font-size: 0px;
+	background: white;
+}
+
+.inIcon ul {
+	width: 100%;
+	display: inline-block;
+	padding-top: 1.4rem;
+}
+
+.inIcon ul li {
+	float: left;
+	width: 25%;
+	margin-bottom: 1.4rem;
+	background: url(../img/index/iconBg.png) no-repeat right;
+}
+
+.inIcon ul li:last-child {
+	background: none;
+}
+
+.inIcon ul li:nth-child(4) {
+	background: none;
+}
+
+.inIcon ul li h3 {
+	display: block;
+}
+
+.inIcon ul li h3 img {
+	display: block;
+	width: 46%;
+	margin: 0px auto;
+}
+
+.inIcon ul li p {
+	color: #ababab;
+	font-size: 0.7rem;
+	text-align: center;
+	line-height: 1rem;
+}
+
+.inRecommend {
+	width: 100%;
+	clear: both;
+}
+
+.inRecommend-title {
+	width: 100%;
+	font-size: 0.6rem;
+	text-align: center;
+	padding: 0.3rem 0rem;
+	background: #ececec;
+	color: #838383;
+}
+
+.inRecommend-center {
+	width: 100%;
+}
+
+.inRecommend-singleton {
+	width: 100%;
+}
+
+.inRecommend-singleton img {
+	display: block;
+	width: 100%;
+}
+
+.inRecommend-double {
+	width: 100%;
+	clear: both;
+	font-size: 0rem;
+}
+
+.inRecommend-double ul {
+	display: inline-block;
+	width: 100%;
+}
+
+.inRecommend-double ul li {
+	width: 50%;
+	float: left;
+}
+
+.inRecommend-double ul li img {
+	display: block;
+	width: 100%;
+}
+
+.goodBox {
+	padding: 0rem 0.1rem;
+	margin: 0px auto;
+	clear: both;
+	font-size: 0px;
+	padding-top: 0.5rem;
+
+}
+
+.goodBox ul {
+	width: 100%;
+	display: inline-block;
+	width: ;
+}
+
+.goodBox ul li {
+	width: 8.5rem;
+	float: left;
+	
+	padding-bottom: 0rem;
+	background: url(../img/boxbg.jpg) no-repeat;
+	background-size: 100% 100%;
+	margin: 0rem 0.2rem;
+	margin-bottom: 0.5rem;
+	
+}
+.goodBox ul li h3{
+	margin: 0.5rem;
+	margin-bottom: 0rem;
+	height: 7.5rem;
+	background-position: 50% 50%;
+	background-size: cover;
+	
+}
+.goodBox ul li h3 img {
+	display: block;
+	width: 100%;
+}
+
+.goodBox ul li p {
+	padding: 0.3rem 0.5rem;
+	font-size: 0.7rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; 
+	
+}
+
+.goodBox ul li .goodBoxbut{
+   
+    padding:0rem 0.5rem;
+   
+    padding-bottom: 0.5rem;
+	height: 1rem;
+	line-height: 1rem;
+	
+	
+}
+
+.goodBox ul li .goodBoxbut small{
+	float: left;
+	display: block;
+	line-height: 1rem;
+	font-size: 0.7rem;
+	color: #ff4444;
+}
+
+
+.goodBoxbut b{
+	float: right;
+	display: block;
+	font-size: 0.6rem;
+	
+	border:solid 1px #FF4444 ;
+	color: #FF4444;
+	font-weight: 100;
+	border-radius: 0.1rem;
+    height: 1rem;
+    line-height: 1rem;
+	padding: 0rem 0.2rem;
+	
+} 
+
+.inBottom{
+	width: 100%;
+	clear: both;
+	padding-top: 1rem;
+	padding-bottom: 2rem;
+}
+
+.inBottom .inBone{
+	width: 70%;
+	margin: 0px auto;
+}
+
+
+.inBottom .inBone img{
+	display: block;
+	width: 100%;
+}
+
+.inBottom .inBoicon{
+	display: block;
+	clear: both;
+	padding: 2rem 0.5rem;
+}
+
+.inBottom .inBoicon ul{
+	width: 100%;
+	display: inline-block;
+	
+}
+
+.inBottom .inBoicon ul li{
+	width: 25%;
+	float: left;
+}
+
+.inBottom .inBoicon ul li h3 img{
+		display: block;
+		width: 80%;
+		margin: 0px auto;
+	
+} 
+
+.inBottom .inBoicon ul li p{
+	text-align: center;
+	font-size: 0.4rem;
+	color: #a9a9a9;
+	padding: 0.3rem 0rem;
+} 
+
+
+.inBocontact{
+	display: block;
+	width: 100%;
+}
+
+.inBocontact h3{
+	width: 100%;
+	text-align: center;
+	background: url(../img/index/inbophonebg.png) no-repeat;
+	background-size: 100%;
+	height: 100%;
+		font-size: 0.6rem;
+	height: 1rem;
+	line-height: 0.5rem;
+}
+
+.inBocontact p{
+	margin: 0.5rem 0rem;
+	font-size: 0.8rem;
+	font-weight: 100;
+	text-align: center;
+	
+	margin-bottom: 0.3rem;
+}
+
+.inBocontact span{
+	display: block;
+	width: 100%;
+	font-size: 0.6rem;
+	color: #b4b4b4;
+	text-align: center;
+	
+}
+

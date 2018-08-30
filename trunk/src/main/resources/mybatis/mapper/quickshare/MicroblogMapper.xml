@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.quickshare.MicroblogDao">
+    <resultMap id="MicroblogMap" type="com.lwxf.newstore.webapp.domain.entity.quickshare.Microblog">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="creator" property="creator" jdbcType="CHAR" />
+        <result column="content" property="content" jdbcType="VARCHAR" />
+        <result column="type" property="type" jdbcType="TINYINT" />
+        <result column="status" property="status" jdbcType="TINYINT" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="columns">
+id, creator, content, type, status, created
+</sql>
+
+    <select id="selectById" resultMap="MicroblogMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   microblog
+WHERE  id = #{id}
+</select>
+
+    <select id="selectByFilter" resultMap="MicroblogMap">
+SELECT <include refid="columns" />
+FROM   microblog
+<where><trim prefixOverrides="AND">
+<if test="id != null">
+    id = #{id}
+</if>
+<if test="creator != null">
+    AND creator = #{creator}
+</if>
+<if test="content != null">
+    AND content = #{content}
+</if>
+<if test="type != null">
+    AND type = #{type}
+</if>
+<if test="status != null">
+    AND status = #{status}
+</if>
+<if test="created != null">
+    AND created = #{created}
+</if>
+</trim></where>
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+microblog(id, creator, content, type, status, created)
+   VALUES(#{id}, #{creator}, #{content}, #{type}, #{status}, #{created})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE microblog
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('content') and content != null">
+    content = #{content},
+</if>
+    <if test="_parameter.containsKey('type') and type != null">
+    type = #{type},
+</if>
+    <if test="_parameter.containsKey('status') and status != null">
+    status = #{status}
+</if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   microblog
+WHERE  id = #{id}
+</delete>
+
+
+
+
+    <delete id="deleteByIdAndUserId" parameterType="map">
+DELETE FROM   microblog
+WHERE  id = #{id} and creator=#{userId}
+</delete>
+
+    <!-- 获取快享普通帖子列表 -->
+    <select id="findByType" resultMap="MicroblogMap">
+        SELECT <include refid="columns" />
+        FROM   microblog
+        <where><trim prefixOverrides="AND">
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="content != null">
+                AND content = '%${content}%'
+            </if>
+            <if test="startTime != null">
+                AND created &lt;= #{startTime}
+            </if>
+            <if test="endTime != null">
+                AND created &gt;= #{endTime}
+            </if>
+            <if test="creator != null">
+                AND creator in
+                <foreach collection="creator" item="creator" open="(" separator="," close=")">
+                    #{creator}
+                </foreach>
+            </if>
+            and status = 1 and type = 0
+        </trim>  </where>
+        order by created desc
+    </select>
+
+    <!-- 查询普通帖子状态为启用的总数量 -->
+    <select id="findCountByStatus" resultType="integer">
+        select count(id) from microblog where status=1
+    </select>
+
+    <!-- 当前用户的帖子列表 -->
+    <select id="findMicroblogByMemberId" resultMap="MicroblogMap">
+        SELECT <include refid="columns" />
+        FROM   microblog
+        where creator = #{memberId}
+        order by created desc
+    </select>
+
+</mapper>

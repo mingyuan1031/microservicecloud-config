@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.quickshare.MicroblogPraiseDao">
+    <resultMap id="MicroblogPraiseMap" type="com.lwxf.newstore.webapp.domain.entity.quickshare.MicroblogPraise">
+        <result column="microblog_id" property="microblogId" jdbcType="CHAR" />
+        <result column="member_id" property="memberId" jdbcType="CHAR" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="columns">
+microblog_id, member_id, created
+</sql>
+    <sql id="counts">
+        member_id
+    </sql>
+
+    <select id="selectByMemberIdAndMicroblogId" resultMap="MicroblogPraiseMap">
+SELECT <include refid="columns" />
+FROM   microblog_praise
+WHERE  member_id = #{memberId}
+   AND microblog_id = #{microblogId}
+</select>
+
+    <select id="selectByFilter" resultMap="MicroblogPraiseMap">
+SELECT <include refid="columns" />
+FROM   microblog_praise
+<where><trim prefixOverrides="AND">
+<if test="microblogId != null">
+    microblog_id = #{microblogId}
+</if>
+<if test="memberId != null">
+    AND member_id = #{memberId}
+</if>
+<if test="created != null">
+    AND created = #{created}
+</if>
+</trim></where>
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+microblog_praise(microblog_id, member_id, created)
+          VALUES(#{microblogId}, #{memberId}, #{created})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE microblog_praise
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('microblogId') and microblogId != null">
+    microblog_id = #{microblogId}
+</if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <select id="findCountByMicroblogId" resultType="integer">
+      select count(<include refid="counts"/>) from microblog_praise where microblog_id=#{microblogId} order by created desc
+    </select>
+
+    <select id="findMemberId" resultMap="MicroblogPraiseMap">
+        select <include refid="columns"/> from microblog_praise where microblog_id = #{microblogId} and member_id = #{memberId}
+    </select>
+
+    <delete id="deleteByMapContext">
+        delete from microblog_praise where microblog_id=#{microblogId} and member_id=#{memberId}
+    </delete>
+
+    <select id="findByBlogIds" resultMap="MicroblogPraiseMap">
+        select <include refid="columns"/> from microblog_praise where microblog_id in
+            <foreach collection="collection" item="blogIds" open="(" separator="," close=")">
+                #{blogIds}
+            </foreach>
+    </select>
+
+    <delete id="deleteByBlogId" parameterType="String">
+        delete from microblog_praise where  microblog_id = #{blogId}
+    </delete>
+
+    <select id="findByMemberId" resultMap="MicroblogPraiseMap">
+        select <include refid="columns"/> from microblog_praise where member_id = #{memberId}
+    </select>
+
+</mapper>

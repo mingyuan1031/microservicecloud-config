@@ -1,0 +1,29 @@
+    .usercontain{
+	  margin-left: 200px;
+	  margin-right: 0;
+      background-color: #EEEEEE;
+      height: 1000px;
+	}
+	.user_form{
+		background: #fff;
+		height: 500px;
+		border: 3px solid #FFFFFF;
+		padding-left: 50px;
+		width: 98%;
+		margin: 0 auto;
+		
+	}
+	.user_form_header{
+		font-weight: 700;
+		font-size: 16px;
+		height: 60px;
+		line-height: 30px;
+		border-bottom: 1px solid #EEEEEE;		
+	}
+	.user_form p{
+		height: 40px;
+		margin: 20px 0;
+	}
+    .user_form:hover{
+    	box-shadow: 0px 0px 4px #888888;
+    }

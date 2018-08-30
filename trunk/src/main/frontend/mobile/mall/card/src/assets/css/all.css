@@ -1,0 +1,185 @@
+body{
+	background: #f7f7f7;
+}
+
+.all-title {
+	width: 100%;
+	clear: both;
+	padding: 1rem 0rem;
+	position: relative;
+	
+}
+
+.all-title  span{
+	display: block;
+	width: 5rem;
+	border-top: 1px solid #AAAAAA;
+	margin: 0px auto;
+}
+
+.all-title  p{
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	
+	width: 100%;
+	height: 2rem;
+	line-height: 2rem;
+}
+
+.all-title  p small{
+	display: block;
+	width: 4rem;
+	background: #f7f7f7;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	margin: 0px auto;
+}
+
+
+.all-good{
+	width: 100%;
+}
+ 
+.all-good ul{
+	width: 100%;
+	display: block;
+	font-size: 0px;
+}
+
+.all-good ul li{
+	height: 5rem;
+	display: block;
+	margin-bottom: 0.2rem;
+	padding:0.5rem 0.5rem;
+	background: white;
+	border-bottom: solid 1px #eff1f5;
+	
+}
+
+.all-good ul li .item{
+	float: left;
+}
+
+.all-good ul li .imgshow{
+	width: 5rem;
+	height: 5rem;
+}
+
+.all-good ul li .imgshow img{
+	display: block;
+	width: 5rem;
+	height: 5rem;
+}
+
+.all-good ul li .allgoodmsg{
+	width: 11.5rem;
+	margin-left: 0.5rem;
+
+}
+
+.all-good ul li .allgoodmsg p{
+	font-size: 0.7rem;
+	color: #333333;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.all-good ul li .allgoodmsg p small{
+	color: white;
+	font-size: 0.5rem;
+	background: #D20000;
+	display: block;
+	float: left;
+	border-radius: 0.2rem;
+	padding: 0.1rem 0.2rem;
+	margin-right: 0.2rem;
+}
+
+.all-good ul li .allgoodmsg span{
+	font-size: 0.6rem;
+	color: #AAAAAA;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+	display: block;
+	-webkit-box-orient: vertical;
+	display: -webkit-box;
+	line-clamp: 2;
+	margin: 0.2rem 0rem;
+}
+
+
+.all-good ul li:last-child{
+	border: none;
+}
+
+
+.all-good ul li .allgoodM{
+	width: 100%;
+	clear: both;
+	padding-top: 0.6rem;
+}
+
+.all-good ul li .allgoodM b{
+	font-size: 1rem;
+	color: #FF4444;
+	font-weight: 100;
+}
+
+.all-good ul li .allgoodM del{
+	font-size: 0.6rem;
+	color: #666;
+	margin-left: 0.5rem;
+}
+
+.all-good ul li .allgoodM small{
+	
+	float: right;
+	font-size: 0.6rem;
+	color: #AAAAAA;
+	line-height: 1.4rem;
+}
+
+.all-good ul li .allgoodM small i{
+	color: #FF4444;
+	font-size: 0.8rem;
+	font-weight:bold;
+}
+
+.allmore {
+	padding-top: 1rem;
+}
+
+.allmore .allclickmore{
+	width: 100%;
+}
+
+.allmore .allclickmore span{
+	display: block;
+	width: 10rem;
+	height: 1rem;
+	font-size: 0.6rem;
+	line-height: 1rem;
+	margin: 1rem auto;
+	text-align: center;
+	/*border: dashed 1px #AAAAAA;*/
+	color: #AAAAAA;
+}
+
+.allnonemore{
+	display: block;
+	width: 100%;
+	height: 1rem;
+	font-size: 0.6rem;
+	line-height: 1rem;
+	margin: 1rem auto;
+	text-align: center;
+	
+	color: #AAAAAA;
+}
+ 

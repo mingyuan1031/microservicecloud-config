@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.user.UserExtraDao">
+	<resultMap id="UserExtraMap" type="com.lwxf.newstore.webapp.domain.entity.user.UserExtra">
+		<result column="user_id" property="userId" jdbcType="CHAR"/>
+		<result column="salt" property="salt" jdbcType="VARCHAR"/>
+		<result column="password" property="password" jdbcType="VARCHAR"/>
+		<result column="updated" property="updated" jdbcType="TIMESTAMP" />
+		<result column="token" property="token" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="columns">
+		user_id, salt, password, updated, token
+	</sql>
+
+	<select id="selectById" resultMap="UserExtraMap" parameterType="java.lang.String">
+		SELECT
+		<include refid="columns"/>
+		FROM user_extra
+		WHERE user_id = #{id}
+	</select>
+
+	<select id="selectByFilter" resultMap="UserExtraMap">
+		SELECT
+		<include refid="columns"/>
+		FROM user_extra
+		<where>
+			<trim prefixOverrides="AND">
+				<if test="userId != null">
+					user_id = #{userId}
+				</if>
+				<if test="salt != null">
+					AND salt = #{salt}
+				</if>
+				<if test="password != null">
+					AND password = #{password}
+				</if>
+				<if test="updated != null">
+					AND updated = #{updated}
+				</if>
+				<if test="token != null">
+					AND token = #{token}
+				</if>
+			</trim>
+		</where>
+
+	</select>
+
+	<insert id="insert" useGeneratedKeys="true" keyProperty="userId">
+		INSERT INTO
+			user_extra(user_id, salt, password, updated, token)
+		VALUES(#{userId}, #{salt}, #{password}, #{updated}, #{token})
+	</insert>
+
+	<update id="updateByMapContext">
+		UPDATE user_extra
+		<set>
+			<trim suffixOverrides=",">
+				<if test="_parameter.containsKey('salt') and salt != null">
+					salt = #{salt},
+				</if>
+				<if test="_parameter.containsKey('password') and password != null">
+					password = #{password},
+				</if>
+				<if test="_parameter.containsKey('updated') and updated != null">
+					updated = #{updated},
+				</if>
+				<if test="_parameter.containsKey('token') and token != null">
+					token = #{token}
+				</if>
+			</trim>
+		</set>
+		WHERE user_id = #{userId}
+	</update>
+	<update id="updateUserExtra">
+		UPDATE user_extra
+		<set>
+			<trim suffixOverrides=",">
+				<if test="salt != null">
+					salt = #{salt},
+				</if>
+				<if test="password != null">
+					password = #{password},
+				</if>
+				<if test="updated != null">
+					updated = #{updated}
+				</if>
+				<if test="token != null">
+					token = #{token}
+				</if>
+			</trim>
+		</set>
+		WHERE user_id = #{userId}
+	</update>
+
+	<delete id="deleteById" parameterType="java.lang.String">
+		DELETE FROM   user_extra
+		WHERE  id = #{id}
+	</delete>
+
+</mapper>

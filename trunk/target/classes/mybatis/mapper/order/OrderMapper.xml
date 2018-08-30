@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.order.OrderDao">
+    <resultMap id="OrderMap" type="com.lwxf.newstore.webapp.domain.entity.order.Order">
+        <id column="id" property="id" jdbcType="CHAR"/>
+        <result column="order_number" property="orderNumber" jdbcType="VARCHAR"/>
+        <result column="member_id" property="memberId" jdbcType="CHAR"/>
+        <result column="paid_price" property="paidPrice" jdbcType="DECIMAL"/>
+        <result column="paid_time" property="paidTime" jdbcType="TIMESTAMP"/>
+        <result column="freight" property="freight" jdbcType="DECIMAL"/>
+        <result column="paid_method" property="paidMethod" jdbcType="TINYINT"/>
+        <result column="descr" property="descr" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="TINYINT"/>
+        <result column="receipt_id" property="receiptId" jdbcType="CHAR" />
+        <result column="trade_no" property="tradeNo" jdbcType="CHAR" />
+        <result column="created" property="created" jdbcType="TIMESTAMP"/>
+        <result column="updated" property="updated" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+
+    <resultMap id="GoodsDtoMap" type="com.lwxf.newstore.webapp.domain.dto.order.GoodsDto">
+        <id column="id" property="id" jdbcType="CHAR"/>
+        <result column="order_id" property="orderId" jdbcType="CHAR"/>
+        <result column="goods_extend_id" property="goodsExtendId" jdbcType="CHAR"/>
+        <result column="goods_amount" property="goodsAmount" jdbcType="INTEGER"/>
+        <result column="paid_price" property="paidPrice" jdbcType="DECIMAL"/>
+        <result column="descr" property="descr" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="TINYINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="goods_id" property="goodsId" jdbcType="CHAR"/>
+        <result column="options" property="options" jdbcType="VARCHAR"/>
+        <result column="smallimage" property="smallimage" jdbcType="VARCHAR"/>
+        <result column="bigimage" property="bigimage" jdbcType="VARCHAR" />
+        <result column="is_disabled" property="disabled" jdbcType="BIT" />
+
+    </resultMap>
+
+    <resultMap id="OrderGoodsDtoMap" type="com.lwxf.newstore.webapp.domain.dto.order.OrderGoodsDto">
+        <id column="id" property="id" jdbcType="CHAR"/>
+        <result column="order_id" property="orderId" jdbcType="CHAR"/>
+        <result column="goods_extend_id" property="goodsExtendId" jdbcType="CHAR"/>
+        <result column="goods_amount" property="goodsAmount" jdbcType="INTEGER"/>
+        <result column="paid_price" property="paidPrice" jdbcType="DECIMAL"/>
+        <result column="descr" property="descr" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="TINYINT"/>
+        <result column="order_number" property="orderNumber" jdbcType="VARCHAR"/>
+        <result column="member_id" property="memberId" jdbcType="CHAR"/>
+        <result column="price" property="price" jdbcType="DECIMAL"/>
+        <result column="paid_time" property="paidTime" jdbcType="TIMESTAMP"/>
+        <result column="order_status" property="orderStatus" jdbcType="TINYINT"/>
+        <result column="created" property="created" jdbcType="TIMESTAMP"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="options" property="options" jdbcType="VARCHAR"/>
+        <result column="goods_id" property="goodsId" jdbcType="CHAR"/>
+        <result column="originalprice" property="originalprice" jdbcType="DECIMAL"/>
+        <result column="smallimage" property="smallimage" jdbcType="VARCHAR"/>
+        <result column="bigimage" property="bigimage" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectOrderGoodsDtoByFilter" resultMap="OrderGoodsDtoMap">
+        SELECT distinct og.id,og.order_id,og.goods_extend_id,og.paid_price,og.goods_amount,og.descr,og.`status`,
+        o.member_id,o.order_number,o.paid_price price,o.paid_time,o.`status`
+        order_status,o.created,ge.`options`,ge.goods_id,ge.originalprice,ge.smallimage,ge.bigimage,
+        g.`name` FROM `order` o,order_goods og, goods_extend ge ,goods g
+        <where>
+            <trim prefixOverrides="AND">
+                o.id=og.order_id
+                and og.goods_extend_id = ge.id
+                and ge.goods_id = g.id
+                <if test="orderNumber != null">
+                    AND o.order_number like CONCAT('%',#{orderNumber},'%')
+                </if>
+                <if test="name != null">
+                    AND g.name like CONCAT('%',#{name},'%')
+                </if>
+                <if test="status != null">
+                    AND og.`status` = #{status}
+                </if>
+                <if test="orderStatus != null">
+                    AND order_status = #{orderStatus}
+                </if>
+            </trim>
+        </where>
+    </select>
+
+    <sql id="columns">
+id, order_number, member_id, paid_price, paid_time, freight, paid_method, descr, status, receipt_id, trade_no, created, updated
+</sql>
+
+
+    <select id="selectGoodsDtoListByOrderIds" resultMap="GoodsDtoMap">
+        SELECT distinct og.id,og.order_id,og.goods_extend_id, og.goods_amount, og.paid_price,og.descr,
+        og.`status`,g.`name`,g.`is_disabled`,ge.goods_id,ge.`options`, ge.smallimage,ge.bigimage
+        FROM order_goods og,goods_extend ge,goods g WHERE og.goods_extend_id=ge.id AND ge.goods_id=g.id AND og.order_id
+        in
+        <foreach collection="orderIds" item="orderId" open="(" close=")" separator=",">#{orderId}</foreach>
+    </select>
+
+    <select id="selectGoodsDtoByOrderGoodsId" resultMap="GoodsDtoMap" parameterType="String">
+        SELECT g.`name`,ge.goods_id,ge.`options`, ge.smallimage,ge.bigimage,og.order_id, og.goods_amount, og.paid_price,og.descr, og.`status`
+        FROM order_goods og,goods_extend ge,goods g WHERE  og.goods_extend_id=ge.id AND ge.goods_id=g.id AND  og.id=#{id}
+    </select>
+
+    <select id="selectById" resultMap="OrderMap" parameterType="String">
+        SELECT
+        <include refid="columns"/>
+        FROM `order`
+        WHERE id = #{id}
+    </select>
+    <select id="selectByOrderGoodsId" resultMap="OrderMap" parameterType="String">
+        SELECT  <include refid="columns"/> FROM `order` o WHERE o.id=(SELECT og.order_id FROM order_goods og WHERE og.id=#{id})
+    </select>
+
+    <select id="selectOrderByMemberId" resultMap="OrderMap" parameterType="String">
+        SELECT
+        <include refid="columns"/>
+        FROM `order`
+        WHERE member_id = #{mid} order by created desc
+    </select>
+
+    <select id="selectByFilter" resultMap="OrderMap">
+        SELECT
+        <include refid="columns"/>
+        FROM `order`
+        <where>
+            <trim prefixOverrides="AND">
+                <if test="id != null">
+                    id = #{id}
+                </if>
+                <if test="orderNumber != null">
+                    AND order_number = #{orderNumber}
+                </if>
+                <if test="memberId != null">
+                    AND member_id = #{memberId}
+                </if>
+                <if test="paidPrice != null">
+                    AND paid_price = #{paidPrice}
+                </if>
+                <if test="paidTime != null">
+                    AND paid_time = #{paidTime}
+                </if>
+                <if test="status != null">
+                    AND status in
+                    <foreach collection='status'  item="statu"  open="("   separator="," close=")">
+                        #{statu}
+                    </foreach>
+                </if>
+                <if test="receiptId != null">
+                    AND receipt_id = #{receiptId}
+                </if>
+                <if test="tradeNo != null">
+                    AND trade_no = #{tradeNo}
+                </if>
+                <if test="created != null">
+                    AND created = #{created}
+                </if>
+                <if test="updated != null">
+                    AND updated = #{updated}
+                </if>
+            </trim>
+        </where>
+        order by created desc
+    </select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO
+ `order`(id, order_number, member_id, paid_price, paid_time, freight, paid_method, descr, status, receipt_id, trade_no, created, updated)
+VALUES(#{id}, #{orderNumber}, #{memberId}, #{paidPrice}, #{paidTime}, #{freight}, #{paidMethod}, #{descr}, #{status}, #{receiptId}, #{tradeNo}, #{created}, #{updated})
+</insert>
+
+    <update id="updateByMapContext">
+        UPDATE `order`
+        <set>
+            <trim suffixOverrides=",">
+                <if test="_parameter.containsKey('orderNumber') and orderNumber != null">
+                    order_number = #{orderNumber},
+                </if>
+                <if test="_parameter.containsKey('memberId') and memberId != null">
+                    member_id = #{memberId},
+                </if>
+                <if test="_parameter.containsKey('paidPrice')">
+                    paid_price = #{paidPrice},
+                </if>
+                <if test="_parameter.containsKey('paidTime')">
+                    paid_time = #{paidTime},
+                </if>
+                <if test="_parameter.containsKey('freight') and freight != null">
+                    freight = #{freight},
+                </if>
+                <if test="_parameter.containsKey('paidMethod') and paidMethod != null">
+                    paid_method = #{paidMethod},
+                </if>
+                <if test="_parameter.containsKey('descr')">
+                    descr = #{descr},
+                </if>
+                <if test="_parameter.containsKey('status') and status != null">
+                    status = #{status},
+                </if>
+                <if test="_parameter.containsKey('receiptId') and receiptId != null">
+                    receipt_id = #{receiptId},
+                </if>
+                <if test="_parameter.containsKey('tradeNo')">
+                    trade_no = #{tradeNo},
+                </if>
+                <if test="_parameter.containsKey('updated')">
+                    updated = #{updated}
+                </if>
+            </trim>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   `order`
+WHERE  id = #{id}
+</delete>
+
+    <select id="isOrderExist" resultType="java.lang.Boolean">
+		SELECT count(*)
+		FROM `order`
+		WHERE id = #{id}
+	</select>
+
+</mapper>

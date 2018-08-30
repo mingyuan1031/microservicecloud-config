@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.news.NewsDao">
+    <resultMap id="NewsMap" type="com.lwxf.newstore.webapp.domain.entity.news.News">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="path" property="path" jdbcType="VARCHAR" />
+        <result column="news_type_id" property="newsTypeId" jdbcType="CHAR" />
+        <result column="is_top" property="top" jdbcType="BIT" />
+        <result column="toped" property="toped" jdbcType="TIMESTAMP" />
+        <result column="is_disabled" property="disabled" jdbcType="BIT" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="creator" property="creator" jdbcType="CHAR" />
+    </resultMap>
+    <resultMap id="NewsDtoMap" type="com.lwxf.newstore.webapp.domain.dto.news.NewsDto">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="path" property="path" jdbcType="VARCHAR" />
+        <result column="news_type_id" property="newsTypeId" jdbcType="CHAR" />
+        <result column="is_top" property="top" jdbcType="BIT" />
+        <result column="toped" property="toped" jdbcType="TIMESTAMP" />
+        <result column="is_disabled" property="disabled" jdbcType="BIT" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="creator" property="creator" jdbcType="CHAR" />
+        <result column="newsTypeName" property="newsTypeName"/>
+    </resultMap>
+    <sql id="columns">
+id, name, path, news_type_id, is_top, toped, is_disabled, created, creator
+</sql>
+
+    <select id="selectById" resultMap="NewsMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   news
+WHERE  id = #{id}
+</select>
+
+    <select id="selectByFilter" resultMap="NewsMap">
+SELECT <include refid="columns" />
+FROM   news
+<where><trim prefixOverrides="AND">
+<if test="id != null">
+    id = #{id}
+</if>
+<if test="name != null">
+    AND name = #{name}
+</if>
+<if test="path != null">
+    AND path = #{path}
+</if>
+<if test="newsTypeId != null">
+    AND news_type_id = #{newsTypeId}
+</if>
+<if test="top != null">
+    AND is_top = #{top}
+</if>
+<if test="toped != null">
+    AND toped = #{toped}
+</if>
+<if test="disabled != null">
+    AND is_disabled = #{disabled}
+</if>
+<if test="created != null">
+    AND created = #{created}
+</if>
+<if test="creator != null">
+    AND creator = #{creator}
+</if>
+</trim></where>
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+  news(id, name, path, news_type_id, is_top, toped, is_disabled, created, creator)
+VALUES(#{id}, #{name}, #{path}, #{newsTypeId}, #{top}, #{toped}, #{disabled}, #{created}, #{creator})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE news
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('name') and name != null">
+    name = #{name},
+</if>
+    <if test="_parameter.containsKey('path')">
+    path = #{path},
+</if>
+    <if test="_parameter.containsKey('top') and top != null">
+    is_top = #{top},
+</if>
+    <if test="_parameter.containsKey('toped')">
+    toped = #{toped},
+</if>
+    <if test="_parameter.containsKey('disabled') and disabled != null">
+    is_disabled = #{disabled}
+</if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   news
+WHERE  id = #{id}
+</delete>
+
+
+<select id="findByNesTypeId" resultType="java.lang.Boolean">
+    select count(*) from news where news_type_id = #{id}
+</select>
+
+    <select id="findByMapper" resultMap="NewsDtoMap">
+        select n.id, n.name, n.path, n.news_type_id, n.is_top, n.toped, n.is_disabled, n.created, n.creator, nt.name newsTypeName from news n left join news_type nt on n.news_type_id = nt.id
+            <where>
+                <trim prefixOverrides="AND">
+                    n.news_type_id = #{newsTypeId}
+                    <if test="_parameter.containsKey('name') and name != null">
+                         and n.name like CONCAT('%',#{name},'%')
+                    </if>
+                    <if test="_parameter.containsKey('disabled') and disabled != null">
+                        and n.is_disabled = #{disabled}
+                    </if>
+                </trim>
+            </where>
+        order by n.is_top desc,n.created desc
+    </select>
+    <select id="findAll" resultMap="NewsDtoMap">
+        select n.id, n.name, n.path, n.news_type_id, n.is_top, n.toped, n.is_disabled, n.created, n.creator, nt.name newsTypeName from news n left join news_type nt on n.news_type_id = nt.id order by n.is_top desc,n.created desc
+    </select>
+</mapper>

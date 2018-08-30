@@ -1,0 +1,147 @@
+.tabs-panels{
+	border: 1px solid #AEC7E5;
+	width: 1400px;
+	margin: 0 auto;
+	padding: 30px;
+	border-radius: 2px;
+}
+.deltable{
+	width: 100%;
+	margin: 10px 0;
+}
+.deltable th{
+	text-align: left;
+}
+.deltable td{
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 30px;
+	height: 30px;
+	font-family: "微软雅黑";
+}
+.deltable h4{
+	font-size: 14px;
+}
+.sunmoney{
+	width: 100%;
+	height: 40px;
+}
+.news{
+	font-size: 14px;
+	float: right;
+}
+.sunmoneyfont{
+	font-size: 20px;
+	color: orangered;
+}
+hr{
+border:none;
+border-top:1px double #ECECEC;	
+}
+.status{
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-weight: 400;
+	font-size: 14px;
+}
+.tablehead{
+ 	height: 42px;
+ 	background-color:#ececec;
+ }
+ ul li{
+ 	list-style: none;
+ }
+ .tablex{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	border: 1px solid #ececec;
+ }
+ .tablex .head ul{
+ 	padding-left: 10px;
+ 	height: 42px;
+ 	background-color: #F5F5F5;
+ 	line-height: 42px;
+ }
+ .tablex .head ul li{
+ 	float: left;
+ 	height: 42px;
+ 	text-align: center;
+ }
+ .tablecontain{
+ 	padding: 8px 0;
+ }
+ .tablecontain ul{
+ 	height: 200px;
+ }
+ .tablecontain .table_contain  li{
+ 	float: left;
+ }
+.miaoshu,.tupian{
+	float: left;
+}
+.miaoshu{
+	width: 200px;
+	padding: 5px 0 5px 5px;
+}
+.table_contain{
+	padding: 10px 0;
+}
+.table_contain li{
+	padding-top: 20px;
+	height: 200px;
+	border: 1px solid #ECECEC;
+}
+.orderdei:hover{
+	color: red;
+	cursor: pointer;
+}
+.productdel{
+	padding-left: 5px;
+	height: 25px;
+	line-height: 25px;
+}
+.go,.back{
+    height: 24px;
+    line-height: 22px;
+    background-color: #fff;
+    border-color:#9c9c9c;
+    border: 1px solid #dcdcdc;
+    width: 62px;
+    text-align: center;
+    margin: 0 3px;
+}
+.btng{
+	margin: 10px 0;
+}
+.tupian{
+	margin-left: 3%;
+	width: 80px;
+	height: 80px;
+}
+.laji{
+	float: right;
+	padding-top: 12px;
+}
+.money{
+	font-weight: 700;
+}
+.deltable{
+	margin: 0 auto;
+	border: none;
+}
+.headx{
+ 	line-height: 42px;
+	background-color: #E8F2FF;
+}
+.headx ul li{
+	float: left;
+ 	height: 42px;
+ 	text-align: center;
+}
+.warn{
+	width: 1400px;
+	margin: 0 auto;
+	height: 100px;
+	padding-top: 30px;
+}

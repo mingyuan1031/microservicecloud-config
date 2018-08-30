@@ -1,0 +1,321 @@
+
+.bobyback{
+	background: whitesmoke;
+}
+
+.paymentaSite {
+	width: 100%;
+	display: inline-block;
+	padding-top: 0.5rem;
+	padding-bottom: 0.3rem;
+	background: whitesmoke;
+}
+
+.paymentaSite .item {
+	float: left;
+}
+
+.paymentaSite .icon {
+	width: 2rem;
+	text-align: center;
+}
+
+.paymentaSite .icon i {
+	font-size: 1rem;
+	color: #AAAAAA;
+}
+
+.paymentaSite .site {
+	width: 14rem;
+}
+
+.paymentaSite .site p {
+	color: #333333;
+	font-size: 0.7rem;
+}
+
+.paymentaSite .site p span {
+	float: right;
+}
+
+.paymentaSite .site h3 {
+	width: 100%;
+	clear: both;
+	font-size: 0.6rem;
+	color: #AAAAAA;
+	line-height: 0.9rem;
+	padding-top: 0.2rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	display: -webkit-box;
+	line-clamp: 2;
+}
+
+.paymentaSite .iconBack {
+	width: 2rem;
+	text-align: center;
+	line-height: 3rem;
+}
+
+.paymentaSite .iconBack i {
+	color: #AAAAAA;
+	font-size: 0.7rem;
+}
+
+.paymentaSite h1 {
+	width: 100%;
+	clear: both;
+	height: 2px;
+	overflow: hidden;
+	background: url(../img/shop/sitebag.png);
+	margin: 0.2rem 0rem;
+}
+
+.store-center {
+	width: 100%;
+}
+
+.store-center ul {
+	width: 100%;
+}
+
+.store-center ul li {
+	width: 100%;
+	font-size: 0px;
+}
+
+.store-center ul li .store-name {
+	padding: 1rem 0.5rem;
+	height: 1rem;
+	font-size: 0.7rem;
+	background: white;
+}
+
+.store-center ul li .store-name span {
+	float: left;
+	margin-right: 0.3rem;
+}
+
+.store-center ul li .store-name span img {
+	display: block;
+	width: 1rem;
+	height: 1rem;
+}
+
+.store-center ul li .store-item {
+	padding: 0.5rem;
+	background: #f8f8f8;
+	width: 17rem;
+	display: inline-block;
+}
+
+.store-center ul li .store-item .item {
+	float: left;
+}
+
+.store-center ul li .store-item .shopimg {}
+
+.store-center ul li .store-item .shopimg img {
+	display: block;
+	width: 4.3rem;
+	height: 4.3rem;
+}
+
+.store-center ul li .store-item .shopnav {
+	width: 11.7rem;
+	margin: 0rem 0.5rem;
+	font-size: 0.7rem;
+}
+
+.store-center ul li .store-item .shopnav p {
+	width: 100%;
+	font-size: 0.7rem;
+	font-weight: 100;
+	line-height:1rem;
+	padding-top: 0.2rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+.store-center ul li .store-item .shopnav span {
+	width: 100%;
+	font-size: 0.6rem;
+	font-weight: 100;
+	color: #A9A9A9;
+	display: block;
+	height: 1.8rem;
+	padding-top: 0.2rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	display: -webkit-box;
+	line-clamp: 2;
+}
+
+.store-center ul li .store-item .calculator  {
+	padding-top: 0.2rem;
+	width: 100%;
+	font-size: 0.6rem;
+	line-height: 1rem;
+	
+}
+
+.store-center ul li .store-item .calculator b {
+color: #FF4444;
+font-size: 1rem;
+}
+
+.store-center ul li .store-item .calculator small {
+color: #FF4444;
+font-size: 0.6rem;
+float: right;
+color: #AAAAAA;
+}
+
+/**/
+
+
+.goodMessage {
+	margin: 0.3rem 0rem;
+	padding: 0rem 0.5rem;
+	clear: both;
+	display: block;
+	background: white;
+}
+
+.goodMessage ul {
+	width: 100%;
+}
+
+.goodMessage ul li.goodMlist {
+	width: 100%;
+	border-bottom: solid 1px #EEEEEE;
+	position: relative;
+	font-size: 0.7rem;
+	line-height: 2rem;
+}
+
+.goodMessage ul li.goodMlist small {
+	font-size: 0.6rem;
+	color: #AAAAAA;
+	margin-right: 0.6rem;
+}
+
+.goodMessage ul li.goodMlist span {
+	color: #333333;
+	font-size: 0.6rem;
+}
+
+.goodMessage ul li.goodMlist i {
+	line-height: 2rem;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	color: #AAAAAA;
+}
+
+.goodMessage ul li.goodMlist small.none {
+	color: orangered;
+	margin: 0px;
+	margin-left: 0.6rem;
+}
+
+.goodMessage ul li:last-child {
+	border: none;
+}
+
+.goodMessage .leave{
+float: right;
+	display: block;
+	width: 12.8rem;
+	border: none;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.6rem;
+	background: white;
+	margin: 0.5rem 0rem;
+}
+
+.order-pay{
+	border-top: solid 1px #EEEEEE;
+	position: fixed;
+	height: 50px;
+	width: 100%;
+	line-height: 50px;
+	z-index: 9;
+	background: white;
+	left: 0px;
+	bottom: 0px;
+}
+
+.order-pay .item{
+	float: left;
+}
+
+.order-pay .total{
+	width: 60%;
+	height: 50px;
+	text-align: right;
+}
+
+.order-pay .total span{
+	color: #ff4444;
+	font-size: 16px;
+	font-weight: 100;
+	margin-right: 20px;
+}
+
+.order-pay .total small{
+	color: #000;
+	font-size: 16px;
+	font-weight: 100;
+}
+
+
+
+
+.order-pay .payment{
+	width: 40%;
+	height: 50px;
+	background: #FF4444;
+	color: white;
+	font-size: 16px;
+	text-align: center;
+}
+
+.order-pay .payment a{
+	color: white;
+}
+
+.notsite{
+	width: 100%;
+	padding:0.6rem 0rem;
+	background: whitesmoke;
+	height: 2rem;
+	line-height: 2rem;
+	color: #000000;
+	font-size: 0.8rem;
+}
+
+.notsite span{
+  float: left;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+ 
+  margin-left: 0.5rem;
+  margin-right: 0.3rem;
+  
+  
+}
+
+.notsite span img{
+	display: block;
+	width: 100%;
+	
+} 

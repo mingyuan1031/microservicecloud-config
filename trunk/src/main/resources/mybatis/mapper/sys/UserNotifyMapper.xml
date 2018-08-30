@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.sys.UserNotifyDao">
+    <resultMap id="UserNotifyMap" type="com.lwxf.newstore.webapp.domain.entity.sys.UserNotify">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="company_id" property="companyId" jdbcType="CHAR" />
+        <result column="user_id" property="userId" jdbcType="CHAR" />
+        <result column="system_activity_id" property="systemActivityId" jdbcType="CHAR" />
+        <result column="grouping" property="grouping" jdbcType="TINYINT" />
+        <result column="is_readed" property="readed" jdbcType="BIT" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="top_time" property="topTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="columns">
+id, company_id, user_id, system_activity_id, grouping, is_readed, created, top_time
+</sql>
+
+    <select id="selectById" resultMap="UserNotifyMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   user_notify
+WHERE  id = #{id}
+</select>
+
+    <select id="selectByFilter" resultMap="UserNotifyMap">
+SELECT <include refid="columns" />
+FROM   user_notify
+<where><trim prefixOverrides="AND">
+<if test="id != null">
+    id = #{id}
+</if>
+<if test="companyId != null">
+    AND company_id = #{companyId}
+</if>
+<if test="userId != null">
+    AND user_id = #{userId}
+</if>
+<if test="systemActivityId != null">
+    AND system_activity_id = #{systemActivityId}
+</if>
+<if test="grouping != null">
+    AND grouping = #{grouping}
+</if>
+<if test="readed != null">
+    AND is_readed = #{readed}
+</if>
+<if test="created != null">
+    AND created = #{created}
+</if>
+<if test="topTime != null">
+    AND top_time = #{topTime}
+</if>
+</trim></where>
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+user_notify(id, company_id, user_id, system_activity_id, grouping, is_readed, created, top_time)
+     VALUES(#{id}, #{companyId}, #{userId}, #{systemActivityId}, #{grouping}, #{readed}, #{created}, #{topTime})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE user_notify
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('readed') and readed != null">
+    is_readed = #{readed},
+</if>
+    <if test="_parameter.containsKey('topTime')">
+    top_time = #{topTime}
+</if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   user_notify
+WHERE  id = #{id}
+</delete>
+
+</mapper>

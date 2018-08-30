@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.cart.CartDao">
+    <resultMap id="CartMap" type="com.lwxf.newstore.webapp.domain.entity.cart.Cart">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="member_id" property="memberId" jdbcType="CHAR" />
+        <result column="goods_id" property="goodsId" jdbcType="CHAR" />
+        <result column="extend_id" property="extendId" jdbcType="CHAR" />
+        <result column="count" property="count" jdbcType="INTEGER" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <resultMap id="CartDtoMap" type="com.lwxf.newstore.webapp.domain.dto.cart.CartDto">
+        <id column="id" property="id" jdbcType="CHAR"/>
+        <result column="member_id" property="memberId" jdbcType="CHAR" />
+        <result column="goods_id" property="goodsId" jdbcType="CHAR" />
+        <result column="extend_id" property="extendId" jdbcType="CHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="options" property="options" jdbcType="VARCHAR"/>
+        <result column="stock" property="stock" jdbcType="INTEGER"/>
+        <result column="price" property="price" jdbcType="DECIMAL"/>
+        <result column="count" property="count" jdbcType="INTEGER" />
+        <result column="bigimage" property="bigimage" jdbcType="VARCHAR" />
+        <result column="state" property="state" jdbcType="CHAR" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="freight" property="freight" jdbcType="DECIMAL" />
+    </resultMap>
+
+    <resultMap id="CartPriceMap" type="com.lwxf.newstore.webapp.domain.dto.cart.CartPriceDto">
+        <id column="id" property="id" jdbcType="CHAR"/>
+        <result column="member_id" property="memberId" jdbcType="CHAR" />
+        <result column="goods_id" property="goodsId" jdbcType="CHAR" />
+        <result column="extend_id" property="extendId" jdbcType="CHAR" />
+        <result column="price" property="price" jdbcType="DECIMAL"/>
+        <result column="count" property="count" jdbcType="INTEGER" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="columns">
+id, member_id, goods_id, extend_id, count, created
+</sql>
+    <sql id="columcto">
+        r.id,r.member_id,r.goods_id,r.extend_id,g.name,e.price,e.options,e.stock,
+	r.count,e.bigimage,e.state, r.created,g.freight
+   </sql>
+    <sql id="columPrice">
+        r.id,r.member_id,r.goods_id,r.extend_id,e.price,r.count,r.created
+    </sql>
+
+    <select id="selectById" resultMap="CartMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   cart
+WHERE  id = #{id}
+</select>
+
+    <select id="selectByFilter" resultMap="CartMap">
+SELECT <include refid="columns" />
+FROM   cart
+<where><trim prefixOverrides="AND">
+<if test="id != null">
+    id = #{id}
+</if>
+<if test="memberId != null">
+    AND member_id = #{memberId}
+</if>
+<if test="goodsId != null">
+    AND goods_id = #{goodsId}
+</if>
+<if test="extendId != null">
+    AND extend_id = #{extendId}
+</if>
+<if test="count != null">
+    AND count = #{count}
+</if>
+<if test="created != null">
+    AND created = #{created}
+</if>
+</trim></where>
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+  cart(id, member_id, goods_id, extend_id, count, created)
+VALUES(#{id}, #{memberId}, #{goodsId}, #{extendId}, #{count}, #{created})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE cart
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('memberId') and memberId != null">
+    member_id = #{memberId},
+</if>
+    <if test="_parameter.containsKey('goodsId') and goodsId != null">
+    goods_id = #{goodsId},
+</if>
+    <if test="_parameter.containsKey('extendId') and extendId != null">
+    extend_id = #{extendId},
+</if>
+    <if test="_parameter.containsKey('count') and count != null">
+    count = #{count}
+</if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   cart
+WHERE  id = #{id}
+</delete>
+
+
+    <!-- 根据ID修改商品数量 -->
+    <update id="updateById">
+        update cart set count=#{count} where id=#{id}
+    </update>
+
+    <!-- 在购物车中删除多个商品 -->
+    <delete id="deleteByIds" parameterType="String">
+        delete from cart where id in
+        <foreach collection="array" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <!-- 根据用户ID显示对应的购物车中的商品 -->
+    <select id="selectByMemberId" resultMap="CartDtoMap">
+        select <include refid="columcto"/>
+        from
+        cart r join goods g on g.id=r.goods_id
+        join goods_extend e on e.id=r.extend_id
+        where r.member_id=#{memberId}
+            <if test="ids != null">
+                and r.id in
+                <foreach collection="ids" item="id" open="(" separator="," close=")">
+                    #{id}
+                </foreach>
+            </if>
+    </select>
+
+    <update id="updateCountById">
+        update cart set count=#{count} where id=#{id}
+    </update>
+
+    <select id="findMemberId" resultMap="CartMap">
+        select <include refid="columns"/> from cart where member_id=#{memberId}
+    </select>
+
+    <select id="findByIds" resultMap="CartPriceMap">
+        select <include refid="columPrice"/> from
+        cart r join goods_extend e on r.extend_id = e.id
+        where r.member_id = #{memberId}
+        and r.id in
+            <foreach collection="ids" item="id" open="(" separator="," close=")">
+                #{id}
+            </foreach>
+    </select>
+
+</mapper>

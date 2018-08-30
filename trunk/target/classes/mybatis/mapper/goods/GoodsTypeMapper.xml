@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.goods.GoodsTypeDao">
+    <resultMap id="GoodsTypeMap" type="com.lwxf.newstore.webapp.domain.entity.goods.GoodsType">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="sort" property="sort" jdbcType="INTEGER" />
+        <result column="is_disabled" property="disabled" jdbcType="BIT" />
+        <result column="parent_id" property="parentId" jdbcType="CHAR" />
+    </resultMap>
+    <sql id="columns">
+id, name, sort, is_disabled, parent_id
+</sql>
+
+    <select id="selectById" resultMap="GoodsTypeMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   goods_type
+WHERE  id = #{id}
+</select>
+
+    <select id="selectByFilter" resultMap="GoodsTypeMap">
+SELECT <include refid="columns" />
+FROM   goods_type
+<where><trim prefixOverrides="AND">
+<if test="id != null">
+    id = #{id}
+</if>
+<if test="name != null">
+    AND name = #{name}
+</if>
+<if test="sort != null">
+    AND sort = #{sort}
+</if>
+<if test="disabled != null">
+    AND is_disabled = #{disabled}
+</if>
+<if test="parentId != null">
+    AND parent_id = #{parentId}
+</if>
+</trim></where>
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+goods_type(id, name, sort, is_disabled, parent_id)
+    VALUES(#{id}, #{name}, #{sort}, #{disabled}, #{parentId})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE goods_type
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('name') and name != null">
+    name = #{name},
+</if>
+    <if test="_parameter.containsKey('sort') and sort != null">
+    sort = #{sort},
+</if>
+    <if test="_parameter.containsKey('disabled') and disabled != null">
+    is_disabled = #{disabled}
+    </if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   goods_type
+WHERE  id = #{id}
+</delete>
+    <select id="findAll" resultMap="GoodsTypeMap">
+        SELECT
+        <include refid="columns"/>
+        FROM goods_type
+    </select>
+
+    <select id="selectByParentId" resultMap="GoodsTypeMap">
+        select <include refid="columns"/>from goods_type where parent_id = #{arg0}
+    </select>
+    <select id="findByParentId" resultMap="GoodsTypeMap">
+        select <include refid="columns"/> from goods_type where parent_id = #{arg0}
+    </select>
+    <select id="findByNameAndParentId" resultMap="GoodsTypeMap">
+        select <include refid="columns"/> from goods_type where name = #{name} and
+        <if test="parentId!=null">
+            parent_id = #{parentId}
+        </if>
+        <if test="parentId==null">
+            parent_id is null
+        </if>
+
+    </select>
+    <select id="findByName" resultMap="GoodsTypeMap">
+        select <include refid="columns"/> from goods_type where name = #{name}
+    </select>
+</mapper>

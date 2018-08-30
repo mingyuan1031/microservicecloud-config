@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.reservation.ReservationDao">
+    <resultMap id="ReservationMap" type="com.lwxf.newstore.webapp.domain.entity.reservation.Reservation">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="user_id" property="userId" jdbcType="CHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="area" property="area" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="TINYINT" />
+        <result column="descr" property="descr" jdbcType="VARCHAR" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="columns">
+id, user_id, phone, name, area, status, descr, created
+</sql>
+
+    <select id="selectById" resultMap="ReservationMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   reservation
+WHERE  id = #{id}
+</select>
+
+    <select id="selectByFilter" resultMap="ReservationMap">
+SELECT <include refid="columns" />
+FROM   reservation
+<where><trim prefixOverrides="AND">
+<if test="id != null">
+    id = #{id}
+</if>
+<if test="userId != null">
+    AND user_id = #{userId}
+</if>
+<if test="phone != null">
+    AND phone like '%${phone}%'
+</if>
+<if test="name != null">
+    AND name like '%${name}%'
+</if>
+<if test="area != null">
+    AND area = #{area}
+</if>
+<if test="status != null">
+    AND status = #{status}
+</if>
+<if test="descr != null">
+    AND descr = #{descr}
+</if>
+<if test="startTime != null">
+    AND created &gt;= #{startTime}
+</if>
+<if test="endTime != null">
+    AND created &lt;= #{endTime}
+</if>
+</trim></where> order by created desc
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+reservation(id, user_id, phone, name, area,  descr, created)
+     VALUES(#{id}, #{userId}, #{phone}, #{name}, #{area}, #{descr}, #{created})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE reservation
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('userId') and userId != null">
+    user_id = #{userId},
+</if>
+    <if test="_parameter.containsKey('phone') and phone != null">
+    phone = #{phone},
+</if>
+    <if test="_parameter.containsKey('name') and name != null">
+    name = #{name},
+</if>
+    <if test="_parameter.containsKey('area') and area != null">
+    area = #{area},
+</if>
+    <if test="_parameter.containsKey('status')">
+    status = #{status},
+</if>
+    <if test="_parameter.containsKey('descr')">
+    descr = #{descr}
+</if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   reservation
+WHERE  id = #{id}
+</delete>
+
+
+    <select id="findAllByUserid" resultMap="ReservationMap">
+        select <include refid="columns"/> from reservation
+        where user_id=#{userId} group by created desc
+    </select>
+
+</mapper>

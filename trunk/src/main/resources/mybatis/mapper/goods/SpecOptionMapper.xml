@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="com.lwxf.newstore.webapp.domain.dao.goods.SpecOptionDao">
+    <resultMap id="SpecOptionMap" type="com.lwxf.newstore.webapp.domain.entity.goods.SpecOption">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="goods_spec_id" property="goodsSpecId" jdbcType="CHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="columns">
+id, goods_spec_id, name
+</sql>
+
+    <select id="selectById" resultMap="SpecOptionMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   spec_option
+WHERE  id = #{id}
+</select>
+
+    <select id="selectByFilter" resultMap="SpecOptionMap">
+SELECT <include refid="columns" />
+FROM   spec_option
+<where><trim prefixOverrides="AND">
+<if test="id != null">
+    id = #{id}
+</if>
+<if test="goodsSpecId != null">
+    AND goods_spec_id = #{goodsSpecId}
+</if>
+<if test="name != null">
+    AND name = #{name}
+</if>
+</trim></where>
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+spec_option(id, goods_spec_id, name)
+     VALUES(#{id}, #{goodsSpecId}, #{name})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE spec_option
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('goodsSpecId') and goodsSpecId != null">
+    goods_spec_id = #{goodsSpecId},
+</if>
+    <if test="_parameter.containsKey('name') and name != null">
+    name = #{name}
+</if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   spec_option
+WHERE  id = #{id}
+</delete>
+
+    <select id="findAll" resultMap="SpecOptionMap">
+        SELECT <include refid="columns" />
+        FROM   spec_option
+    </select>
+
+    <select id="findBySpecId" resultMap="SpecOptionMap">
+        select <include refid="columns"/> from spec_option where goods_spec_id = #{arg0}
+    </select>
+
+    <select id="isExistByName" resultType="java.lang.Boolean">
+        select count(*) from spec_option where goods_spec_id=#{goodsSpecId} and name = #{name}
+    </select>
+
+    <delete id="deleteBySpecId">
+        delete from spec_option where goods_spec_id = #{arg0}
+    </delete>
+
+    <select id="findByIds" resultType="int">
+        select count(*) from spec_option where id in
+        <foreach collection="array"  item="id"  open="("   separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+    <select id="findSpecByOptionids" resultType="int">
+        select count(DISTINCT(goods_spec_id))  from spec_option where id IN
+        <foreach collection="array"  item="id"  open="("   separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+    <select id="findTypeByOptions" resultType="int">
+        SELECT COUNT(DISTINCT(sp.goods_type_id)) from goods_spec sp RIGHT JOIN (SELECT s.goods_spec_id from spec_option s where id IN
+        <foreach collection="array"  item="id"  open="("   separator="," close=")">
+            #{id}
+        </foreach>
+        ) op ON sp.id=op.goods_spec_id
+    </select>
+</mapper>

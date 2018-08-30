@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.company.CompanyDao">
+    <resultMap id="CompanyMap" type="com.lwxf.newstore.webapp.domain.entity.company.Company">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="columns">
+id, name
+</sql>
+
+    <select id="selectById" resultMap="CompanyMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   company
+WHERE  id = #{id}
+</select>
+
+    <select id="selectByFilter" resultMap="CompanyMap">
+SELECT <include refid="columns" />
+FROM   company
+<where><trim prefixOverrides="AND">
+<if test="id != null">
+    id = #{id}
+</if>
+<if test="name != null">
+    AND name = #{name}
+</if>
+</trim></where>
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+company(id, name)
+ VALUES(#{id}, #{name})
+</insert>
+
+    <update id="updateByMapContext">
+UPDATE company
+<set><trim suffixOverrides=",">
+<if test="_parameter.containsKey('name') and name != null">
+    name = #{name}
+</if>
+</trim></set>
+WHERE  id = #{id}
+</update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   company
+WHERE  id = #{id}
+</delete>
+
+    <select id="findAll" resultMap="CompanyMap">
+        SELECT <include refid="columns" />
+        FROM   company
+    </select>
+
+</mapper>

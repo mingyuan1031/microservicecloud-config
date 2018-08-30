@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.order.LogisticsDao">
+    <resultMap id="LogisticsMap" type="com.lwxf.newstore.webapp.domain.entity.order.Logistics">
+        <id column="id" property="id" jdbcType="CHAR"/>
+        <result column="order_id" property="orderId" jdbcType="CHAR"/>
+        <result column="logistics_name" property="logisticsName" jdbcType="VARCHAR"/>
+        <result column="logistics_number" property="logisticsNumber" jdbcType="VARCHAR"/>
+        <result column="deliver_time" property="deliverTime" jdbcType="TIMESTAMP"/>
+        <result column="receipt_time" property="receiptTime" jdbcType="TIMESTAMP"/>
+        <result column="receipt_id" property="receiptId" jdbcType="CHAR"/>
+        <result column="order_goods_id" property="orderGoodsId" jdbcType="VARCHAR"/>
+        <result column="remarks" property="remarks" jdbcType="VARCHAR"/>
+        <result column="created" property="created" jdbcType="TIMESTAMP"/>
+        <result column="updated" property="updated" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <resultMap id="LogisticsAddressDtoMap" type="com.lwxf.newstore.webapp.domain.dto.order.LogisticsAddressDto">
+        <result column="order_id" property="orderId" jdbcType="CHAR"/>
+        <result column="logistics_name" property="logisticsName" jdbcType="VARCHAR"/>
+        <result column="logistics_number" property="logisticsNumber" jdbcType="VARCHAR"/>
+        <result column="receipt_id" property="receiptId" jdbcType="CHAR"/>
+        <result column="order_goods_id" property="orderGoodsId" jdbcType="VARCHAR"/>
+        <result column="receiver" property="receiver" jdbcType="VARCHAR"/>
+        <result column="receiver_phone" property="receiverPhone" jdbcType="VARCHAR"/>
+        <result column="receiver_address" property="receiverAddress" jdbcType="VARCHAR"/>
+    </resultMap>
+    <resultMap id="LogisticsDtoMap" type="com.lwxf.newstore.webapp.domain.dto.order.LogisticsDto">
+        <result column="order_id" property="orderId" jdbcType="CHAR"/>
+        <result column="logistics_name" property="logisticsName" jdbcType="VARCHAR"/>
+        <result column="logistics_number" property="logisticsNumber" jdbcType="VARCHAR"/>
+        <result column="remarks" property="remarks" jdbcType="VARCHAR"/>
+        <result column="receipt_id" property="receiptId" jdbcType="CHAR"/>
+        <result column="order_goods_id" property="orderGoodsId" jdbcType="VARCHAR"/>
+        <result column="receiver" property="receiver" jdbcType="VARCHAR"/>
+        <result column="receiver_phone" property="receiverPhone" jdbcType="VARCHAR"/>
+        <result column="receiver_address" property="receiverAddress" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="columns">
+id, order_id, logistics_name, logistics_number, deliver_time, receipt_time, receipt_id, order_goods_id, remarks, created, updated
+</sql>
+
+
+    <select id="selectLogisticsAdDtosByOrderIds" resultMap="LogisticsAddressDtoMap" >
+        SELECT lo.logistics_name,lo.logistics_number,lo.order_id,lo.order_goods_id,lo.receipt_id,
+        ad.receiver,ad.receiver_phone,ad.receiver_address FROM logistics lo INNER JOIN address ad ON lo.receipt_id =ad.id WHERE lo.order_id  in
+        <foreach collection="orderIds" item="orderId" open="(" close=")" separator=",">#{orderId}</foreach>
+    </select>
+
+    <select id="selectLogisticsAdDtosByOrderGoodsId" resultMap="LogisticsAddressDtoMap" parameterType="String">
+        SELECT lo.logistics_name,lo.logistics_number,lo.order_id,lo.order_goods_id,lo.receipt_id,
+        ad.receiver,ad.receiver_phone,ad.receiver_address FROM logistics lo INNER JOIN address ad ON lo.receipt_id =ad.id WHERE lo.order_goods_id=#{id} LIMIT 1
+    </select>
+
+    <select id="selectById" resultMap="LogisticsMap" parameterType="String">
+        SELECT
+        <include refid="columns"/>
+        FROM logistics
+        WHERE id = #{id}
+    </select>
+    <select id="selectByOrderGoodsId" resultMap="LogisticsMap" parameterType="String">
+        SELECT
+        <include refid="columns"/>
+        FROM logistics
+        WHERE order_goods_id = #{orderGoodsId} LIMIT 1
+    </select>
+    <select id="selectLogisticsDtoByOrderId" resultMap="LogisticsDtoMap" parameterType="String">
+       SELECT lo.order_id,lo.logistics_name,lo.logistics_number,lo.remarks,lo.receipt_id,lo.order_goods_id,
+      ad.receiver,ad.receiver_phone,ad.receiver_address FROM logistics lo INNER JOIN address ad ON lo.receipt_id=ad.id
+      WHERE lo.order_id=#{orderId}
+    </select>
+
+    <select id="selectByFilter" resultMap="LogisticsMap">
+        SELECT
+        <include refid="columns"/>
+        FROM logistics
+        <where>
+            <trim prefixOverrides="AND">
+                <if test="id != null">
+                    id = #{id}
+                </if>
+                <if test="orderId != null">
+                    AND order_id = #{orderId}
+                </if>
+                <if test="logisticsName != null">
+                    AND logistics_name = #{logisticsName}
+                </if>
+                <if test="logisticsNumber != null">
+                    AND logistics_number = #{logisticsNumber}
+                </if>
+                <if test="deliverTime != null">
+                    AND deliver_time = #{deliverTime}
+                </if>
+                <if test="receiptTime != null">
+                    AND receipt_time = #{receiptTime}
+                </if>
+                <if test="receiptId != null">
+                    AND receipt_id = #{receiptId}
+                </if>
+                <if test="orderGoodsId != null">
+                    AND order_goods_id = #{orderGoodsId}
+                </if>
+                <if test="remarks != null">
+                    AND remarks = #{remarks}
+                </if>
+                <if test="created != null">
+                    AND created = #{created}
+                </if>
+                <if test="updated != null">
+                    AND updated = #{updated}
+                </if>
+            </trim>
+        </where>
+
+    </select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+logistics(id, order_id, logistics_name, logistics_number, deliver_time, receipt_time, receipt_id, order_goods_id, remarks, created, updated)
+   VALUES(#{id}, #{orderId}, #{logisticsName}, #{logisticsNumber}, #{deliverTime}, #{receiptTime}, #{receiptId}, #{orderGoodsId}, #{remarks}, #{created}, #{updated})
+</insert>
+
+    <update id="updateByMapContext">
+        UPDATE logistics
+        <set>
+            <trim suffixOverrides=",">
+                <if test="_parameter.containsKey('orderId') and orderId != null">
+                    order_id = #{orderId},
+                </if>
+                <if test="_parameter.containsKey('logisticsName') and logisticsName != null">
+                    logistics_name = #{logisticsName},
+                </if>
+                <if test="_parameter.containsKey('logisticsNumber') and logisticsNumber != null">
+                    logistics_number = #{logisticsNumber},
+                </if>
+                <if test="_parameter.containsKey('deliverTime')">
+                    deliver_time = #{deliverTime},
+                </if>
+                <if test="_parameter.containsKey('receiptTime')">
+                    receipt_time = #{receiptTime},
+                </if>
+                <if test="_parameter.containsKey('receiptId') and receiptId != null">
+                    receipt_id = #{receiptId},
+                </if>
+                <if test="_parameter.containsKey('orderGoodsId') and orderGoodsId != null">
+                    order_goods_id = #{orderGoodsId},
+                </if>
+                <if test="_parameter.containsKey('remarks')">
+                    remarks = #{remarks},
+                </if>
+                <if test="_parameter.containsKey('created') and created != null">
+                    created = #{created}
+                </if>
+                <if test="_parameter.containsKey('updated')">
+                    updated = #{updated}
+                </if>
+            </trim>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   logistics
+WHERE  id = #{id}
+</delete>
+
+</mapper>

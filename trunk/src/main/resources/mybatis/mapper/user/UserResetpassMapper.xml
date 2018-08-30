@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.user.UserResetpassDao">
+	<resultMap id="UserResetpassMap" type="com.lwxf.newstore.webapp.domain.entity.user.UserResetpass">
+		<id column="id" property="id" jdbcType="CHAR"/>
+		<result column="created" property="created" jdbcType="TIMESTAMP"/>
+		<result column="email" property="email" jdbcType="VARCHAR"/>
+	</resultMap>
+	<sql id="columns">
+id, created, email
+</sql>
+
+	<select id="selectById" resultMap="UserResetpassMap" parameterType="java.lang.String">
+		SELECT
+		<include refid="columns"/>
+		FROM user_resetpass
+		WHERE id = #{id}
+	</select>
+
+	<select id="selectByFilter" resultMap="UserResetpassMap">
+		SELECT
+		<include refid="columns"/>
+		FROM user_resetpass
+		<where>
+			<trim prefixOverrides="AND">
+				<if test="id != null">
+					id = #{id}
+				</if>
+				<if test="created != null">
+					AND created = #{created}
+				</if>
+				<if test="email != null">
+					AND email = #{email}
+				</if>
+			</trim>
+		</where>
+
+	</select>
+	<select id="selectByEmail" resultMap="UserResetpassMap">
+		SELECT
+		<include refid="columns"/>
+		FROM user_resetpass
+		WHERE email = #{email} LIMIT 1
+	</select>
+
+	<insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+user_resetpass(id, created, email)
+        VALUES(#{id}, #{created}, #{email})
+</insert>
+
+	<update id="updateByMapContext">
+		UPDATE user_resetpass
+		<set>
+			<trim suffixOverrides=",">
+				<if test="_parameter.containsKey('email') and email != null">
+					email = #{email}
+				</if>
+			</trim>
+		</set>
+		WHERE id = #{id}
+	</update>
+	<update id="updateUserResetpass">
+		UPDATE user_resetpass
+			SET created = #{created}
+		WHERE id = #{id}
+	</update>
+
+	<delete id="deleteById" parameterType="java.lang.String">
+		DELETE FROM   user_resetpass
+		WHERE  id = #{id}
+	</delete>
+
+</mapper>

@@ -1,0 +1,29 @@
+
+body{position: relative;}
+.yuyue{ widows: 100%; margin: auto;}
+.yuyue_son{  display: block;}
+.yuyue_son img{width: 100%;}
+
+.yh_tianxie{width: 100%; margin: auto;}
+.yh_xinxi{width: 92%; margin: auto; }
+.name_t{width: 100%; border:solid #838383 1px; border-radius: 0.4rem; box-sizing: border-box; height:2rem; font-size: 0.8rem; padding-left: 2%;margin-top: 0.6rem; color: #838383;}
+.tel_t{width: 100%; border:solid #838383 1px; border-radius: 0.4rem; box-sizing: border-box; height:2rem; font-size: 0.8rem; padding-left: 2%;margin-top: 0.5rem;color: #838383;
+     }
+.tel_t input{
+	outline: none;
+}
+.zf_xinxi{width: 100%; margin:auto ;}
+.zf_bor{ margin:0.8rem auto 0rem auto; font-size: 0.8rem;}
+.zf_bors{width: 92%; height: 1rem; line-height: 1rem; padding: 0.3rem 0rem;}
+.zf_bors li{float: left; margin:0rem 0.5rem;  font-size: 0.8rem; }
+
+.zf_bors li.active{
+	color: orangered;
+}
+
+.tj_button{width: 100%;margin: auto; margin-top: 1rem; margin-bottom: 1rem;}
+.tijiao_bj{width: 94%; margin: auto; text-align: center;border-radius: 0.4rem; background-color: #ff4444; padding: 0.5rem 0; font-size: 1rem; color: white;}
+.dianhua_tel{width: 94%; margin: auto; text-align: center;border-radius: 0.4rem; background-color: #2fbd43; padding: 0.5rem 0; font-size: 1rem; color: white; margin-top: 0.5rem;}
+
+.fixed{width: 100%; margin: auto; position: absolute;top:40%; }
+.tijiao_cg{width: 40%; background-color: #333333; padding: 0.8rem 0; border-radius: 0.4rem; font-size:0.8rem;text-align: center; margin: auto; color: white;}

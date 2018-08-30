@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.goods.BrandDao">
+    <resultMap id="BrandMap" type="com.lwxf.newstore.webapp.domain.entity.goods.Brand">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="is_disabled" property="disabled" jdbcType="BIT" />
+        <result column="content" property="content" jdbcType="VARCHAR" />
+        <result column="image" property="image" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="columns">
+id, name, is_disabled, content, image
+</sql>
+
+    <select id="selectById" resultMap="BrandMap" parameterType="String">
+        SELECT <include refid="columns" />
+        FROM   brand
+        WHERE  id = #{id}
+    </select>
+
+    <select id="selectByFilter" resultMap="BrandMap">
+        SELECT <include refid="columns" />
+        FROM   brand
+        <where><trim prefixOverrides="AND">
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="name != null">
+                AND name = #{name}
+            </if>
+            <if test="disabled != null">
+                AND is_disabled = #{disabled}
+            </if>
+            <if test="content != null">
+                AND content = #{content}
+            </if>
+            <if test="image != null">
+                AND image = #{image}
+            </if>
+        </trim></where>
+
+    </select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO
+ brand(id, name, is_disabled, content, image)
+VALUES(#{id}, #{name}, #{disabled}, #{content}, #{image})
+</insert>
+
+    <update id="updateByMapContext">
+        UPDATE brand
+        <set><trim suffixOverrides=",">
+            <if test="_parameter.containsKey('name') and name != null">
+                name = #{name},
+            </if>
+            <if test="_parameter.containsKey('disabled') and disabled != null">
+                is_disabled = #{disabled},
+            </if>
+            <if test="_parameter.containsKey('content')">
+                content = #{content},
+            </if>
+            <if test="_parameter.containsKey('image')">
+                image = #{image}
+            </if>
+        </trim></set>
+        WHERE  id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   brand
+WHERE  id = #{id}
+</delete>
+    <select id="findAll" resultMap="BrandMap">
+        SELECT
+        <include refid="columns"/>
+        FROM brand
+    </select>
+    <select id="findByBrandName" resultMap="BrandMap">
+        SELECT <include refid="columns"/> FROM brand WHERE name = #{arg0}
+    </select>
+    <select id="findListByParams" resultMap="BrandMap">
+        select <include refid="columns"/> from brand
+        <where>
+            <trim prefixOverrides="AND">
+                <if test="name != null">
+                    AND name like CONCAT('%',#{name},'%')
+                </if>
+                <if test="disabled != null">
+                    AND is_disabled = #{disabled}
+                </if>
+            </trim>
+        </where>
+    </select>
+    <select id="findLikeName" resultMap="BrandMap">
+        select <include refid="columns"/> from brand where name like CONCAT('%',#{name},'%')
+    </select>
+</mapper>

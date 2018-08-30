@@ -1,0 +1,471 @@
+
+body{
+	background: #f8f8f8;
+}
+
+.bobyback{
+	background: #f8f8f8;
+}
+
+.paymentaSite {
+	width: 100%;
+	display: inline-block;
+	padding-top: 0.5rem;
+	padding-bottom: 0.3rem;
+	background: whitesmoke;
+}
+
+.paymentaSite .item {
+	float: left;
+}
+
+.paymentaSite .icon {
+	width: 2rem;
+	text-align: center;
+}
+
+.paymentaSite .icon i {
+	font-size: 1rem;
+	color: #AAAAAA;
+}
+
+.paymentaSite .site {
+	width: 14rem;
+}
+
+.paymentaSite .site p {
+	color: #333333;
+	font-size: 0.7rem;
+}
+
+.paymentaSite .site p span {
+	float: right;
+}
+
+.paymentaSite .site h3 {
+	width: 100%;
+	clear: both;
+	font-size: 0.6rem;
+	color: #AAAAAA;
+	line-height: 0.9rem;
+	padding-top: 0.2rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.7rem;
+	display: block;
+	
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	display: -webkit-box;
+	line-clamp: 2;
+	margin-bottom: 0.3rem;
+}
+
+.paymentaSite .iconBack {
+	width: 2rem;
+	text-align: center;
+	line-height: 3rem;
+}
+
+.paymentaSite .iconBack i {
+	color: #AAAAAA;
+	font-size: 0.7rem;
+}
+
+.paymentaSite h1 {
+	width: 100%;
+	clear: both;
+	height: 2px;
+	overflow: hidden;
+	background: url(../img/shop/sitebag.png);
+	margin: 0.2rem 0rem;
+}
+
+.store-center {
+	width: 100%;
+}
+
+.store-center ul {
+	width: 100%;
+}
+
+.store-center ul li {
+	width: 100%;
+	font-size: 0px;
+}
+
+.store-center ul li .store-name {
+	padding: 1rem 0.5rem;
+	height: 1rem;
+	font-size: 0.7rem;
+	background: white;
+}
+
+.store-center ul li .store-name span {
+	float: left;
+	margin-right: 0.3rem;
+}
+
+.store-center ul li .store-name span img {
+	display: block;
+	width: 1rem;
+	height: 1rem;
+}
+
+.store-center ul li .store-item {
+	padding: 0.5rem;
+	background: white;
+	width: 17rem;
+	display: inline-block;
+}
+
+.store-center ul li .store-item .item {
+	float: left;
+}
+
+.store-center ul li .store-item .shopimg {}
+
+.store-center ul li .store-item .shopimg img {
+	display: block;
+	width: 4.3rem;
+	height: 4.3rem;
+}
+
+.store-center ul li .store-item .shopnav {
+	width: 11.7rem;
+	margin: 0rem 0.5rem;
+	font-size: 0.7rem;
+}
+
+.store-center ul li .store-item .shopnav p {
+	width: 100%;
+	font-size: 0.7rem;
+	font-weight: 100;
+	line-height:1rem;
+	padding-top: 0.2rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+.store-center ul li .store-item .shopnav span {
+	width: 100%;
+	font-size: 0.6rem;
+	font-weight: 100;
+	color: #A9A9A9;
+	display: block;
+	height: 1.8rem;
+	padding-top: 0.2rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	display: -webkit-box;
+	line-clamp: 2;
+}
+
+.store-center ul li .store-item .calculator  {
+	padding-top: 0.2rem;
+	width: 100%;
+	font-size: 0.6rem;
+	line-height: 1rem;
+	
+}
+
+.store-center ul li .store-item .calculator b {
+color: #333;
+font-weight: 100;
+font-size: 1rem;
+}
+
+.store-center ul li .store-item .calculator small {
+color: #FF4444;
+font-size: 0.6rem;
+float: right;
+color: #AAAAAA;
+}
+
+/**/
+
+
+.goodMessage {
+	margin: 0.3rem 0rem;
+	padding: 0rem 0.5rem;
+	clear: both;
+	display: block;
+	background: white;
+}
+
+.goodMessage ul {
+	width: 100%;
+	border-bottom: solid 1px #EEEEEE;
+}
+
+.goodMessage ul li.goodMlist {
+	width: 100%;
+	
+	position: relative;
+	font-size: 0.8rem;
+	height: 1.6rem;
+	line-height: 1.6rem;
+}
+
+.goodMessage ul li.goodMlist small {
+	font-size: 0.7rem;
+	color: #AAAAAA;
+
+	float: left;
+	display: block;
+	width: 4rem;
+}
+
+.goodMessage ul li.goodMlist span {
+	color: #333333;
+	font-size: 0.7rem;
+}
+
+.goodMessage ul li.goodMlist i {
+	line-height: 2rem;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	color: #AAAAAA;
+}
+
+.goodMessage ul li.goodMlist small.none {
+	color: orangered;
+	margin: 0px;
+	margin-left: 0.6rem;
+}
+
+.goodMessage ul li:last-child {
+	border: none;
+}
+
+.goodMessage .leave{
+float: right;
+	display: block;
+	width: 12.8rem;
+	border: none;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.6rem;
+	background: white;
+	margin: 0.5rem 0rem;
+}
+
+.order-pay{
+	border-top: solid 1px #EEEEEE;
+	position: fixed;
+	
+	width: 100%;
+	z-index: 9;
+	background: white;
+	left: 0px;
+	
+	bottom: 0px;
+	padding: 0.5rem 0rem;
+}
+
+
+
+
+.order-pay span{
+	display: block;
+	float: right;
+	color: #696969;
+	text-align: center;
+    padding:0.3rem 0.5rem;
+	border: solid 1px #696969;
+	font-size: 0.7rem;
+	margin-right: 0.5rem;
+	border-radius: 0.2rem;
+}
+
+.notsite{
+	width: 100%;
+	padding:0.6rem 0rem;
+	background: whitesmoke;
+	height: 2rem;
+	line-height: 2rem;
+	color: #000000;
+	font-size: 0.8rem;
+}
+
+.notsite span{
+  float: left;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+ 
+  margin-left: 0.5rem;
+  margin-right: 0.3rem;
+  
+  
+}
+
+.notsite span img{
+	display: block;
+	width: 100%;
+	
+} 
+
+
+			.order-good {
+				display: inline-block;
+				width: 100%;
+				border-top: solid 1px #EEEEEE;
+				border-bottom: solid 1px #EEEEEE;
+				padding: 0.5rem 0rem;
+			}
+			
+			.order-good .item {
+				float: left;
+			}
+			
+			.order-good .imges {
+				width: 4rem;
+				height: 4rem;
+				border-radius: 0.3rem;
+				overflow: hidden;
+			}
+			
+			.order-good .imges img {
+				display: block;
+				width: 4rem;
+				height: 4rem;
+			}
+			
+			.order-good .nametype {
+				width: 9rem;
+				margin: 0rem 0.5rem;
+			}
+			
+			.order-good .nametype p {
+				width: 100%;
+				color: #333333;
+				font-size: 0.7rem;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				 white-space: nowrap; 
+				
+				
+			}
+			
+			.order-good .nametype span {
+				width: 100%;
+				color: #AAAAAA;
+				margin: 0.3rem 0rem;
+				font-size: 0.6rem;
+				overflow: hidden;
+				display: block;
+				 white-space: nowrap; 
+			}
+			
+			
+			.order-good .nametype  b{
+				font-size: 1rem;
+				font-weight: 100;
+				color: #666666;
+			}
+			
+			.order-good .status {
+				width: 2rem;
+				padding-right: 0.5rem;
+				float: right;
+				text-align: right;
+			}
+			
+			.order-good .status span {
+				display: block;
+				width: 100%;
+				height: 2rem;
+				line-height: 2rem;
+				color: #666;
+				font-size: 0.7rem;
+			}
+			
+			.order-good .status small {
+				display: block;
+				width: 100%;
+				color: #D20000;
+				font-size: 0.6rem;
+			}
+			
+
+.goodMessage .goodMlist.all{
+	width: 100%;
+	font-size: 1rem;
+	color: #D20000;
+	padding: 0.5rem 0rem;
+	
+}
+
+.goodMessage .goodMlist.all small{
+	font-size: 0.8rem;
+	color: #D20000;
+	font-weight: 100;
+}
+
+
+.goodMessage .goodMlist.all span{
+	font-size: 0.8rem;
+	color: #D20000;
+	font-weight: 100;
+}
+
+.order-kf{
+	display: block;
+	padding: 0.5rem;
+	background: white;
+	margin-top: 0.5;
+}
+
+.order-kf p{
+	font-size: 0.6rem;
+	color: #696969;
+}
+
+
+.order-kfbut{
+	height: 2rem;
+    width: 100%;
+    padding: 0.5rem 0rem;
+}
+
+.order-kfbut .li{
+	width: 6rem;
+	height: 1.8rem;
+	line-height: 1.8rem;
+
+	padding: 0.2rem 1rem;
+	font-size: 0.7rem;
+	color: #AAAAAA;
+	border: solid 1px #AAAAAA;
+	border-radius: 0.2rem;
+	
+}
+
+.order-kfbut .li span{
+	display: block;
+	width: 1.6rem;
+	height: 1.6rem;
+	float: left;
+	margin: 0.1rem;
+}
+
+.order-kfbut .li span img{
+	display: block;
+	width: 1.6rem;
+	height: 1.6rem;
+}
+
+.order-kfbut .li small{ 
+	font-size: 0.7rem;
+	padding-left: 0.5rem;
+}
+
+.order-kfbut .li  a{
+	color: #696969;
+}

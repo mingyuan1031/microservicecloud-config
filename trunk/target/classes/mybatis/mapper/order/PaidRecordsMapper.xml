@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.order.PaidRecordsDao">
+    <resultMap id="PaidRecordsMap" type="com.lwxf.newstore.webapp.domain.entity.order.PaidRecords">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="member_id" property="memberId" jdbcType="CHAR" />
+        <result column="paid_num" property="paidNum" jdbcType="VARCHAR" />
+        <result column="paid_price" property="paidPrice" jdbcType="DECIMAL" />
+        <result column="paid_time" property="paidTime" jdbcType="TIMESTAMP" />
+        <result column="type" property="type" jdbcType="TINYINT" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="order_id" property="orderId" jdbcType="CHAR" />
+    </resultMap>
+    <resultMap id="PaidDto" type="com.lwxf.newstore.webapp.domain.dto.user.PaidDto">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="member_id" property="memberId" jdbcType="CHAR" />
+        <result column="paid_num" property="paidNum" jdbcType="VARCHAR" />
+        <result column="paid_price" property="paidPrice" jdbcType="DECIMAL" />
+        <result column="paid_time" property="paidTime" jdbcType="TIMESTAMP" />
+        <result column="type" property="type" jdbcType="TINYINT" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="order_id" property="orderId" jdbcType="CHAR" />
+        <result column="orderNum" property="orderNum" jdbcType="CHAR"/>
+    </resultMap>
+    <sql id="columns">
+id, member_id, paid_num, paid_price, paid_time, type, created, order_id
+</sql>
+
+    <select id="selectById" resultMap="PaidRecordsMap" parameterType="String">
+        SELECT <include refid="columns" />
+        FROM   paid_records
+        WHERE  id = #{id}
+    </select>
+    <select id="findByMemberId" resultMap="PaidRecordsMap" parameterType="String">
+        SELECT p.*,o.order_number orderNum
+        FROM   paid_records p LEFT JOIN `order` o ON
+				p.order_id = o.id
+        WHERE  p.member_id = #{id} order by p.created desc
+    </select>
+
+    <select id="selectByFilter" resultMap="PaidRecordsMap">
+        SELECT <include refid="columns" />
+        FROM   paid_records
+        <where><trim prefixOverrides="AND">
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="memberId != null">
+                AND member_id = #{memberId}
+            </if>
+            <if test="paidNum != null">
+                AND paid_num = #{paidNum}
+            </if>
+            <if test="paidPrice != null">
+                AND paid_price = #{paidPrice}
+            </if>
+            <if test="paidTime != null">
+                AND paid_time = #{paidTime}
+            </if>
+            <if test="type != null">
+                AND type = #{type}
+            </if>
+            <if test="created != null">
+                AND created = #{created}
+            </if>
+            <if test="orderId != null">
+                AND order_id = #{orderId}
+            </if>
+        </trim></where>
+
+    </select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO
+paid_records(id, member_id, paid_num, paid_price, paid_time, type, created, order_id)
+      VALUES(#{id}, #{memberId}, #{paidNum}, #{paidPrice}, #{paidTime}, #{type}, #{created}, #{orderId})
+</insert>
+
+    <update id="updateByMapContext">
+        UPDATE paid_records
+        <set><trim suffixOverrides=",">
+            <if test="_parameter.containsKey('orderId')">
+                order_id = #{orderId}
+            </if>
+        </trim></set>
+        WHERE  id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   paid_records
+WHERE  id = #{id}
+</delete>
+
+</mapper>

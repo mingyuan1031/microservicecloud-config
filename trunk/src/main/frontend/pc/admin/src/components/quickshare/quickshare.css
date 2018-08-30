@@ -1,0 +1,196 @@
+ .table{
+ 	margin-top: 20px;	
+ }
+ .table{
+ 	border-collapse: collapse;
+    border-spacing: 0;
+    background: #ffffff;
+    border: 1px solid #E9E9E9;
+    color: #333333;
+    width: 100%;
+ }
+ .table tr{
+ 	display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+ }
+ .table td{
+    padding: 4px;
+    border: 1px solid #e5e5e5;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #F5F5F5;
+ }
+ .tables{
+ 	width: 100%;
+ 	height: 150px;
+ 	background-color: deepskyblue;
+ }
+ .tablemod{
+ 	margin-top: 30px;
+ 	height: 150px;
+ 	width: 100%;
+ 	background-color: deepskyblue;
+ }
+ .tablehead{
+ 	height: 42px;
+ 	background-color:#ececec;
+ }
+ ul li{
+ 	list-style: none;
+ }
+ .tablex{
+ 	margin-top: 30px;
+ 	border: 1px solid #fff;
+ }
+
+ .tablex .head ul{
+ 	height: 42px;
+ 	background-color: #F5F5F5;
+ 	line-height: 42px;
+ }
+ .tablex .head ul li{
+ 	float: left;
+ 	height: 42px;
+ 	text-align: center;
+ }
+
+ .tablecontain .table_containx  li{
+ 	float: left;
+ }
+.miaoshu,.tupians{
+	float: left;
+	margin-right: 20px;
+}
+.miaoshus{
+	cursor: pointer;
+	padding: 5px 0 5px 5px;
+}
+.table_containx li{
+	height: 250px;
+	border: 1px solid #ECECEC;
+	margin-top: 5px;
+}
+.orderdei:hover{
+	color: red;
+	cursor: pointer;
+}
+.productdels{
+	width: 400px;
+	height: 125px;
+	line-height: 25px;
+	border-bottom: 1px solid #E2E2E2;
+	overflow-y: auto;
+	word-wrap:break-word
+}
+.go,.back{
+    height: 24px;
+    line-height: 22px;
+    background-color: #fff;
+    border-color:#9c9c9c;
+    border: 1px solid #dcdcdc;
+    width: 62px;
+    text-align: center;
+    margin: 0 3px;
+}
+.back:hover{
+	 border: 1px solid red;
+}
+.go:hover{
+	border: 1px solid red;
+}
+.btng{
+	margin: 10px 0;
+}
+.tupians{
+	margin-left: 3%;
+}
+.laji{
+	float: right;
+	padding-top: 12px;
+}
+.money{
+	font-weight: 700;
+}
+.deltable{
+	width: 910px;
+	margin: 0 auto;
+	border: none;
+}
+.tabletime{
+	font-size: 14px;
+}
+.statecolor{
+	font-size: 12px;
+}
+.moneyss{
+	font-weight: 700;
+	color: red;
+	font-size: 14px;
+	display: block;
+	margin-top: 50px;
+}
+.originalprice{
+	color: #9c9c9c;
+}
+
+.imagex{
+	width:310px;
+	height:150px;
+}
+.photos li{
+	float: left;
+	height: 50px;
+}
+.knowmore{
+	float: right;
+	color: cornflowerblue
+}
+.df{
+	float: left;
+	border-radius: 50%;
+	margin-top: 30px;
+	width: 400px;
+}
+.df_limg{
+	float: left;
+	border-radius: 50%;
+}
+.zhanghao{
+	float: left;
+	margin-left: 20px;
+}
+.zhanghao1{
+	display: inline-block;
+	margin-top: 5px;
+	font-weight:600;
+}
+.df_r{
+	float: right;
+	margin-top: 20px;
+}
+.dianzan{
+	margin-left: 20px;
+}
+.zan{
+	display: block;
+	margin: 10px 0;
+	font-weight: 600;
+}
+.conment{
+	color: red;
+	font-size: 14px;
+}
+.photos li{
+	cursor: pointer;
+	border: 1px solid #fff;
+}
+.comments{
+	font-size: 14px;
+	letter-spacing: 0.1em;
+}
+.money{
+	height: 60px;
+}

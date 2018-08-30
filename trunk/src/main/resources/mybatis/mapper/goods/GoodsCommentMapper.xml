@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.goods.GoodsCommentDao">
+    <resultMap id="GoodsCommentMap" type="com.lwxf.newstore.webapp.domain.entity.goods.GoodsComment">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="member_id" property="memberId" jdbcType="CHAR" />
+        <result column="parent_id" property="parentId" jdbcType="CHAR" />
+        <result column="goods_id" property="goodsId" jdbcType="CHAR" />
+        <result column="content" property="content" jdbcType="VARCHAR" />
+        <result column="is_answered" property="answered" jdbcType="BIT" />
+        <result column="is_auditd" property="auditd" jdbcType="BIT" />
+        <result column="is_disabled" property="disabled" jdbcType="BIT" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="goods_extend_id" property="goodsExtendId" jdbcType="CHAR" />
+        <result column="score" property="score" jdbcType="CHAR" />
+    </resultMap>
+    <resultMap id="GoodsCommentsMap" type="com.lwxf.newstore.webapp.domain.dto.goods.GoodsComments">
+        <id column="id" property="id"/>
+        <result column="member_id" property="memberId"/>
+        <result column="goods_id" property="goodsId"/>
+        <result column="content" property="content"/>
+        <result column="is_disabled" property="disabled"/>
+        <result column="created" property="created"/>
+        <result column="goods_extend_id" property="goodsExtendId"/>
+        <result column="score" property="score"/>
+        <result column="reply" property="reply"/>
+        <result column="replyCreated" property="replyCreated"/>
+        <result column="replyId" property="replyId"/>
+        <result column="goodsName" property="goodsName"/>
+    </resultMap>
+    <sql id="columns">
+id, member_id, parent_id, goods_id, content, is_answered, is_auditd, is_disabled, created, goods_extend_id, score
+</sql>
+
+    <select id="selectById" resultMap="GoodsCommentMap" parameterType="String">
+        SELECT <include refid="columns" />
+        FROM   goods_comment
+        WHERE  id = #{id}
+    </select>
+    <select id="findByMapper" resultMap="GoodsCommentsMap">
+        select g.name goodsName,g.id,g.created,t.created replyCreated,g.goods_id,g.goods_extend_id,t.content reply,t.id replyId,g.score,g.is_disabled,g.member_id,g.content from (select co.*,gd.name from goods_comment co join goods gd on gd.id=co.goods_id where co.parent_id is NULL
+        <if test="goodsName!=null">
+            and gd.name like CONCAT('%',#{goodsName},'%')
+        </if>
+        ) g
+        left JOIN (select * from goods_comment where parent_id is not null) t ON g.id = t.parent_id
+        <where>
+            <trim prefixOverrides="AND">
+                <if test="goodsId!=null">
+                    g.goods_id=#{goodsId}
+                </if>
+                <if test="score!=null">
+                    AND g.score=#{score}
+                </if>
+                <if test="disabled!=null">
+                    AND g.is_disabled = #{disabled}
+                </if>
+            </trim>
+        </where>
+        order by g.created desc
+    </select>
+    <select id="selectByFilter" resultMap="GoodsCommentMap">
+        SELECT <include refid="columns" />
+        FROM   goods_comment
+        <where><trim prefixOverrides="AND">
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="memberId != null">
+                AND member_id = #{memberId}
+            </if>
+            <if test="parentId != null">
+                AND parent_id = #{parentId}
+            </if>
+            <if test="goodsId != null">
+                AND goods_id = #{goodsId}
+            </if>
+            <if test="content != null">
+                AND content = #{content}
+            </if>
+            <if test="answered != null">
+                AND is_answered = #{answered}
+            </if>
+            <if test="auditd != null">
+                AND is_auditd = #{auditd}
+            </if>
+            <if test="disabled != null">
+                AND is_disabled = #{disabled}
+            </if>
+            <if test="created != null">
+                AND created = #{created}
+            </if>
+            <if test="goodsExtendId != null">
+                AND goods_extend_id = #{goodsExtendId}
+            </if>
+            <if test="score != null">
+                AND score = #{score}
+            </if>
+        </trim></where>
+
+    </select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO
+goods_comment(id, member_id, parent_id, goods_id, content, is_answered, is_auditd, is_disabled, created, goods_extend_id, score)
+       VALUES(#{id}, #{memberId}, #{parentId}, #{goodsId}, #{content}, #{answered}, #{auditd}, #{disabled}, #{created}, #{goodsExtendId}, #{score})
+</insert>
+
+    <update id="updateByMapContext">
+        UPDATE goods_comment
+        <set><trim suffixOverrides=",">
+            <if test="_parameter.containsKey('answered')">
+                is_answered = #{answered},
+            </if>
+            <if test="_parameter.containsKey('auditd')">
+                is_auditd = #{auditd},
+            </if>
+            <if test="_parameter.containsKey('disabled') and disabled != null">
+                is_disabled = #{disabled}
+            </if>
+        </trim></set>
+        WHERE  id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   goods_comment
+WHERE  id = #{id}
+</delete>
+    <delete id="deleteByParentId">
+        delete from goods_comment where parent_id = #{arg0}
+    </delete>
+    <select id="findCountById" resultType="map">
+select IFNULL(
+	(
+		SELECT
+			count(*)
+		FROM
+			goods_comment g
+		WHERE
+			g.goods_id = #{arg0} and g.score = '0' and g.is_disabled = '0'
+	),
+	0
+) AS zero,IFNULL(
+	(
+		SELECT
+			count(*)
+		FROM
+			goods_comment g
+		WHERE
+			g.goods_id = #{arg0} and g.score = '1' and g.is_disabled = '0'
+	),
+	0
+) AS one,IFNULL(
+	(
+		SELECT
+			count(*)
+		FROM
+			goods_comment g
+		WHERE
+			g.goods_id = #{arg0} and g.score = '2' and g.is_disabled = '0'
+	),
+	0
+) AS two
+
+    </select>
+</mapper>

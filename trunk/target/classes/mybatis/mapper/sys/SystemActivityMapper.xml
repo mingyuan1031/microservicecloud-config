@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.sys.SystemActivityDao">
+    <resultMap id="SystemActivityMap" type="com.lwxf.newstore.webapp.domain.entity.sys.SystemActivity">
+        <id column="id" property="id" jdbcType="CHAR" />
+        <result column="company_id" property="companyId" jdbcType="CHAR" />
+        <result column="event" property="event" jdbcType="VARCHAR" />
+        <result column="created" property="created" jdbcType="TIMESTAMP" />
+        <result column="creator" property="creator" jdbcType="CHAR" />
+        <result column="r1" property="r1" jdbcType="CHAR" />
+        <result column="r2" property="r2" jdbcType="CHAR" />
+        <result column="r3" property="r3" jdbcType="LONGVARCHAR" />
+        <result column="scope" property="scope" jdbcType="TINYINT" />
+    </resultMap>
+    <sql id="columns">
+id, company_id, event, created, creator, r1, r2, r3, scope
+</sql>
+
+    <select id="selectById" resultMap="SystemActivityMap" parameterType="String">
+SELECT <include refid="columns" />
+FROM   system_activity
+WHERE  id = #{id}
+</select>
+
+    <select id="selectByFilter" resultMap="SystemActivityMap">
+SELECT <include refid="columns" />
+FROM   system_activity
+<where><trim prefixOverrides="AND">
+<if test="id != null">
+    id = #{id}
+</if>
+<if test="companyId != null">
+    AND company_id = #{companyId}
+</if>
+<if test="event != null">
+    AND event = #{event}
+</if>
+<if test="created != null">
+    AND created = #{created}
+</if>
+<if test="creator != null">
+    AND creator = #{creator}
+</if>
+<if test="r1 != null">
+    AND r1 = #{r1}
+</if>
+<if test="r2 != null">
+    AND r2 = #{r2}
+</if>
+<if test="r3 != null">
+    AND r3 = #{r3}
+</if>
+<if test="scope != null">
+    AND scope = #{scope}
+</if>
+</trim></where>
+
+</select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+system_activity(id, company_id, event, created, creator, r1, r2, r3, scope)
+         VALUES(#{id}, #{companyId}, #{event}, #{created}, #{creator}, #{r1}, #{r2}, #{r3}, #{scope})
+</insert>
+
+    <update id="updateByMapContext" />
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   system_activity
+WHERE  id = #{id}
+</delete>
+
+    <delete id="deleteByIds" parameterType="String">
+        DELETE FROM   system_activity
+        WHERE  id in
+        <foreach collection="array" item="ids" separator="," open="(" close=")">
+            #{ids}
+        </foreach>
+    </delete>
+
+
+
+</mapper>

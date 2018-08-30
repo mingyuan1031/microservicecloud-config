@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lwxf.newstore.webapp.domain.dao.order.CityAreaDao">
+    <resultMap id="CityAreaMap" type="com.lwxf.newstore.webapp.domain.entity.order.CityArea">
+        <id column="id" property="id" jdbcType="CHAR"/>
+        <result column="parent_id" property="parentId" jdbcType="CHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="merger_name" property="mergerName" jdbcType="VARCHAR"/>
+        <result column="short_name" property="shortName" jdbcType="VARCHAR"/>
+        <result column="merger_short_name" property="mergerShortName" jdbcType="VARCHAR"/>
+        <result column="level_type" property="levelType" jdbcType="TINYINT"/>
+        <result column="city_code" property="cityCode" jdbcType="VARCHAR"/>
+        <result column="zip_code" property="zipCode" jdbcType="VARCHAR"/>
+        <result column="name_pinyin" property="namePinyin" jdbcType="VARCHAR"/>
+        <result column="name_jianpin" property="nameJianpin" jdbcType="VARCHAR"/>
+        <result column="fisrt_char" property="fisrtChar" jdbcType="CHAR"/>
+        <result column="lng" property="lng" jdbcType="FLOAT"/>
+        <result column="lat" property="lat" jdbcType="FLOAT"/>
+    </resultMap>
+    <sql id="columns">
+id, parent_id, name, merger_name, short_name, merger_short_name, level_type, city_code, zip_code, name_pinyin, name_jianpin, fisrt_char, lng, lat
+</sql>
+
+    <select id="selectById" resultMap="CityAreaMap" parameterType="String">
+        SELECT
+        <include refid="columns"/>
+        FROM city_area
+        WHERE id = #{id}
+    </select>
+
+    <select id="selectCityAreaListByParentId" resultMap="CityAreaMap" parameterType="String">
+        SELECT
+        <include refid="columns"/>
+        FROM city_area
+        WHERE parent_id = #{parentId}
+    </select>
+
+    <select id="selectCityAreaListByLevel" resultMap="CityAreaMap" parameterType="Integer">
+        SELECT
+        <include refid="columns"/>
+        FROM city_area
+        WHERE level_type = #{levelType}
+    </select>
+
+    <select id="selectByFilter" resultMap="CityAreaMap">
+        SELECT
+        <include refid="columns"/>
+        FROM city_area
+        <where>
+            <trim prefixOverrides="AND">
+                <if test="id != null">
+                    id = #{id}
+                </if>
+                <if test="parentId != null">
+                    AND parent_id = #{parentId}
+                </if>
+                <if test="name != null">
+                    AND name = #{name}
+                </if>
+                <if test="mergerName != null">
+                    AND merger_name = #{mergerName}
+                </if>
+                <if test="shortName != null">
+                    AND short_name = #{shortName}
+                </if>
+                <if test="mergerShortName != null">
+                    AND merger_short_name = #{mergerShortName}
+                </if>
+                <if test="levelType != null">
+                    AND level_type = #{levelType}
+                </if>
+                <if test="cityCode != null">
+                    AND city_code = #{cityCode}
+                </if>
+                <if test="zipCode != null">
+                    AND zip_code = #{zipCode}
+                </if>
+                <if test="namePinyin != null">
+                    AND name_pinyin = #{namePinyin}
+                </if>
+                <if test="nameJianpin != null">
+                    AND name_jianpin = #{nameJianpin}
+                </if>
+                <if test="fisrtChar != null">
+                    AND fisrt_char = #{fisrtChar}
+                </if>
+                <if test="lng != null">
+                    AND lng = #{lng}
+                </if>
+                <if test="lat != null">
+                    AND lat = #{lat}
+                </if>
+            </trim>
+        </where>
+
+    </select>
+
+    <insert id="insert" useGeneratedKeys="false">
+INSERT INTO 
+city_area(id, parent_id, name, merger_name, short_name, merger_short_name, level_type, city_code, zip_code, name_pinyin, name_jianpin, fisrt_char, lng, lat)
+   VALUES(#{id}, #{parentId}, #{name}, #{mergerName}, #{shortName}, #{mergerShortName}, #{levelType}, #{cityCode}, #{zipCode}, #{namePinyin}, #{nameJianpin}, #{fisrtChar}, #{lng}, #{lat})
+</insert>
+
+    <update id="updateByMapContext">
+        UPDATE city_area
+        <set>
+            <trim suffixOverrides=",">
+                <if test="_parameter.containsKey('parentId') and parentId != null">
+                    parent_id = #{parentId},
+                </if>
+                <if test="_parameter.containsKey('name') and name != null">
+                    name = #{name},
+                </if>
+                <if test="_parameter.containsKey('mergerName')">
+                    merger_name = #{mergerName},
+                </if>
+                <if test="_parameter.containsKey('shortName')">
+                    short_name = #{shortName},
+                </if>
+                <if test="_parameter.containsKey('mergerShortName')">
+                    merger_short_name = #{mergerShortName},
+                </if>
+                <if test="_parameter.containsKey('levelType')">
+                    level_type = #{levelType},
+                </if>
+                <if test="_parameter.containsKey('cityCode')">
+                    city_code = #{cityCode},
+                </if>
+                <if test="_parameter.containsKey('zipCode')">
+                    zip_code = #{zipCode},
+                </if>
+                <if test="_parameter.containsKey('namePinyin')">
+                    name_pinyin = #{namePinyin},
+                </if>
+                <if test="_parameter.containsKey('nameJianpin')">
+                    name_jianpin = #{nameJianpin},
+                </if>
+                <if test="_parameter.containsKey('fisrtChar')">
+                    fisrt_char = #{fisrtChar},
+                </if>
+                <if test="_parameter.containsKey('lng')">
+                    lng = #{lng},
+                </if>
+                <if test="_parameter.containsKey('lat')">
+                    lat = #{lat}
+                </if>
+            </trim>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="String">
+DELETE FROM   city_area
+WHERE  id = #{id}
+</delete>
+
+</mapper>

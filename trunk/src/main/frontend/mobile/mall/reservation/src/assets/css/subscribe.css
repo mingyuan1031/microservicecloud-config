@@ -1,0 +1,130 @@
+.order{
+	background: whitesmoke;
+}
+.order-head{
+	width: 100%;
+	
+	background: white;
+}
+
+.order-head ul{
+	padding-top: 0.5rem ;
+   display: inline-block;
+	width: 100%;
+	
+	border-bottom: solid 1px #EEEEEE;
+}
+
+.order-head ul li{
+	width: 20%;
+	text-align: center;
+	color: #333333;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.7rem;
+	float: left;
+	padding-bottom: 0.5rem;
+}
+
+.order-head ul li.active span{
+	padding-bottom: 0.5rem;
+	border-bottom: solid 2px #d20000;
+	color: #D20000;
+}
+
+.order-nav{
+	width: 100%;
+	
+}
+
+.order-class{
+	width: 100%;
+	display: block;
+}
+
+.order-class .order-item{
+	display: block;
+	padding: 0.5rem 0rem;
+
+	
+	
+	
+	
+}
+
+
+.order-class .order-itemNav{
+	background: white;
+	padding: 0.5rem 0rem;
+	padding-left: 0.5rem;
+}
+
+.order-class .order-itemNav .ordernum{
+	width: 100%;
+	padding-bottom: 0.5rem;
+	font-size: 0.7rem;
+	height: 1rem;
+	line-height: 1rem;
+	position: relative;
+	color: #333333;
+}
+
+.order-class .order-itemNav .ordernum span{
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0.5rem;
+	
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.7rem;
+}
+
+
+.order-good{
+	display: inline-block;
+	width: 100%;
+	border-top: solid 1px #EEEEEE;
+	border-bottom: solid 1px #EEEEEE;
+	padding: 0.5rem 0rem;
+}
+
+
+.order-good p{
+	color: #333333;
+	font-size: 0.7rem;
+	line-height: 1.2rem;
+}
+
+.nonal{
+	padding: 1rem 0rem;
+	background: white;
+}
+
+.nonal p{
+	font-size: 0.8rem;
+	text-align: center;
+	
+	color: #AAAAAA;
+}
+
+.nonal span{
+	display: block;
+	width: 5rem;
+	margin: 0px auto;
+	color: white;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.8rem;
+	background: orangered;
+	border-radius: 0.2rem;
+	text-align: center;
+	color: white;
+	margin-top: 0.2rem;
+	
+}
+
+
+.nonal span a{
+	color: white;
+}
